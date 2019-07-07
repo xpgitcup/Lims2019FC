@@ -1,0 +1,8 @@
+body {
+  background: url("../cup/img_bg_haven.jpg");
+  background-position: center;
+  background-size: cover;
+  /*这个是正确的*/
+  height: 100%;
+}
+/*# sourceMappingURL=cup20190509.css.map */
