@@ -34,6 +34,11 @@ class PersonTitle implements SelfCheck {
         return s
     }
 
+    static titleList(title) {
+        def pt = PersonTitle.findByName(title)
+        return pt.relatedTitles()
+    }
+
     List relatedTitles() {
         def list = []
         if (subTitles) {

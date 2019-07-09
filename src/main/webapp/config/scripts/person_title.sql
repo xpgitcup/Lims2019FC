@@ -3,15 +3,15 @@
 
  Source Server         : sample
  Source Server Type    : MySQL
- Source Server Version : 50725
+ Source Server Version : 80016
  Source Host           : localhost:3306
- Source Schema         : lims2019dba
+ Source Schema         : lims2019dbb
 
  Target Server Type    : MySQL
- Target Server Version : 50725
+ Target Server Version : 80016
  File Encoding         : 65001
 
- Date: 05/06/2019 14:38:23
+ Date: 08/07/2019 17:23:23
 */
 
 SET NAMES utf8mb4;
@@ -51,6 +51,6 @@ INSERT INTO `person_title` VALUES (13, 0, 3, '本科生');
 INSERT INTO `person_title` VALUES (14, 0, 3, '研究生');
 INSERT INTO `person_title` VALUES (16, 0, 14, '博士');
 INSERT INTO `person_title` VALUES (17, 0, 14, '硕士');
-INSERT INTO `person_title` VALUES (18, 0, 14, '博士后');
+INSERT INTO `person_title` VALUES (18, 1, 2, '博士后');
 
 SET FOREIGN_KEY_CHECKS = 1;

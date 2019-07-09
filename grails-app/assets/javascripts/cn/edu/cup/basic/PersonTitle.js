@@ -73,6 +73,7 @@ function editPersonTitle(id) {
 * 显示节点信息
 * */
 function showPersonTitle(node) {
+    //console.info(node)
     if (node) {
         var id = node.value[0];
         ajaxRun("operation4PersonTitle/show", id, "showPersonTitleDiv");

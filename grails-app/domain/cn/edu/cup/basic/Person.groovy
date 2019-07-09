@@ -32,10 +32,19 @@ class Person implements SelfCheck {
     自定义的一些相关查询
     * */
 
-    static List allTeachers() {
-        def pt = PersonTitle.findByName("教师")
+    static List allTeachers(params) {
+        return allSomeBody("教师", params)
+    }
+
+    static List allSomeBody(String atitle, params) {
+        def pt = PersonTitle.findByName(atitle)
         def pts = pt.relatedTitles()
-        def ts = Person.executeQuery("from Person person where person.personTitle in (${pts})")
+        def ts
+        if (params) {
+            ts = Person.executeQuery("from Person person where person.personTitle in (${pts})", params)
+        } else {
+            ts = Person.executeQuery("from Person person where person.personTitle in (${pts})")
+        }
         return ts
     }
 
