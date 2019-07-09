@@ -158,7 +158,6 @@ class InitService {
             if (selfCheckMethod) {
                 e.metaClass.invokeMethod(e, selfCheckMethod)
             }
-            //captionService.save(e)
             e.save(flush: true)
         }
         return objects

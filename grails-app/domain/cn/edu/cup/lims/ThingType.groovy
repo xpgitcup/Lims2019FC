@@ -10,12 +10,14 @@ class ThingType implements SelfCheck {
 
     String name
     ThingType upType
+    String appendKeys
 
     static hasMany = [subTypes: ThingType, things: Thing]
 
     static constraints = {
         name(unique: true)
         upType(nullable: true)
+        appendKeys(nullable: true)
     }
 
     static mapping = {
@@ -27,6 +29,36 @@ class ThingType implements SelfCheck {
     String toString() {
         return "${name}"
     }
+
+    /*
+    当前的参数
+    * */
+
+    def selfKeys() {
+        def ks = com.alibaba.fastjson.JSON.parseArray(appendKeys)
+        return ks
+    }
+
+    /*
+    所有的参数
+    * */
+
+    def keys() {
+        def ks = []
+        def tlist = []
+        def ut = upType
+        while (ut) {
+            tlist.add(ut)
+            ut = ut.upType
+        }
+        tlist.reverse().each { e ->
+            ks.addAll(e.selfKeys())
+        }
+        ks.addAll(this.selfKeys())
+        return ks
+    }
+
+    //==================================================================================================================
 
     List relatedThingTypeList() {
         def list = []
@@ -50,7 +82,7 @@ class ThingType implements SelfCheck {
     @Override
     void selfCheck() {
         if (subTypes) {
-            subTypes.each { e->
+            subTypes.each { e ->
                 e.upType = this
                 e.selfCheck()
             }
