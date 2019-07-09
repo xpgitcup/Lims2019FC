@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <meta name="layout" content="mainCup20190407"/>
+    <meta name="layout" content="mainAfterLogin20190709"/>
     <g:set var="entityName" value="HomeA"/>
     <title>${entityName}</title>
     <asset:javascript src="cn/edu/cup/os/${entityName}.js"/>

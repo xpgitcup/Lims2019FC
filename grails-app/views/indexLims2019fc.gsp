@@ -11,7 +11,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!--设置布局模板-->
-    <meta name="layout" content="mainCup20190407"/>
+    <meta name="layout" content="mainCup20190709"/>
     %{--浏览器标签上的标题-kq--}%
     <title>${cn.edu.cup.basic.Caption.findByName("main")?.title}</title>
     %{--浏览器标签上的图标-kq--}%

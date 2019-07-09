@@ -109,11 +109,16 @@
         </div>
     </div>
 
-    <div class="row m-2"></div>
-
     <!--第3行-->
-    <g:layoutBody/>
+    <div class="row m-0 p-0">
 
+        <div class="col-2">
+        </div>
+
+        <div class="col-10">
+            <g:layoutBody/>
+        </div>
+    </div>
 
     <!--第4行-->
     <div class="row m-0 p-0 text-white">

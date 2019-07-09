@@ -4,6 +4,7 @@
     "menuAction": "#",
     "menuDescription": "对系统的菜单结构进行用户友好的维护",
     "menuOrder": 0,
+    "layout": "mainAfterLogin20190709",
     "menuItems": [
       {
         "menuContext": "权限维护",
