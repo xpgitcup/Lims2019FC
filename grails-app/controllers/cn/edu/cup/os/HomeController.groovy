@@ -36,7 +36,7 @@ class HomeController extends CommonController {
 
         model:
         [
-                sql: "${sql}",
+                sql    : "${sql}",
                 persons: persons
         ]
     }
@@ -97,7 +97,37 @@ class HomeController extends CommonController {
     def selectCurrentMenuItem() {
         println("${params}")
         systemCommonService.updateSystemStatus(request, params)
+        session.currentMenuItem = SystemMenu.get(params.currentMenuItem)
         redirect(action: "index")
+    }
+
+    def getTopMenuItems() {
+        def systemMenuList = []
+        def menuPath = []
+        def currentMenuItem = null
+        def sid = session.getId()
+        def ss = SystemStatus.findBySessionId(sid)
+        if (ss) {
+            def ps = ss.getParameters()
+            currentMenuItem = systemMenuService.get(ps.currentMenuItem)
+            def user = systemUserService.get(session.systemUser.id)
+            if (user) {
+                def q = SystemMenu.createCriteria()
+                def roles = user.userRoles()
+                systemMenuList = q.list(params) {
+                    isNull('upMenuItem')
+                    'in'('menuContext', roles)      // 只要菜单的名字在其中就可以 20181208
+                    order('menuOrder')
+                }
+            }
+        } else {
+        }
+        def result = [systemMenuList: systemMenuList, meunPath: menuPath, currentMenuItem: currentMenuItem]
+        if (request.xhr) {
+            render(template: "applicationMenu", model: result)
+        } else {
+            result
+        }
     }
 
     def getMenuItems() {

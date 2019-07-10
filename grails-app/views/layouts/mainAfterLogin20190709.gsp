@@ -113,6 +113,27 @@
     <div class="row m-0 p-0">
 
         <div class="col-2">
+            <div class="card">
+                <div class="card-header">
+                    <g:if test="${session.currentMenuItem}">
+                        ${session.currentMenuItem?.menuContext}
+                    </g:if>
+                    <g:else>
+                        请选择
+                    </g:else>
+                </div>
+
+                <div class="crard-body" id="menuItemListDiv">
+                    <g:if test="${session.currentMenuItem}">
+                        <div class="nav flex-column">
+                            <g:each in="${session.currentMenuItem?.menuItems}" var="item" status="i">
+                                <li class="nav-link">${item.menuContext}</li>
+                            </g:each>
+                        </div>
+
+                    </g:if>
+                </div>
+            </div>
         </div>
 
         <div class="col-10">

@@ -51,7 +51,7 @@
     ]
   },
   {
-    "menuContext": "基础维护",
+    "menuContext": "静态基础",
     "menuAction": "#",
     "menuDescription": "维护基础数据",
     "menuOrder": 1,
@@ -69,51 +69,45 @@
         "menuOrder": 1
       },
       {
-        "menuContext": "人员数据",
-        "menuAction": "operation4Person/index",
+        "menuContext": "通用计划",
+        "menuAction": "#",
         "menuDescription": "各种人员的基础数据",
         "menuOrder": 2
-      },
-      {
-        "menuContext": "项目数据",
-        "menuAction": "operation4Thing/index",
-        "menuDescription": "各种项目的基础数据",
-        "menuOrder": 3
-      },
-      {
-        "menuContext": "团队维护",
-        "menuAction": "operation4Team/index",
-        "menuDescription": "通用计划管理",
-        "menuOrder": 4
-      },
-      {
-        "menuContext": "通用计划",
-        "menuAction": "operation4Plan/index",
-        "menuDescription": "通用计划管理",
-        "menuOrder": 5
-      },
-      {
-        "menuContext": "团队计划",
-        "menuAction": "operation4ProjectPlan/index",
-        "menuDescription": "团队计划管理",
-        "menuOrder": 5
       }
     ]
   },
   {
-    "menuContext": "组织服务",
+    "menuContext": "动态基础",
     "menuAction": "#",
     "menuDescription": "所有用户统一的",
     "menuOrder": 2,
     "menuItems": [
       {
-        "menuContext": "课题组",
+        "menuContext": "项目数据",
         "menuAction": "operation4GroupInfo/index",
         "menuDescription": "课题组管理",
         "menuOrder": 5
       },
       {
-        "menuContext": "学生班级",
+        "menuContext": "人员数据",
+        "menuAction": "operation4GradeInfo/index",
+        "menuDescription": "课题组管理",
+        "menuOrder": 5
+      },
+      {
+        "menuContext": "课题组",
+        "menuAction": "operation4GradeInfo/index",
+        "menuDescription": "课题组管理",
+        "menuOrder": 5
+      },
+      {
+        "menuContext": "团队维护",
+        "menuAction": "operation4GradeInfo/index",
+        "menuDescription": "课题组管理",
+        "menuOrder": 5
+      },
+      {
+        "menuContext": "进度维护",
         "menuAction": "operation4GradeInfo/index",
         "menuDescription": "课题组管理",
         "menuOrder": 5
@@ -121,15 +115,29 @@
     ]
   },
   {
-    "menuContext": "科研维护",
+    "menuContext": "日常工作",
     "menuAction": "operation4Project/index",
     "menuDescription": "所有用户统一的",
-    "menuOrder": 3
-  },
-  {
-    "menuContext": "教学维护",
-    "menuAction": "operation4Course/index",
-    "menuDescription": "针对教师的服务",
-    "menuOrder": 4
+    "menuOrder": 3,
+    "menuItems": [
+      {
+        "menuContext": "计划维护",
+        "menuAction": "operation4GradeInfo/index",
+        "menuDescription": "课题组管理",
+        "menuOrder": 5
+      },
+      {
+        "menuContext": "进度维护",
+        "menuAction": "operation4GradeInfo/index",
+        "menuDescription": "课题组管理",
+        "menuOrder": 5
+      },
+      {
+        "menuContext": "团队管理",
+        "menuAction": "operation4GradeInfo/index",
+        "menuDescription": "课题组管理",
+        "menuOrder": 5
+      }
+    ]
   }
 ]
