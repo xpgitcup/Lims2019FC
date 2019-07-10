@@ -4,11 +4,6 @@
             当前菜单：${currentMenuItem.menuContext}
         </div>
     </g:if>
-    <g:if test="${currentMenuItem.upMenuItem}">
-        <a class="breadcrumb-item text-info"
-           href="home/selectCurrentMenuItem?currentMenuItem=${currentMenuItem?.upMenuItem?.id}"
-           style="color: yellow">返回上级</a>
-    </g:if>
     <g:each in="${systemMenuList}" var="item" status="i">
         <g:if test="${item.menuAction == '#'}">
             <g:if test="${i==0}">

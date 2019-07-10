@@ -97,9 +97,30 @@ class HomeController extends CommonController {
     def selectCurrentMenuItem() {
         println("${params}")
         systemCommonService.updateSystemStatus(request, params)
-        session.currentMenuItem = SystemMenu.get(params.currentMenuItem)
+        session.currentMenuItem = params.currentMenuItem
         redirect(action: "index")
     }
+
+    /*
+    获取左侧菜单
+    * */
+
+    def getLeftMenuItems() {
+        def currentMenuItem = session.currentMenuItem
+        def menuItems = []
+        menuItems.addAll(currentMenuItem.menuItems)
+        println("${menuItems}")
+        def result = [menuItems: menuItems, currentMenuItem: currentMenuItem]
+        if (request.xhr) {
+            render(template: "leftMenuItems", model: result)
+        } else {
+            result
+        }
+    }
+
+    /*
+    获取顶级菜单
+    * */
 
     def getTopMenuItems() {
         def systemMenuList = []
@@ -109,7 +130,6 @@ class HomeController extends CommonController {
         def ss = SystemStatus.findBySessionId(sid)
         if (ss) {
             def ps = ss.getParameters()
-            currentMenuItem = systemMenuService.get(ps.currentMenuItem)
             def user = systemUserService.get(session.systemUser.id)
             if (user) {
                 def q = SystemMenu.createCriteria()
