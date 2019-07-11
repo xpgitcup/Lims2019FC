@@ -52,7 +52,7 @@
     <!-- 加载石油大学的设置-->
     <asset:javascript src="cn/edu/cup/common.js"/>
     <asset:javascript src="cn/edu/cup/commonUI20190706.js"/>
-    <asset:javascript src="cn/edu/cup/os/homeUI.js"/>
+    <asset:javascript src="cn/edu/cup/os/homeUIAfterLogin.js"/>
 
     <!--加载百度的绘图 -->
     <asset:javascript src="echarts/echarts.min.js"/>
@@ -115,20 +115,7 @@
     <div class="row m-0 p-0">
 
         <div class="col-2">
-            <div class="card">
-                <div class="card-header">
-                    <g:if test="${session.currentMenuItem}">
-                        ${session.currentMenuItem}
-                    </g:if>
-                    <g:else>
-                        请选择
-                    </g:else>
-                </div>
-
-                <div class="card-body" id="leftMenuItemListDiv">
-
-                </div>
-            </div>
+            <div class="card" id="leftMenuItemListDiv"></div>
         </div>
 
         <div class="col-10">
@@ -136,22 +123,7 @@
         </div>
     </div>
 
-    <!--第4行-->
-    <div class="row m-0 p-0 text-white">
-        <div class="col-4">
-            <div>
-                中国石油大学（北京），Copyright 2019, Ver 0.9
-            </div>
-        </div>
-
-        <div class="col-4 text-center">
-            <div>当前环境 ${grails.util.Environment.current}</div>
-        </div>
-
-        <div class="col-4 text-right m-0 p-0">
-            <div id="onlineCount" class="text-right"></div>
-        </div>
-    </div>
+    <g:render template="/home/footer"/>
 
 </div>
 

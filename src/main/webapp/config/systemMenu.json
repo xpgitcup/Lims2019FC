@@ -9,43 +9,50 @@
       {
         "menuContext": "权限维护",
         "menuAction": "operation4SystemAttribute/index",
-        "menuDescription": "对系统的用户属性进行用户友好的维护",
+        "menuDescription": "对系统权限进行维护",
+        "layout": "mainAfterLogin20190709",
         "menuOrder": 0
       },
       {
         "menuContext": "菜单维护",
         "menuAction": "operation4SystemMenu/index",
         "menuDescription": "对系统的菜单进行维护",
+        "layout": "mainAfterLogin20190709",
         "menuOrder": 10
       },
       {
         "menuContext": "用户维护",
         "menuAction": "operation4SystemUser/index",
         "menuDescription": "对系统的用户进行用户友好的维护",
+        "layout": "mainAfterLogin20190709",
         "menuOrder": 20
       },
       {
         "menuContext": "查询维护A",
         "menuAction": "operation4QueryStatementA/index",
         "menuDescription": "对系统底层的查询语句进行维护",
+        "layout": "mainAfterLogin20190709",
         "menuOrder": 30
       },
       {
         "menuContext": "路径维护",
         "menuAction": "operation4DataRootPath/index",
         "menuDescription": "对系统底层的数据路径进行维护",
+        "layout": "mainAfterLogin20190709",
         "menuOrder": 40
       },
       {
         "menuContext": "底层维护",
         "menuAction": "home/basic",
         "menuDescription": "底层的数据维护",
+        "layout": "mainAfterLogin20190709",
         "menuOrder": 50
       },
       {
         "menuContext": "数据整合",
         "menuAction": "database/index",
         "menuDescription": "整合其他数据库",
+        "layout": "mainAfterLogin20190709",
         "menuOrder": 60
       }
     ]
@@ -55,23 +62,27 @@
     "menuAction": "#",
     "menuDescription": "维护基础数据",
     "menuOrder": 1,
+    "layout": "mainAfterLogin20190709",
     "menuItems": [
       {
         "menuContext": "人员类型",
         "menuAction": "operation4PersonTitle/index",
         "menuDescription": "维护人员的各种类型数据",
+        "layout": "mainAfterLogin20190709",
         "menuOrder": 0
       },
       {
         "menuContext": "项目类型",
         "menuAction": "operation4ThingType/index",
         "menuDescription": "维护各种项目的类型数据",
+        "layout": "mainAfterLogin20190709",
         "menuOrder": 1
       },
       {
         "menuContext": "通用计划",
-        "menuAction": "#",
+        "menuAction": "operation4Plan/index",
         "menuDescription": "各种人员的基础数据",
+        "layout": "mainAfterLogin20190709",
         "menuOrder": 2
       }
     ]
@@ -79,63 +90,73 @@
   {
     "menuContext": "动态基础",
     "menuAction": "#",
-    "menuDescription": "所有用户统一的",
+    "menuDescription": "动态数据的维护",
     "menuOrder": 2,
+    "layout": "mainAfterLogin20190709",
     "menuItems": [
       {
         "menuContext": "项目数据",
-        "menuAction": "operation4GroupInfo/index",
-        "menuDescription": "课题组管理",
+        "menuAction": "operation4Thing/index",
+        "menuDescription": "管理项目数据",
+        "layout": "mainAfterLogin20190709",
         "menuOrder": 5
       },
       {
         "menuContext": "人员数据",
-        "menuAction": "operation4GradeInfo/index",
-        "menuDescription": "课题组管理",
+        "menuAction": "operation4Person/index",
+        "menuDescription": "管理人员数据",
+        "layout": "mainAfterLogin20190709",
         "menuOrder": 5
       },
       {
         "menuContext": "课题组",
         "menuAction": "operation4GradeInfo/index",
         "menuDescription": "课题组管理",
+        "layout": "mainAfterLogin20190709",
         "menuOrder": 5
       },
       {
         "menuContext": "团队维护",
-        "menuAction": "operation4GradeInfo/index",
-        "menuDescription": "课题组管理",
+        "menuAction": "operation4Team/index",
+        "menuDescription": "管理团队数据",
+        "layout": "mainAfterLogin20190709",
         "menuOrder": 5
       },
       {
         "menuContext": "进度维护",
-        "menuAction": "operation4GradeInfo/index",
-        "menuDescription": "课题组管理",
+        "menuAction": "operation4Progress/index",
+        "menuDescription": "管理进度数据",
+        "layout": "mainAfterLogin20190709",
         "menuOrder": 5
       }
     ]
   },
   {
     "menuContext": "日常工作",
-    "menuAction": "operation4Project/index",
-    "menuDescription": "所有用户统一的",
+    "menuAction": "#",
+    "menuDescription": "用户的日常工作",
     "menuOrder": 3,
+    "layout": "mainAfterLogin20190709",
     "menuItems": [
       {
         "menuContext": "计划维护",
-        "menuAction": "operation4GradeInfo/index",
-        "menuDescription": "课题组管理",
+        "menuAction": "operation4ProjectPlan/index",
+        "menuDescription": "维护项目计划",
+        "layout": "mainAfterLogin20190709",
         "menuOrder": 5
       },
       {
         "menuContext": "进度维护",
-        "menuAction": "operation4GradeInfo/index",
-        "menuDescription": "课题组管理",
+        "menuAction": "operation4Progress/index",
+        "menuDescription": "维护项目进度",
+        "layout": "mainAfterLogin20190709",
         "menuOrder": 5
       },
       {
         "menuContext": "团队管理",
-        "menuAction": "operation4GradeInfo/index",
-        "menuDescription": "课题组管理",
+        "menuAction": "operation4Team/index",
+        "menuDescription": "维护团队信息",
+        "layout": "mainAfterLogin20190709",
         "menuOrder": 5
       }
     ]

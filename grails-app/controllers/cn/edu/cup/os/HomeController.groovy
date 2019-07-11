@@ -105,12 +105,16 @@ class HomeController extends CommonController {
     获取左侧菜单
     * */
 
-    def getLeftMenuItems() {
-        def currentMenuItem = session.currentMenuItem
+    def getLeftMenuItems(SystemMenu menuItem) {
+        println("当前菜单：")
+        println("${menuItem}")
+        // 修改布局
+        session.layout = menuItem.layout
+
         def menuItems = []
-        menuItems.addAll(currentMenuItem.menuItems)
+        menuItems.addAll(menuItem.menuItems)
         println("${menuItems}")
-        def result = [menuItems: menuItems, currentMenuItem: currentMenuItem]
+        def result = [menuItems: menuItems, currentMenuItem: menuItem]
         if (request.xhr) {
             render(template: "leftMenuItems", model: result)
         } else {
@@ -129,12 +133,13 @@ class HomeController extends CommonController {
         def sid = session.getId()
         def ss = SystemStatus.findBySessionId(sid)
         if (ss) {
-            def ps = ss.getParameters()
             def user = systemUserService.get(session.systemUser.id)
             if (user) {
                 def q = SystemMenu.createCriteria()
                 def roles = user.userRoles()
-                systemMenuList = q.list(params) {
+                println("用户权限 ${user.roleAttribute}")
+                println("${roles}")
+                systemMenuList = q.list() {     // 删掉括号中的params
                     isNull('upMenuItem')
                     'in'('menuContext', roles)      // 只要菜单的名字在其中就可以 20181208
                     order('menuOrder')

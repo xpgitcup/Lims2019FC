@@ -35,7 +35,7 @@
             <ul class="nav navbar bg-light">
                 <li>
                     <a class="list">
-                        系统菜单维护——(重新登录后，更新)
+                        系统菜单维护
                     </a>
                 </li>
             </ul>
