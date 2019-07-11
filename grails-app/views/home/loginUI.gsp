@@ -40,5 +40,9 @@
     </div>
 </form>
 
+<g:javascript>
+    sessionStorage.removeItem("currentMenuItem");
+</g:javascript>
+
 </body>
 </html>

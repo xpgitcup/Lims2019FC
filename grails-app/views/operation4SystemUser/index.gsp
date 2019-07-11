@@ -38,6 +38,9 @@
                         系统用户维护——(重新登录后，更新)
                     </a>
                 </li>
+                <li>
+                    <a class="list" href="operation4SystemUser/resetUserRight">重置用户权限</a>
+                </li>
             </ul>
             <!-- 具体卡片-->
             <div class="card">

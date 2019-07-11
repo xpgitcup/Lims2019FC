@@ -139,7 +139,7 @@ class HomeController extends CommonController {
                 def roles = user.userRoles()
                 println("用户权限 ${user.roleAttribute}")
                 println("${roles}")
-                if (roles.length > 1) {
+                if (roles.length > 0) {
                     systemMenuList = q.list() {     // 删掉括号中的params
                         isNull('upMenuItem')
                         'in'('menuContext', roles)      // 只要菜单的名字在其中就可以 20181208
