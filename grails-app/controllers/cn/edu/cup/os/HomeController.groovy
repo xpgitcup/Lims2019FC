@@ -139,10 +139,12 @@ class HomeController extends CommonController {
                 def roles = user.userRoles()
                 println("用户权限 ${user.roleAttribute}")
                 println("${roles}")
-                systemMenuList = q.list() {     // 删掉括号中的params
-                    isNull('upMenuItem')
-                    'in'('menuContext', roles)      // 只要菜单的名字在其中就可以 20181208
-                    order('menuOrder')
+                if (roles.length > 1) {
+                    systemMenuList = q.list() {     // 删掉括号中的params
+                        isNull('upMenuItem')
+                        'in'('menuContext', roles)      // 只要菜单的名字在其中就可以 20181208
+                        order('menuOrder')
+                    }
                 }
             }
         } else {
