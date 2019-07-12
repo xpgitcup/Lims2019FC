@@ -11,15 +11,27 @@ $(function(){
     loadCurrentPageBootStrap("用户维护")
 })
 
+/*
+* 查询--需要各个页面自定义
+* */
+function queryStatementBootStrap() {
+    var keyString = document.getElementById("keyString");
+    console.info("查询..." + keyString.value);
+    sessionStorage.setItem("filter" + document.title, "like");
+    sessionStorage.setItem("keyString" + document.title, keyString.value);
+    location.reload();
+}
 
 /*
 * 生成附加参数
 * */
 function appendParamsBootStrapSystemUser(title) {
     // 根据sessionStorage的参数，设置相应的附加参数，不同的标签的--都在各自页面考虑，所以不带参数
+    console.info("用户维护" + title);
     var append = ""
     var filter = readStorage("filter" + document.title, "false");
     var keyString = readStorage("keyString" + document.title, "");
+    console.info(keyString);
     switch (filter) {
         case "like":
             append = "&like=" + keyString;

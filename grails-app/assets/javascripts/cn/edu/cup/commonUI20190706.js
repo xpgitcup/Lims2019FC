@@ -14,7 +14,6 @@ function setupPagination4Card(theCardDiv) {
     //console.info(theCardDiv.getAttribute("type"));
     //console.info(theCardDiv.hasOwnProperty("text"));
     //console.info(Object.prototype.toString.call(theCardDiv));
-    var hrefTest = Object.prototype.toString.call(theCardDiv);
     //console.info(test);
     var pageSize = bootStrapPaginationSetting.defaultPageSize;
     var pageSizeName;
@@ -25,6 +24,7 @@ function setupPagination4Card(theCardDiv) {
     var currentPageName;
     var currentPage = 1;
     var title
+    var hrefTest = Object.prototype.toString.call(theCardDiv);
     if (hrefTest === "[object HTMLAnchorElement]") {
         title = theCardDiv.text.trim();
     } else {
@@ -74,7 +74,7 @@ function setupTabsBootStrap(tabsDiv) {
         console.info("激活事件：");
         console.info(e);
         //console.info(e.target);
-        setupPagination4Card(e.target);
+        setupPagination4Card(e.target); // 这是关键--标签页与Card统一起来了
         title = $(e.target).text().trim();
         //console.info("点击事件..." + title + "!")
         sessionStorage.setItem(currentTabName, title); //记录缺省标签
@@ -138,6 +138,10 @@ function selectTabByTitle(title) {
 * */
 function loadCurrentPageBootStrap(title) {
     var currentPage = getCurrentPageBootStrap(title)
+    var totalPage = getTotalPageBootStrap(title)
+    if (currentPage > totalPage) {
+        currentPage = 1;
+    }
     loadDataBootStrap(title, currentPage);
 }
 
@@ -242,7 +246,7 @@ function loadDataBootStrap(title, currentPage) {
         console.info("生成附加参数：" + append);
     }
     var url = bootStrapPaginationSetting.controller + "/list" + pageParams + "&key=" + title + append;
-    console.info("列表：" + url);
+    //console.info("列表：" + url);
     ajaxRun(url, 0, "display" + title + "Div");
 }
 
@@ -277,5 +281,5 @@ function queryStatementBootStrap(tabsDiv) {
     console.info("查询..." + keyString.value);
     sessionStorage.setItem("filter" + document.title, title);
     sessionStorage.setItem("keyString" + document.title, keyString.value);
-    location.reload();
+    //location.reload();
 }

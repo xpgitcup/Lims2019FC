@@ -134,7 +134,7 @@ class InitService {
         }
 
         // 处理SQL数据
-        def queryStatementAFileName = "${webRootDir}/config/queryStatementa.json"
+        def queryStatementAFileName = "${webRootDir}/config/queryStatementA.json"
         if ((queryStatementAService.count() < 1) && (new File(queryStatementAFileName).exists())) {
             def queryStatementAs = importObjects(queryStatementAFileName, QueryStatementA.class, null)
             queryStatementAs.each { e ->

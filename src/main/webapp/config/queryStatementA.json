@@ -1,0 +1,111 @@
+[
+	{
+		"actionName":"count",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"在研项目",
+		"needToQuery":true,
+		"paramsString":"[]",
+		"updateTime":1562913018000,
+		"version":0
+	},
+	{
+		"actionName":"count",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"管理的项目",
+		"needToQuery":true,
+		"paramsString":"[]",
+		"updateTime":1562913022000,
+		"version":0
+	},
+	{
+		"actionName":"list",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"在研项目",
+		"needToQuery":true,
+		"paramsString":"[max, offset]",
+		"updateTime":1562913018000,
+		"version":0
+	},
+	{
+		"actionName":"list",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"管理的项目",
+		"needToQuery":true,
+		"paramsString":"[max, offset]",
+		"updateTime":1562913022000,
+		"version":0
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4QueryStatementA",
+		"isSQL":false,
+		"keyString":"查询维护",
+		"needToQuery":true,
+		"paramsString":"[]",
+		"queryString":"select count(*) from QueryStatementA queryStatementA",
+		"updateTime":1562913030000,
+		"version":0
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4QueryStatementA",
+		"isSQL":false,
+		"keyString":"查询维护待编辑",
+		"needToQuery":true,
+		"paramsString":"[]",
+		"queryString":"select count(*) from QueryStatementA queryStatementA where queryString is null",
+		"updateTime":1562913037000,
+		"version":0
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4QueryStatementA",
+		"isSQL":false,
+		"keyString":"查询维护",
+		"needToQuery":true,
+		"paramsString":"[max, offset]",
+		"queryString":"from QueryStatementA queryStatementA",
+		"updateTime":1562913030000,
+		"version":0,
+		"viewName":"listQueryStatementA"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4QueryStatementA",
+		"isSQL":false,
+		"keyString":"查询维护待编辑",
+		"needToQuery":true,
+		"paramsString":"[max, offset]",
+		"queryString":"from QueryStatementA queryStatementA where queryString is null",
+		"updateTime":1562913037000,
+		"version":0,
+		"viewName":"listQueryStatementA"
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4SystemUser",
+		"isSQL":false,
+		"keyString":"用户维护",
+		"needToQuery":true,
+		"paramsString":"[]",
+		"queryString":"select count(*) from SystemUser systemUser",
+		"updateTime":1562913028000,
+		"version":0
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4SystemUser",
+		"isSQL":false,
+		"keyString":"用户维护",
+		"needToQuery":true,
+		"paramsString":"[max, offset]",
+		"queryString":"from SystemUser systemUser",
+		"updateTime":1562913029000,
+		"version":0,
+		"viewName":"listSystemUser"
+	}
+]

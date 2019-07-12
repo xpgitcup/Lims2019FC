@@ -46,10 +46,7 @@
         <li>
             <a id="filter" href="javascript: listToDo()">待编辑&完成</a>
         </li>
-        <li><span class="form-inline">筛选:<div id="currentFilter" class="text-danger">${keyString}</div></span></li>
-        <li>
-            <a href="javascript: clearFilter()">清除筛选</a>
-        </li>
+        <li><span class="form-inline">筛选:<div id="currentFilter" class="text-danger">${keyString}</div><a href="javascript: clearFilter()">清除</a></span></li>
         <li>
             <g:form onsubmit="return queryStatement()">
                 <label>关键字</label>

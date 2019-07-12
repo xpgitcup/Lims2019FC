@@ -51,7 +51,9 @@ class Operation4QueryStatementAController extends QueryStatementAController {
         def now = new Date()
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH-mm")
         def fileName = "${params.fileName} ${df.format(now)}.json"
-        commonService.exportObjectsToJsonFileName(queryStatementAService.list(), fileName)
+        def qlist = QueryStatementA.executeQuery("from QueryStatementA queryStatementA order by controllerName, actionName, keyString")
+        //commonService.exportObjectsToJsonFileName(queryStatementAService.list(), fileName)
+        commonService.exportObjectsToJsonFileName(qlist, fileName)
         redirect(action: "index")
     }
 
