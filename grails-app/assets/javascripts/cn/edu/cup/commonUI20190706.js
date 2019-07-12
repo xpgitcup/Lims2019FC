@@ -2,6 +2,7 @@ var bootStrapPaginationSetting = {
     identifier: "",
     controller: "",
     defaultPageSize: 10,
+    appendFunction: "",
     onTabShift: null
 }
 
@@ -234,22 +235,28 @@ function loadNextPageBootStrap(title, currentPage) {
 function loadDataBootStrap(title, currentPage) {
     var pageSize = getPageSizeBootStrap(title)
     var pageParams = getParams(currentPage, pageSize)
-    var append = appendParamsBootStrap(title)
+    var append = "";    //appendParamsBootStrap(title)
+    if (bootStrapPaginationSetting.appendFunction != "") {
+        var appendFunction = eval(bootStrapPaginationSetting.appendFunction);
+        append = appendFunction(title);
+        console.info("生成附加参数：" + append);
+    }
     var url = bootStrapPaginationSetting.controller + "/list" + pageParams + "&key=" + title + append;
     console.info("列表：" + url);
     ajaxRun(url, 0, "display" + title + "Div");
 }
 
 function countDataBootStrap(title) {
-    var append = appendParamsBootStrap(title)
+    var append = "";    //appendParamsBootStrap(title)
+    if (bootStrapPaginationSetting.appendFunction != "") {
+        var appendFunction = eval(bootStrapPaginationSetting.appendFunction);
+        append = appendFunction(title);
+        console.info("生成附加参数：" + append);
+    }
     var url = bootStrapPaginationSetting.controller + "/count?key=" + title + append;
     //console.info("统计:" + url);
     var total = ajaxCalculate(url);
     return total;
-}
-
-function appendParamsBootStrap(title) {
-    return "";
 }
 
 // 与搜索有关的代码---------------------------------------------------------

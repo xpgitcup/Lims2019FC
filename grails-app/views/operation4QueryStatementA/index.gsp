@@ -36,9 +36,9 @@
             <a href="operation4QueryStatementA/exportToJsonFileName?fileName=config/out/queryStatementS"
                class="save">阿里导出Json文件</a>
         </li>
-        <li>
+        <!--li>
             <a href="operation4QueryStatementA/backup2file" class="save">备份SQL文件</a>
-        </li>
+        </li-->
         <!--li>
             <a href="operation4QueryStatementA/importFromJsonFile?fileName=config/queryStatement.json"
                class="create">从Json文件导入</a>

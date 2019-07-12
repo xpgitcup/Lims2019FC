@@ -1,4 +1,4 @@
-<table>
+<table class="mb-0">
     <thead>
     <th>用户名</th>
     <th>用户属性</th>

@@ -1,5 +1,6 @@
-bootStrapPaginationSetting.identifier = "QueryStatementA"
-bootStrapPaginationSetting.controller = "operation4QueryStatementA"
+bootStrapPaginationSetting.identifier = "QueryStatementA";
+bootStrapPaginationSetting.controller = "operation4QueryStatementA";
+bootStrapPaginationSetting.appendFunction = "appendParamsBootStrap";
 
 var card查询维护Div;
 
