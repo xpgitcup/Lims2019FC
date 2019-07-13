@@ -259,7 +259,11 @@ function countDataBootStrap(title) {
     }
     var url = bootStrapPaginationSetting.controller + "/count?key=" + title + append;
     //console.info("统计:" + url);
-    var total = ajaxCalculate(url);
+    var total = 0;
+    $.when(total = ajaxCalculate(url)).done(function (data) {
+        console.info("统计结果-----：" + data)
+        //total = data;
+    });
     return total;
 }
 
