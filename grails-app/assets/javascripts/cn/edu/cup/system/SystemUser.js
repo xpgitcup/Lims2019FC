@@ -11,16 +11,6 @@ $(function(){
     loadCurrentPageBootStrap("用户维护")
 })
 
-/*
-* 查询--需要各个页面自定义
-* */
-function queryStatementBootStrap() {
-    var keyString = document.getElementById("keyString");
-    console.info("查询..." + keyString.value);
-    sessionStorage.setItem("filter" + document.title, "like");
-    sessionStorage.setItem("keyString" + document.title, keyString.value);
-    location.reload();
-}
 
 /*
 * 生成附加参数

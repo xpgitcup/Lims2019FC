@@ -44,7 +44,7 @@
                class="create">从Json文件导入</a>
         </li-->
         <li>
-            <a id="filter" href="javascript: listToDo()">待编辑&完成</a>
+            <a id="filter" href="javascript: listToDo()">待编辑</a>
         </li>
         <li><span class="form-inline">筛选:<div id="currentFilter" class="text-danger">${keyString}</div><a href="javascript: clearFilter()">清除</a></span></li>
         <li>

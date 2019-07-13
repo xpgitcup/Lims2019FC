@@ -7,11 +7,6 @@ import java.text.SimpleDateFormat
 
 class Operation4QueryStatementAController extends QueryStatementAController {
 
-    def queryDebug() {
-        def result = QueryStatementA.executeQuery(params.hql)
-        render(template: "debugLog", model: [result: result])
-    }
-
     def copyStatement() {
         def source = queryStatementAService.get(params.sourceId)
         def target = queryStatementAService.get(params.targetId)

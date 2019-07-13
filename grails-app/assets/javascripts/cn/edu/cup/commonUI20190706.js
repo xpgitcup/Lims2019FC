@@ -278,8 +278,19 @@ function clearFilterBootStrap() {
 function queryStatementBootStrap(tabsDiv) {
     var keyString = document.getElementById("keyString");
     var title = getCurrentTabTitle(tabsDiv);
+    console.log("查询..." + keyString.value);
     console.info("查询..." + keyString.value);
     sessionStorage.setItem("filter" + document.title, title);
     sessionStorage.setItem("keyString" + document.title, keyString.value);
-    //location.reload();
+    $("#currentFilter").html(keyString)
+    switch (filter) {
+        case "true":
+            append = "待编辑"
+            break;
+        case "like":
+            append = "&like=" + keyString;
+            break
+    }
+    //return  append;
+    location.reload();
 }
