@@ -25,7 +25,6 @@
     <g:set var="entityName" value="QueryStatementA"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>${entityName}</title>
-    <asset:javascript src="cn/edu/cup/system/${entityName}.js"/>
 </head>
 
 <body>
@@ -46,7 +45,12 @@
         <li>
             <a id="filter" href="javascript: listToDo()">待编辑</a>
         </li>
-        <li><span class="form-inline">筛选:<div id="currentFilter" class="text-danger">${keyString}</div><a href="javascript: clearFilter()">清除</a></span></li>
+        <li>
+            <span class="form-inline">
+                筛选:<div id="currentFilter" class="text-danger">${keyString}</div>
+                <a href="javascript: clearFilter()">清除</a>
+            </span>
+        </li>
         <li>
             <g:form onsubmit="return queryStatement()">
                 <label>关键字</label>
@@ -72,5 +76,8 @@
 <g:if test="${flash.message}">
     <div class="easyui-panel"><div class="message" role="status">${flash.message}</div></div>
 </g:if>
+
+<asset:javascript src="cn/edu/cup/system/${entityName}.js"/>
+
 </body>
 </html>

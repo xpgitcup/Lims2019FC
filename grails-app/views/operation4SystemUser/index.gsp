@@ -32,18 +32,25 @@
 <div class="container-fluid">
     <!-- 设置查询 -->
     <ul id="query用户维护UL" class="nav navbar bg-light">
-        <li><span class="form-inline">筛选:<div id="currentFilter" class="text-danger">${keyString}</div></span></li>
+        <li><span class="form-inline">筛选:<div id="currentFilter用户维护" class="text-danger">${keyString}</div></span></li>
         <li>
             <a href="javascript: clearFilterBootStrap()">清除筛选</a>
         </li>
         <li>
-            <g:form onsubmit="return queryStatementBootStrap(card用户维护Div)">
+            <span class="form-inline">
+                筛选:<div id="currentFilter" class="text-danger">${keyString}</div>
+                <a href="javascript: clearFilterBootStrap()">清除</a>
+            </span>
+        </li>
+        <li>
+            <g:form onsubmit="return queryStatementBootStrap()">
                 <label>关键字</label>
                 <input type="text" id="keyString" name="keyString" value=""/>
                 <input type="submit" name="查询" value="查询">
             </g:form>
         </li>
     </ul>
+
 
     <div class="row">
         <div class="col-6 column">

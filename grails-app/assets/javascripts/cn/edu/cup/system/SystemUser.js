@@ -4,39 +4,53 @@ bootStrapPaginationSetting.appendFunction = "appendParamsBootStrapSystemUser";
 
 var card用户维护Div;
 
-$(function(){
+$(function () {
     console.info(document.title + "加载了...")
     card用户维护Div = $("#card用户维护Div");
     setupPagination4Card(card用户维护Div);
     loadCurrentPageBootStrap("用户维护")
 })
 
-
 /*
-* 生成附加参数
+* 生成附加参数---针对每个页面都要重新定义！！！
 * */
-function appendParamsBootStrapSystemUser(title) {
-    // 根据sessionStorage的参数，设置相应的附加参数，不同的标签的--都在各自页面考虑，所以不带参数
-    console.info("用户维护" + title);
+function appendParamsBootStrap(title) {
     var append = ""
     var filter = readStorage("filter" + document.title, "false");
     var keyString = readStorage("keyString" + document.title, "");
-    console.info(keyString);
     switch (filter) {
-        case "like":
+        case "true":
             append = "&like=" + keyString;
+            // 更新显示
             $("#currentFilter").html(keyString)
             break
     }
-    return  append;
+    return append;
 }
 
+/*
+* 查询--需要各个页面自定义
+* */
+function queryStatementBootStrap() {
+    // 获取数据
+    var keyString = document.getElementById("keyString");
+
+    console.log("查询..." + keyString.value);
+    console.info("查询..." + keyString.value);
+
+    // 保存数据
+    sessionStorage.setItem("filter" + document.title, "true");
+    sessionStorage.setItem("keyString" + document.title, keyString.value);
+
+    //location.reload();
+}
 
 /*
 * 清除过滤条件
 * */
-function clearFilter() {
+function clearFilterBootStrap() {
     sessionStorage.setItem("filter" + document.title, false)
+    $("#currentFilter用户维护").html("")
     location.reload();
 }
 

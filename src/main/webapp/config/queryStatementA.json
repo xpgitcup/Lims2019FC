@@ -41,6 +41,75 @@
 	},
 	{
 		"actionName":"count",
+		"controllerName":"operation4DataRootPath",
+		"isSQL":false,
+		"keyString":"数据根目录",
+		"needToQuery":true,
+		"paramsString":"[]",
+		"queryString":"select count(*) from DataRootPath dataRootPath",
+		"updateTime":1563100074000,
+		"version":0
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4DataRootPath",
+		"isSQL":false,
+		"keyString":"数据根目录",
+		"needToQuery":true,
+		"paramsString":"[max, offset]",
+		"queryString":"from DataRootPath dataRootPath",
+		"updateTime":1563100074000,
+		"version":0,
+		"viewName":"listDataRootPath"
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4Plan",
+		"isSQL":false,
+		"keyString":"通用计划",
+		"needToQuery":true,
+		"paramsString":"[]",
+		"queryString":"select count(*) from Plan plan",
+		"updateTime":1563100080000,
+		"version":0
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4Plan",
+		"isSQL":false,
+		"keyString":"通用计划",
+		"needToQuery":true,
+		"paramsString":"[like]",
+		"queryString":"select count(*) from Plan plan where thingType.name like :like",
+		"updateTime":1563100095000,
+		"version":1
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Plan",
+		"isSQL":false,
+		"keyString":"通用计划",
+		"needToQuery":true,
+		"paramsString":"[max, offset]",
+		"queryString":"from Plan plan",
+		"updateTime":1563100080000,
+		"version":0,
+		"viewName":"listPlan"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Plan",
+		"isSQL":false,
+		"keyString":"通用计划",
+		"needToQuery":true,
+		"paramsString":"[like, max, offset]",
+		"queryString":"from Plan plan where thingType.name like :like",
+		"updateTime":1563100095000,
+		"version":1,
+		"viewName":"listPlan"
+	},
+	{
+		"actionName":"count",
 		"controllerName":"operation4QueryStatementA",
 		"isSQL":false,
 		"keyString":"查询维护",
@@ -120,6 +189,17 @@
 		"version":0
 	},
 	{
+		"actionName":"count",
+		"controllerName":"operation4SystemUser",
+		"isSQL":false,
+		"keyString":"用户维护",
+		"needToQuery":true,
+		"paramsString":"[like]",
+		"queryString":"select count(*) from SystemUser systemUser where (userName like :like) or (appendAttribute like :like)",
+		"updateTime":1563089815000,
+		"version":3
+	},
+	{
 		"actionName":"list",
 		"controllerName":"operation4SystemUser",
 		"isSQL":false,
@@ -129,6 +209,18 @@
 		"queryString":"from SystemUser systemUser",
 		"updateTime":1562913029000,
 		"version":0,
+		"viewName":"listSystemUser"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4SystemUser",
+		"isSQL":false,
+		"keyString":"用户维护",
+		"needToQuery":true,
+		"paramsString":"[like, max, offset]",
+		"queryString":"from SystemUser systemUser where (userName like :like) or (appendAttribute like :like)",
+		"updateTime":1563089815000,
+		"version":2,
 		"viewName":"listSystemUser"
 	}
 ]

@@ -10,12 +10,6 @@ $(function(){
     setupPagination4Card(card查询维护Div);
     loadCurrentPageBootStrap("查询维护")
 
-    var filter = readStorage("filter" + document.title, "false");
-    if (filter=="true") {
-        $("#filter").addClass("text-danger");
-    } else {
-        $("#filter").removeClass("text-danger");
-    }
 })
 
 

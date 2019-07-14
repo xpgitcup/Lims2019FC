@@ -18,13 +18,13 @@
         <li class="page-item">
             <a class="page-link" href="javascript: loadPreviousPageBootStrap('用户维护')">&laquo</a>
         </li>
-        <li class="page-item" >
+        <li class="page-item">
             <a class="page-link" id="currentPageSystemUser用户维护"></a>
         </li>
-        <li class="page-item" >
+        <li class="page-item">
             <a class="page-link">/</a>
         </li>
-        <li class="page-item" >
+        <li class="page-item">
             <a class="page-link" id="totalPageSystemUser用户维护"></a>
         </li>
         <li>

@@ -32,66 +32,41 @@
 <body>
 
 <div class="container-fluid">
-    <ul id="operation4PlanUl" class="nav navbar bg-light">
-        <li class="icon-help">&nbsp&nbsp&nbsp&nbsp：</li>
-        <li id="tipsOperation4Progress"></li>
+    <!-- 设置查询 -->
+    <ul id="query通用计划UL" class="nav navbar bg-light">
         <li>当前：${planTitle}.${planJsRoutine}</li>
         <li id="currentTitle"></li>
         <li><a id="createItem"></a></li>
-        <!--li><a id="editItem"></a></li-->
+        <li><span class="form-inline">筛选:<div id="currentFilter通用计划" class="text-danger">${keyString}</div></span></li>
+        <li>
+            <a href="javascript: clearFilterBootStrap()">清除筛选</a>
+        </li>
+        <li>
+            <span class="form-inline">
+                筛选:<div id="currentFilter" class="text-danger">${keyString}</div>
+                <a href="javascript: clearFilterBootStrap()">清除</a>
+            </span>
+        </li>
+        <li>
+            <g:form onsubmit="return queryStatementBootStrap()">
+                <label>关键字</label>
+                <input type="text" id="keyString" name="keyString" value=""/>
+                <input type="submit" name="查询" value="查询">
+            </g:form>
+        </li>
     </ul>
+
 
     <div class="row">
         <!--左面显示类型-->
         <div class="col-md-4">
             <div class="card">
-                <ul id="ztreeThingTypeUl" class="ztree" title="项目类型"></ul>
+                <ul id="ztreeThingTypeUl" class="ztree" title="通用计划"></ul>
             </div>
         </div>
         <!--右边显示计划-->
         <div class="col-md-8">
-            <!-- 具体卡片-->
-            <div class="card">
-                <!--具体的通用计划标签-->
-                <div id="display通用计划Div" class="card-body">
-                    <br> 在这里显示通用计划所需的信息</br>
-                </div>
-
-                <div class="card-footer justify-content-center  m-0 pb-0">
-                    <!-- 这里是分页设置-->
-                    <ul class="pagination pagination-sm">
-                        <li class="page-item">
-                            <a class="page-link">页长</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" id="pageSizePlan通用计划"></a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="javascript: loadPlanFirstPage()">首页</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="javascript: loadPlanPreviousPage()">&laquo</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" id="currentPagePlan通用计划"></a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link">/</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" id="totalPagePlan通用计划"></a>
-                        </li>
-                        <li>
-                            <a class="page-link" href="javascript: loadPlanNextPage()">&raquo</a>
-                        </li>
-                        <li>
-                            <a class="page-link" href="javascript: loadPlanLastPage()">末页</a>
-                        </li>
-                    </ul>
-                </div>
-                <!--具体的通用计划标签结束======-->
-                <div class="card" id="operation4PlanItemDiv"></div>
-            </div>
+            <g:render template="listPlanPanel"/>
         </div>
     </div>
 </div>
