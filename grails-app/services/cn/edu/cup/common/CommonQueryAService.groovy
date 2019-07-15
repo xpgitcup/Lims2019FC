@@ -16,14 +16,14 @@ class CommonQueryAService {
     * */
 
     def listFunction(params) {
-        def (QueryStatementA queryStatement, leftParams) = findOrCreateQueryString(params)
+        def (QueryStatementA queryStatement, leftParams, isNewQuery) = findOrCreateQueryString(params)
         // 开始执行查询
         def result = [:]
         def objectList = []
         // 设置缺省参数
         result.view = "default"
         result.objectList = objectList
-        if (queryStatement) {
+        if (queryStatement && !isNewQuery) {
             // 处理视图
             if (queryStatement.viewName) {
                 result.view = queryStatement.viewName
@@ -54,9 +54,9 @@ class CommonQueryAService {
 
     def countFunction(params) {
         def count = 1
-        def (QueryStatementA queryStatement, leftParams) = findOrCreateQueryString(params)
+        def (QueryStatementA queryStatement, leftParams, isNewQuery) = findOrCreateQueryString(params)
         // 开始执行查询
-        if (queryStatement) {
+        if (queryStatement && !isNewQuery) {
             if (queryStatement.needToQuery) {
                 if (queryStatement.queryString) {
                     def queryString = queryStatement.queryString
@@ -78,7 +78,9 @@ class CommonQueryAService {
     找到或者创建查询语句
     * */
 
+    @Transactional(readOnly = false)
     private List findOrCreateQueryString(params) {
+        def isNewQuery = false
         def (controllerName,
              actionName,
              paramsString,
@@ -92,6 +94,7 @@ class CommonQueryAService {
                 QueryStatementA.findByControllerNameAndActionNameAndKeyStringAndParamsString(
                         controllerName, actionName, keyString, paramsString)
         if (!queryStatement) {
+            isNewQuery = true
             if (controllerName.contains("operation4")) {
                 def queryString = ""
                 def domainName = ""
@@ -128,11 +131,16 @@ class CommonQueryAService {
                         paramsString: paramsString
                 )
             }
-            queryStatementAService.save(queryStatement)
+            //queryStatementAService.save(queryStatement)
+            if (queryStatement.save(flush: true)) {
+                queryStatement.errors.allErrors.each{
+                    println(it)
+                }
+            }
             println("创建查询：${queryStatement}")
         }
-        //println("参数值：${leftParams}")
-        [queryStatement, leftParams]
+        println("参数值：${leftParams}")
+        [queryStatement, leftParams, isNewQuery]
     }
 
     /*

@@ -5,7 +5,7 @@ bootStrapPaginationSetting.appendFunction = "appendParamsBootStrap";
 
 var tabs项目维护Div;
 
-$(function(){
+$(function () {
     console.info(document.title + "加载了...")
     tabs项目维护Div = $("#tabs项目维护Div");
     setupTabsBootStrap(tabs项目维护Div);
@@ -38,11 +38,12 @@ function clearFilterBootStrap() {
 * */
 function appendParamsBootStrap(title) {
     // 根据sessionStorage的参数，设置相应的附加参数，不同的标签的--都在各自页面考虑，所以不带参数
-    var append = ""
+    var title = getCurrentTabTitle(tabs项目维护Div);
+    var append = "";//"&title=" + title;
     var filter = readStorage("filter" + document.title, "false");
     var keyString = readStorage("keyString" + document.title, "");
 
-    if (filter!="false") {
+    if (filter != "false") {
         // 更新显示
         $("#currentFilter").html(keyString)
     }
@@ -52,7 +53,7 @@ function appendParamsBootStrap(title) {
             append = "&like=" + keyString;
             break
     }
-    return  append;
+    return append;
 }
 
 function editProject(id) {

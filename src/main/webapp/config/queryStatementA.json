@@ -222,5 +222,51 @@
 		"updateTime":1563089815000,
 		"version":2,
 		"viewName":"listSystemUser"
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4Thing",
+		"isSQL":false,
+		"keyString":"教学任务",
+		"needToQuery":true,
+		"paramsString":"[thingTypeList]",
+		"queryString":"select count(*) from Thing thing where thing.thingType in (:thingTypeList)",
+		"updateTime":1563201740000,
+		"version":1
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4Thing",
+		"isSQL":false,
+		"keyString":"科研项目",
+		"needToQuery":true,
+		"paramsString":"[thingTypeList]",
+		"queryString":"select count(*) from Thing thing where thing.thingType in (:thingTypeList)",
+		"updateTime":1563201735000,
+		"version":1
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Thing",
+		"isSQL":false,
+		"keyString":"教学任务",
+		"needToQuery":true,
+		"paramsString":"[max, offset, thingTypeList]",
+		"queryString":"from Thing thing where thing.thingType in (:thingTypeList)",
+		"updateTime":1563201740000,
+		"version":1,
+		"viewName":"listThing"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Thing",
+		"isSQL":false,
+		"keyString":"科研项目",
+		"needToQuery":true,
+		"paramsString":"[max, offset, thingTypeList]",
+		"queryString":"from Thing thing  where thing.thingType in (:thingTypeList)",
+		"updateTime":1563201735000,
+		"version":1,
+		"viewName":"listThing"
 	}
 ]
