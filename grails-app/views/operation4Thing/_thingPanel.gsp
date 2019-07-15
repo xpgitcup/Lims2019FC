@@ -1,3 +1,27 @@
+<!-- 设置查询 -->
+<ul id="query项目维护UL" class="nav navbar bg-light">
+    <g:if test="${cn.edu.cup.lims.Thing.count() < 1}">
+        <li>
+            <span class="form-inline">
+                <a href="database/importThing?next=operation4Thing">导入</a>
+            </span>
+        </li>
+    </g:if>
+    <li>
+        <span class="form-inline">
+            筛选:<div id="currentFilter" class="text-danger">${keyString}</div>
+            <a href="javascript: clearFilterBootStrap()">清除</a>
+        </span>
+    </li>
+    <li>
+        <g:form onsubmit="return queryStatementBootStrap()">
+            <label>关键字</label>
+            <input type="text" id="keyString" name="keyString" value=""/>
+            <input type="submit" name="查询" value="查询">
+        </g:form>
+    </li>
+</ul>
+
 <!-- 关于 项目维护 的自动生成代码 -->
 <div class="card" id="tabs项目维护Div" title="项目维护">
     <!-- 选项卡 -->
