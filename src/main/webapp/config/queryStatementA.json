@@ -238,11 +238,33 @@
 		"actionName":"count",
 		"controllerName":"operation4Thing",
 		"isSQL":false,
+		"keyString":"教学任务",
+		"needToQuery":true,
+		"paramsString":"[like, thingTypeList]",
+		"queryString":"select count(*) from Thing thing\r\nwhere thing.thingType in (:thingTypeList)\r\nand \r\n(name like :like) or (sponsor.name like :like) or (thing.thingType.name like :like)",
+		"updateTime":1563286913000,
+		"version":1
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4Thing",
+		"isSQL":false,
 		"keyString":"科研项目",
 		"needToQuery":true,
 		"paramsString":"[thingTypeList]",
 		"queryString":"select count(*) from Thing thing where thing.thingType in (:thingTypeList)",
 		"updateTime":1563201735000,
+		"version":1
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4Thing",
+		"isSQL":false,
+		"keyString":"科研项目",
+		"needToQuery":true,
+		"paramsString":"[like, thingTypeList]",
+		"queryString":"select count(*) from Thing thing \r\nwhere thing.thingType in (:thingTypeList)\r\nand \r\n(name like :like) or (sponsor.name like :like) or (thing.thingType.name like :like)",
+		"updateTime":1563286887000,
 		"version":1
 	},
 	{
@@ -261,11 +283,35 @@
 		"actionName":"list",
 		"controllerName":"operation4Thing",
 		"isSQL":false,
+		"keyString":"教学任务",
+		"needToQuery":true,
+		"paramsString":"[like, max, offset, thingTypeList]",
+		"queryString":"from Thing thing\r\nwhere thing.thingType in (:thingTypeList)\r\nand \r\n(name like :like) or (sponsor.name like :like) or (thing.thingType.name like :like)",
+		"updateTime":1563286913000,
+		"version":1,
+		"viewName":"listThing"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Thing",
+		"isSQL":false,
 		"keyString":"科研项目",
 		"needToQuery":true,
 		"paramsString":"[max, offset, thingTypeList]",
 		"queryString":"from Thing thing  where thing.thingType in (:thingTypeList)",
 		"updateTime":1563201735000,
+		"version":1,
+		"viewName":"listThing"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Thing",
+		"isSQL":false,
+		"keyString":"科研项目",
+		"needToQuery":true,
+		"paramsString":"[like, max, offset, thingTypeList]",
+		"queryString":"from Thing thing\r\nwhere thing.thingType in (:thingTypeList)\r\nand \r\n(name like :like) or (sponsor.name like :like) or (thing.thingType.name like :like)",
+		"updateTime":1563286888000,
 		"version":1,
 		"viewName":"listThing"
 	}

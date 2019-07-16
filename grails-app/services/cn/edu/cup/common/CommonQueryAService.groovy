@@ -23,7 +23,7 @@ class CommonQueryAService {
         // 设置缺省参数
         result.view = "default"
         result.objectList = objectList
-        if (queryStatement && !isNewQuery) {
+        if (queryStatement &&  !isNewQuery) {
             // 处理视图
             if (queryStatement.viewName) {
                 result.view = queryStatement.viewName

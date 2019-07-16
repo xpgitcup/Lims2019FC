@@ -18,6 +18,7 @@ function queryStatementBootStrap() {
     var keyString = document.getElementById("keyString");
     console.info("查询..." + keyString.value);
     var title = getCurrentTabTitle(tabs项目维护Div);
+    //alert("处理搜索！" + title);
     sessionStorage.setItem("filter" + document.title, title);
     sessionStorage.setItem("keyString" + document.title, keyString.value);
     //location.reload();
@@ -39,22 +40,17 @@ function clearFilterBootStrap() {
 function appendParamsBootStrap(title) {
     // 根据sessionStorage的参数，设置相应的附加参数，不同的标签的--都在各自页面考虑，所以不带参数
     // 这个title 是传进来的，应该直接用！！！！
-    console.info("当前标签：" + title);
+    //console.info("当前标签：" + title);
     var append = "";//"&title=" + title;
     var filter = readStorage("filter" + document.title, "false");
     var keyString = readStorage("keyString" + document.title, "");
-    console.info("当前关键字：" + keyString);
-    console.info(filter);
+    //console.info("当前关键字：" + keyString);
+    //console.info(filter);
     if (filter != "false") {
         // 更新显示
         $("#currentFilter").html(keyString)
-        console.info("更新了吗？.....")
-    }
-
-    switch (filter) {
-        case "like":
-            append = "&like=" + keyString;
-            break
+        append = "&like=" + keyString;
+        //console.info("更新了吗？.....")
     }
     return append;
 }

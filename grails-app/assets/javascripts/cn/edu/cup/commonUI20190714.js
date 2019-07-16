@@ -111,27 +111,10 @@ function setupTabsBootStrap(tabsDiv) {
 * 查找当前标题
 * */
 function getCurrentTabTitle(tabsDiv) {
-    //console.info("查找当前标签：")
-    //console.info(tabsDiv);
-    //var url = "a.nav-link.active.show"
-    //var url = "a.nav-link";
     var url = "a.nav-link.active.show";
-    var tab = tabsDiv.find("a.nav-link.active.show");
-    //var tab = document.getElementsByClassName(url);
-    console.info("获取当前标签：");
-    console.info(tab);
-    console.info("找到了一个：")
-    console.info(tab[0]);
-    console.info(tab[1]);
-    //console.info(Object.prototype.toString.call(tab));
-    //console.info(typeof(tab));
-    //console.info(Object.keys(tab));
-    //  console.info(Object.getOwnPropertyNames(tab));  //这个正常工作
-    console.info($(tab.target));
-    console.info($(tab.target).title);
-    console.info(tab.innerHTML);
-    console.info($(tab.target).text().trim());
-    var title = $(tab.target).text().trim();
+    var tab = tabsDiv.find(url);
+    //alert("找到了：" + tab[0].text.trim());
+    var title = tab[0].text.trim()
     return title;
 }
 
