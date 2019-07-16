@@ -31,7 +31,7 @@ function setupPagination4Card(theCardDiv) {
         title = theCardDiv.attr("title");
     }
 
-    console.info("处理：" + bootStrapPaginationSetting.identifier + title + "!");
+    //console.info("处理：" + bootStrapPaginationSetting.identifier + title + "!");
     // 页长度
     pageSizeName = "pageSize" + bootStrapPaginationSetting.identifier + title;
     if (sessionStorage.hasOwnProperty(pageSizeName)) {
@@ -71,18 +71,18 @@ function setupTabsBootStrap(tabsDiv) {
     // 每个标签绑定数据加载函数---
     var title;
     tabsDiv.find("a.nav-link").on("click", function (e) {
-        console.info("激活事件：");
-        console.info(e);
+        //console.info("激活事件：");
+        //console.info(e);
         //console.info(e.target);
         setupPagination4Card(e.target); // 这是关键--标签页与Card统一起来了
         title = $(e.target).text().trim();
-        //console.info("点击事件..." + title + "!")
+        //console.info("初始化设置中的----点击事件..." + title + "!")
         sessionStorage.setItem(currentTabName, title); //记录缺省标签
         loadCurrentPageBootStrap(title)
         // 切换tab事件 ...
         if (bootStrapPaginationSetting.onTabShift != null) {
             var todo = eval(bootStrapPaginationSetting.onTabShift);
-            console.log("切换标签...");
+            //console.log("切换标签...");
             todo(title);
         }
     })
@@ -111,9 +111,25 @@ function setupTabsBootStrap(tabsDiv) {
 * 查找当前标题
 * */
 function getCurrentTabTitle(tabsDiv) {
-    var url = "a.nav-link.active.show"
-    var tab = tabsDiv.find(url);
+    //console.info("查找当前标签：")
+    //console.info(tabsDiv);
+    //var url = "a.nav-link.active.show"
+    //var url = "a.nav-link";
+    var url = "a.nav-link.active.show";
+    var tab = tabsDiv.find("a.nav-link.active.show");
+    //var tab = document.getElementsByClassName(url);
+    console.info("获取当前标签：");
     console.info(tab);
+    console.info("找到了一个：")
+    console.info(tab[0]);
+    console.info(tab[1]);
+    //console.info(Object.prototype.toString.call(tab));
+    //console.info(typeof(tab));
+    //console.info(Object.keys(tab));
+    //  console.info(Object.getOwnPropertyNames(tab));  //这个正常工作
+    console.info($(tab.target));
+    console.info($(tab.target).title);
+    console.info(tab.innerHTML);
     console.info($(tab.target).text().trim());
     var title = $(tab.target).text().trim();
     return title;
