@@ -258,6 +258,9 @@ class DatabaseController {
     }
 
     def importTeam() {
+        theSQL = Sql.newInstance(url, username, password, driverClassName);
+        def controller = params.next
+
         def logFileName = "${commonService.webRootPath}/config/out/db_team.log"
         def lofFile = new File(logFileName)
         def printWriter = new PrintWriter(lofFile, "utf-8")
@@ -285,7 +288,7 @@ class DatabaseController {
 
         printWriter.close()
 
-        redirect(action: "index")
+        redirect(action: "index", controller: controller)
     }
 
     def importPerson() {

@@ -23,6 +23,15 @@ function queryStatementBootStrap() {
     location.reload();
 }
 
+/*
+* 清除过滤条件
+* */
+function clearFilterBootStrap() {
+    sessionStorage.setItem("filter" + document.title, false)
+    $("#currentFilter").html("")
+    location.reload();
+}
+
 
 /*
 * 生成附加参数---却根据需要调整代码
@@ -32,10 +41,17 @@ function appendParamsBootStrap(title) {
     var append = ""
     var filter = readStorage("filter" + document.title, "false");
     var keyString = readStorage("keyString" + document.title, "");
+
+    console.info("当前关键字：" + keyString);
+
+    if (filter!="false") {
+        // 更新显示
+        $("#currentFilter").html(keyString)
+    }
+
     switch (filter) {
         case "like":
             append = "&like=" + keyString;
-            $("#currentFilter人员维护").html(keyString)
             break
     }
     return  append;
@@ -52,9 +68,11 @@ function shiftDisplay(title) {
             $("#newTeacher").attr("class", "")
             break
         case "本科生":
+        case "全部本科生":
             $("#newStudent").attr("class", "")
             break
         case "研究生":
+        case "全部研究生":
             $("#newMaster").attr("class", "")
             break
     }

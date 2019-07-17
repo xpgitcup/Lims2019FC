@@ -4,7 +4,7 @@
   and open the template in the editor.
 -->
 
-<%@ page import="cn.edu.cup.basic.PersonTitle" contentType="text/html;charset=UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 
 <html>
 <head>
@@ -22,25 +22,28 @@
         </g:else>
     </g:else>
 <!-- end 实现可定制的布局 -->
-    <g:set var="entityName" value="Person"/>
+<!--这个地方设置成固定的-->
+    <g:set var="entityName" value="Progress"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>${entityName}</title>
-    <asset:javascript src="cn/edu/cup/basic/${entityName}.js"/>
+    <asset:javascript src="cn/edu/cup/lims/${entityName}.js"/>
 </head>
 
 <body>
 
-<g:render template="queryPanel"/>
-
-
-<div class="container-fluid m-0 p-0">
-    <g:render template="personTabs"/>
-    <g:if test="${flash.message}">
-        <div class="card">
-            <div class="message" role="status">${flash.message}</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <g:render template="progressPanel"/>
         </div>
-    </g:if>
+    </div>
 </div>
+
+<g:if test="${flash.message}">
+    <div class="easyui-panel">
+        <div class="message" role="status">${flash.message}</div>
+    </div>
+</g:if>
 
 </body>
 </html>

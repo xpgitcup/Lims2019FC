@@ -60,6 +60,12 @@ class Operation4PersonController extends PersonController {
             case "研究生":
                 params.titleList = PersonTitle.findByName("研究生").relatedTitles()
                 break
+            case "全部本科生":
+                params.titleList = PersonTitle.findAllByName("本科生")
+                break
+            case "全部研究生":
+                params.titleList = PersonTitle.findByName("研究生").relatedTitles()
+                break
         }
     }
 

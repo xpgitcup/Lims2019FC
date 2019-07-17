@@ -2,10 +2,10 @@
 
 <table class="table table-striped table-sm m-0 p-0">
     <thead>
-    <th width="10%">名称</th>
-    <th width="30%">组长</th>
+    <th width="20%">名称</th>
+    <th width="20%">组长</th>
     <th>人数</th>
-    <th width="50%">招聘</th>
+    <th width="50%">招募</th>
     </thead>
     <tbody>
     <g:each in="${objectList}" var="item" status="i">

@@ -76,14 +76,14 @@
         "menuAction": "operation4ThingType/index",
         "menuDescription": "维护各种项目的类型数据",
         "layout": "mainAfterLogin20190709",
-        "menuOrder": 1
+        "menuOrder": 10
       },
       {
         "menuContext": "通用计划",
         "menuAction": "operation4Plan/index",
         "menuDescription": "各种人员的基础数据",
         "layout": "mainAfterLogin20190709",
-        "menuOrder": 2
+        "menuOrder": 20
       }
     ]
   },
@@ -99,35 +99,35 @@
         "menuAction": "operation4Thing/index",
         "menuDescription": "管理项目数据",
         "layout": "mainAfterLogin20190709",
-        "menuOrder": 5
+        "menuOrder": 0
       },
       {
         "menuContext": "人员数据",
         "menuAction": "operation4Person/index",
         "menuDescription": "管理人员数据",
         "layout": "mainAfterLogin20190709",
-        "menuOrder": 5
+        "menuOrder": 10
       },
       {
         "menuContext": "课题组",
-        "menuAction": "operation4GradeInfo/index",
+        "menuAction": "operation4GroupInfo/index",
         "menuDescription": "课题组管理",
         "layout": "mainAfterLogin20190709",
-        "menuOrder": 5
+        "menuOrder": 20
       },
       {
         "menuContext": "团队维护",
         "menuAction": "operation4Team/index",
         "menuDescription": "管理团队数据",
         "layout": "mainAfterLogin20190709",
-        "menuOrder": 5
+        "menuOrder": 30
       },
       {
         "menuContext": "进度维护",
         "menuAction": "operation4Progress/index",
         "menuDescription": "管理进度数据",
         "layout": "mainAfterLogin20190709",
-        "menuOrder": 5
+        "menuOrder": 40
       }
     ]
   },
@@ -143,21 +143,21 @@
         "menuAction": "operation4ProjectPlan/index",
         "menuDescription": "维护项目计划",
         "layout": "mainAfterLogin20190709",
-        "menuOrder": 5
+        "menuOrder": 0
       },
       {
         "menuContext": "进度维护",
         "menuAction": "operation4Progress/index",
         "menuDescription": "维护项目进度",
         "layout": "mainAfterLogin20190709",
-        "menuOrder": 5
+        "menuOrder": 10
       },
       {
         "menuContext": "团队管理",
         "menuAction": "operation4Team/index",
         "menuDescription": "维护团队信息",
         "layout": "mainAfterLogin20190709",
-        "menuOrder": 5
+        "menuOrder": 20
       }
     ]
   }

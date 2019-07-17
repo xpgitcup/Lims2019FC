@@ -3,9 +3,9 @@
 <table class="table table-striped table-sm m-0 p-0">
     <thead>
     <th>id</th>
-    <th width="12%">Controller</th>
+    <th width="10%">Controller</th>
     <th>Action</th>
-    <th>关键字</th>
+    <th width="7%">关键字</th>
     <th width="10%">参数</th>
     <th width="45%">查询</th>
     <th>视图</th>

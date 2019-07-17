@@ -1,9 +1,9 @@
 package cn.edu.cup.operation
 
-import cn.edu.cup.lims.TeamController
+import cn.edu.cup.lims.ProgressController
 import cn.edu.cup.lims.ThingType
 
-class Operation4TeamController extends TeamController {
+class Operation4ProgressController extends ProgressController {
 
     protected void prepareParams() {
         switch (params.key) {

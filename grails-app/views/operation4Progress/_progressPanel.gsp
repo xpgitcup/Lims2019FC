@@ -1,9 +1,9 @@
 <!-- 设置查询 -->
-<ul id="query团队维护UL" class="nav navbar bg-light">
-    <g:if test="${cn.edu.cup.lims.Team.count() < 1}">
+<ul id="query进度维护UL" class="nav navbar bg-light">
+    <g:if test="${cn.edu.cup.lims.Progress.count() < 1}">
         <li>
             <span class="form-inline">
-                <a href="database/importTeam?next=operation4Team">导入</a>
+                <a href="database/updateProgress?next=operation4Team">更新</a>
             </span>
         </li>
     </g:if>
@@ -22,8 +22,8 @@
     </li>
 </ul>
 
-<!-- 关于 团队维护 的自动生成代码 -->
-<div class="card" id="tabs团队维护Div" title="团队维护">
+<!-- 关于 进度维护 的自动生成代码 -->
+<div class="card" id="tabs进度维护Div" title="进度维护">
     <!-- 选项卡 -->
     <ul class="nav nav-tabs" role="tablist">
         <li class="nav-item">
@@ -58,7 +58,7 @@
                     <a class="page-link">页长</a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" id="pageSizeTeam科研项目"></a>
+                    <a class="page-link" id="pageSizeProgress科研项目"></a>
                 </li>
                 <li class="page-item">
                     <a class="page-link" href="javascript: loadFirstPageBootStrap('科研项目')">首页</a>
@@ -67,13 +67,13 @@
                     <a class="page-link" href="javascript: loadPreviousPageBootStrap('科研项目')">&laquo</a>
                 </li>
                 <li class="page-item" >
-                    <a class="page-link" id="currentPageTeam科研项目"></a>
+                    <a class="page-link" id="currentPageProgress科研项目"></a>
                 </li>
                 <li class="page-item" >
                     <a class="page-link">/</a>
                 </li>
                 <li class="page-item" >
-                    <a class="page-link" id="totalPageTeam科研项目"></a>
+                    <a class="page-link" id="totalPageProgress科研项目"></a>
                 </li>
                 <li>
                     <a class="page-link" href="javascript: loadNextPageBootStrap('科研项目')">&raquo</a>
@@ -85,7 +85,7 @@
                     <a class="page-link">总记录数</a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" id="totalCountTeam科研项目"></a>
+                    <a class="page-link" id="totalCountProgress科研项目"></a>
                 </li>
             </ul>
         </div>
@@ -101,7 +101,7 @@
                     <a class="page-link">页长</a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" id="pageSizeTeam教学任务"></a>
+                    <a class="page-link" id="pageSizeProgress教学任务"></a>
                 </li>
                 <li class="page-item">
                     <a class="page-link" href="javascript: loadFirstPageBootStrap('教学任务')">首页</a>
@@ -110,13 +110,13 @@
                     <a class="page-link" href="javascript: loadPreviousPageBootStrap('教学任务')">&laquo</a>
                 </li>
                 <li class="page-item" >
-                    <a class="page-link" id="currentPageTeam教学任务"></a>
+                    <a class="page-link" id="currentPageProgress教学任务"></a>
                 </li>
                 <li class="page-item" >
                     <a class="page-link">/</a>
                 </li>
                 <li class="page-item" >
-                    <a class="page-link" id="totalPageTeam教学任务"></a>
+                    <a class="page-link" id="totalPageProgress教学任务"></a>
                 </li>
                 <li>
                     <a class="page-link" href="javascript: loadNextPageBootStrap('教学任务')">&raquo</a>
@@ -128,7 +128,7 @@
                     <a class="page-link">总记录数</a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" id="totalCountTeam教学任务"></a>
+                    <a class="page-link" id="totalCountProgress教学任务"></a>
                 </li>
             </ul>
         </div>
@@ -144,7 +144,7 @@
                     <a class="page-link">页长</a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" id="pageSizeTeam全部科研项目"></a>
+                    <a class="page-link" id="pageSizeProgress全部科研项目"></a>
                 </li>
                 <li class="page-item">
                     <a class="page-link" href="javascript: loadFirstPageBootStrap('全部科研项目')">首页</a>
@@ -153,13 +153,13 @@
                     <a class="page-link" href="javascript: loadPreviousPageBootStrap('全部科研项目')">&laquo</a>
                 </li>
                 <li class="page-item" >
-                    <a class="page-link" id="currentPageTeam全部科研项目"></a>
+                    <a class="page-link" id="currentPageProgress全部科研项目"></a>
                 </li>
                 <li class="page-item" >
                     <a class="page-link">/</a>
                 </li>
                 <li class="page-item" >
-                    <a class="page-link" id="totalPageTeam全部科研项目"></a>
+                    <a class="page-link" id="totalPageProgress全部科研项目"></a>
                 </li>
                 <li>
                     <a class="page-link" href="javascript: loadNextPageBootStrap('全部科研项目')">&raquo</a>
@@ -171,7 +171,7 @@
                     <a class="page-link">总记录数</a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" id="totalCountTeam全部科研项目"></a>
+                    <a class="page-link" id="totalCountProgress全部科研项目"></a>
                 </li>
             </ul>
         </div>
@@ -187,7 +187,7 @@
                     <a class="page-link">页长</a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" id="pageSizeTeam全部教学任务"></a>
+                    <a class="page-link" id="pageSizeProgress全部教学任务"></a>
                 </li>
                 <li class="page-item">
                     <a class="page-link" href="javascript: loadFirstPageBootStrap('全部教学任务')">首页</a>
@@ -196,13 +196,13 @@
                     <a class="page-link" href="javascript: loadPreviousPageBootStrap('全部教学任务')">&laquo</a>
                 </li>
                 <li class="page-item" >
-                    <a class="page-link" id="currentPageTeam全部教学任务"></a>
+                    <a class="page-link" id="currentPageProgress全部教学任务"></a>
                 </li>
                 <li class="page-item" >
                     <a class="page-link">/</a>
                 </li>
                 <li class="page-item" >
-                    <a class="page-link" id="totalPageTeam全部教学任务"></a>
+                    <a class="page-link" id="totalPageProgress全部教学任务"></a>
                 </li>
                 <li>
                     <a class="page-link" href="javascript: loadNextPageBootStrap('全部教学任务')">&raquo</a>
@@ -214,7 +214,7 @@
                     <a class="page-link">总记录数</a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" id="totalCountTeam全部教学任务"></a>
+                    <a class="page-link" id="totalCountProgress全部教学任务"></a>
                 </li>
             </ul>
         </div>

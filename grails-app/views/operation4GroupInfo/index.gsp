@@ -29,9 +29,9 @@
 
 <body>
 
-<div class="container-fluid">
+<div class="container-fluid m-0 p-0">
     <!-- 设置查询 -->
-    <ul id="query课题组UL" class="nav navbar bg-light">
+    <ul id="query课题组UL" class="nav navbar bg-light m-0 p-0">
         <li>
             <g:form controller="operation4GroupInfo" action="save" method="POST">
                 <label>创建课题组</label>
