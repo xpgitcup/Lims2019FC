@@ -25,8 +25,8 @@ class DatabaseController {
     def driverClassName = "com.mysql.cj.jdbc.Driver";//    #升级到这个版本是为了适应MySQL 8.X
     def username = "sample";
     def password = "sample@chuyun";
-    def url = "jdbc:mysql://10.1.16.50:3306/lims2019dba?zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&serverTimezone=Asia/Shanghai"
-    //def url = "jdbc:mysql://localhost:3306/lims2019dba?zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&serverTimezone=Asia/Shanghai"
+    //def url = "jdbc:mysql://10.1.16.50:3306/lims2019dba?zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&serverTimezone=Asia/Shanghai"
+    def url = "jdbc:mysql://localhost:3306/lims2019dba?zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&serverTimezone=Asia/Shanghai"
 
     def importSystemStatus() {
         def logFileName = "${commonService.webRootPath}/config/out/db_status.log"
@@ -34,9 +34,9 @@ class DatabaseController {
         def printWriter = new PrintWriter(lofFile, "utf-8")
 
         def qstring = "select * from system_status order by login_time"
-        theSQL.eachRow(qstring) { e->
+        theSQL.eachRow(qstring) { e ->
             println("${e}")
-            if (SystemStatus.countBySessionId(e.session_id)<1) {
+            if (SystemStatus.countBySessionId(e.session_id) < 1) {
                 def ss = new SystemStatus(
                         userName: e.user_name,
                         loginTime: e.login_time,
@@ -123,6 +123,13 @@ class DatabaseController {
     }
 
     def updateProgress() {
+        def controller = params.next
+        def eThing = 0
+        def ePerson = 0
+        def eTeam = 0
+
+        theSQL = Sql.newInstance(url, username, password, driverClassName);
+
         def logFileName = "${commonService.webRootPath}/config/out/db_progress.log"
         def lofFile = new File(logFileName)
         def printWriter = new PrintWriter(lofFile, "utf-8")
@@ -145,12 +152,15 @@ class DatabaseController {
                 println("新库：${team.id} ${team}")
                 if (!thing) {
                     printWriter.println("找不到事情：${ee.thingName}")
+                    eThing++
                 }
                 if (!person) {
                     printWriter.println("找不到人：${ee.code}")
+                    ePerson++
                 }
                 if (!team) {
                     printWriter.println("找不到团队：${thing} ${person}")
+                    eTeam++
                 }
                 printWriter.println("团队：${e.id} (${ee.code},${ee.thingName}) ${ee.id} -->${team.id}  ${team}")
                 //progress.team = team
@@ -168,8 +178,9 @@ class DatabaseController {
             println("=================================================================================================")
             progressService.save(progress)
         }
+        printWriter.format("%d事情找不到, %d个人找不到, %d个团队招不到！", eThing, ePerson, eTeam)
         printWriter.close()
-        redirect(action: "index")
+        redirect(action: "index", controller: controller)
     }
 
     def importThing() {

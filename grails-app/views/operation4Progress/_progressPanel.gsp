@@ -1,9 +1,9 @@
 <!-- 设置查询 -->
 <ul id="query进度维护UL" class="nav navbar bg-light">
-    <g:if test="${cn.edu.cup.lims.Progress.count() < 1}">
+    <g:if test="${cn.edu.cup.lims.Progress.count() > 1}">
         <li>
             <span class="form-inline">
-                <a href="database/updateProgress?next=operation4Team">更新</a>
+                <a href="database/updateProgress?next=operation4Progress">更新</a>
             </span>
         </li>
     </g:if>
