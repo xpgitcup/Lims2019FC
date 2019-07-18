@@ -44,15 +44,11 @@ function appendParamsBootStrap(title) {
 
     console.info("当前关键字：" + keyString);
 
-    if (filter!="false") {
+    if (filter == title) {
         // 更新显示
-        $("#currentFilter").html(keyString)
-    }
-
-    switch (filter) {
-        case "like":
-            append = "&like=" + keyString;
-            break
+        $("#currentFilter").html(filter + "." + keyString)
+        append = "&like=" + keyString;
+        //console.info("更新了吗？.....")
     }
     return  append;
 }

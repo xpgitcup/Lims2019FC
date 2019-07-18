@@ -46,9 +46,9 @@ function appendParamsBootStrap(title) {
     var keyString = readStorage("keyString" + document.title, "");
     //console.info("当前关键字：" + keyString);
     //console.info(filter);
-    if (filter != "false") {
+    if (filter == title) {
         // 更新显示
-        $("#currentFilter").html(keyString)
+        $("#currentFilter").html(filter + "." + keyString)
         append = "&like=" + keyString;
         //console.info("更新了吗？.....")
     }

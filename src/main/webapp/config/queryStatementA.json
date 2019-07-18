@@ -3,10 +3,70 @@
 		"actionName":"count",
 		"controllerName":"home",
 		"isSQL":false,
+		"keyString":"全部教学",
+		"needToQuery":true,
+		"paramsString":"[]",
+		"updateTime":1563432964000,
+		"version":0
+	},
+	{
+		"actionName":"count",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"全部项目",
+		"needToQuery":true,
+		"paramsString":"[]",
+		"updateTime":1563432963000,
+		"version":0
+	},
+	{
+		"actionName":"count",
+		"controllerName":"home",
+		"isSQL":false,
 		"keyString":"在研项目",
 		"needToQuery":true,
 		"paramsString":"[]",
 		"updateTime":1562913018000,
+		"version":0
+	},
+	{
+		"actionName":"count",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"当前教学",
+		"needToQuery":true,
+		"paramsString":"[]",
+		"updateTime":1563432963000,
+		"version":0
+	},
+	{
+		"actionName":"count",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"教学进展",
+		"needToQuery":true,
+		"paramsString":"[]",
+		"updateTime":1563432965000,
+		"version":0
+	},
+	{
+		"actionName":"count",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"登录统计",
+		"needToQuery":true,
+		"paramsString":"[]",
+		"updateTime":1563432966000,
+		"version":0
+	},
+	{
+		"actionName":"count",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"科研进展",
+		"needToQuery":true,
+		"paramsString":"[]",
+		"updateTime":1563432964000,
 		"version":0
 	},
 	{
@@ -20,6 +80,36 @@
 		"version":0
 	},
 	{
+		"actionName":"count",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"进展统计",
+		"needToQuery":true,
+		"paramsString":"[]",
+		"updateTime":1563432965000,
+		"version":0
+	},
+	{
+		"actionName":"list",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"全部教学",
+		"needToQuery":true,
+		"paramsString":"[max, offset]",
+		"updateTime":1563432964000,
+		"version":0
+	},
+	{
+		"actionName":"list",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"全部项目",
+		"needToQuery":true,
+		"paramsString":"[max, offset]",
+		"updateTime":1563432963000,
+		"version":0
+	},
+	{
 		"actionName":"list",
 		"controllerName":"home",
 		"isSQL":false,
@@ -33,10 +123,60 @@
 		"actionName":"list",
 		"controllerName":"home",
 		"isSQL":false,
+		"keyString":"当前教学",
+		"needToQuery":true,
+		"paramsString":"[max, offset]",
+		"updateTime":1563432963000,
+		"version":0
+	},
+	{
+		"actionName":"list",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"教学进展",
+		"needToQuery":true,
+		"paramsString":"[max, offset]",
+		"updateTime":1563432965000,
+		"version":0
+	},
+	{
+		"actionName":"list",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"登录统计",
+		"needToQuery":true,
+		"paramsString":"[max, offset]",
+		"updateTime":1563432966000,
+		"version":0
+	},
+	{
+		"actionName":"list",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"科研进展",
+		"needToQuery":true,
+		"paramsString":"[max, offset]",
+		"updateTime":1563432964000,
+		"version":0
+	},
+	{
+		"actionName":"list",
+		"controllerName":"home",
+		"isSQL":false,
 		"keyString":"管理的项目",
 		"needToQuery":true,
 		"paramsString":"[max, offset]",
 		"updateTime":1562913022000,
+		"version":0
+	},
+	{
+		"actionName":"list",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"进展统计",
+		"needToQuery":true,
+		"paramsString":"[max, offset]",
+		"updateTime":1563432965000,
 		"version":0
 	},
 	{
@@ -122,6 +262,17 @@
 		"actionName":"count",
 		"controllerName":"operation4Person",
 		"isSQL":false,
+		"keyString":"教师",
+		"needToQuery":true,
+		"paramsString":"[like, titleList]",
+		"queryString":"select count(*) from Person person \r\nwhere person.personTitle in (:titleList) \r\nand ((person.code like :like) or (person.name like :like))",
+		"updateTime":1563433910000,
+		"version":1
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4Person",
+		"isSQL":false,
 		"keyString":"本科生",
 		"needToQuery":true,
 		"paramsString":"[titleList]",
@@ -139,6 +290,17 @@
 		"queryString":"select count(*) from Person person\r\nwhere person.personTitle in (:titleList)",
 		"updateTime":1563332443000,
 		"version":2
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4Person",
+		"isSQL":false,
+		"keyString":"研究生",
+		"needToQuery":true,
+		"paramsString":"[like, titleList]",
+		"queryString":"select count(*) from Person person\r\nwhere person.personTitle in (:titleList) \r\nand ((person.code like :like) or (person.name like :like))",
+		"updateTime":1563434156000,
+		"version":1
 	},
 	{
 		"actionName":"list",
@@ -180,6 +342,18 @@
 		"actionName":"list",
 		"controllerName":"operation4Person",
 		"isSQL":false,
+		"keyString":"教师",
+		"needToQuery":true,
+		"paramsString":"[like, max, offset, titleList]",
+		"queryString":"from Person person\r\nwhere person.personTitle in (:titleList) \r\nand ((person.code like :like) or (person.name like :like))",
+		"updateTime":1563433910000,
+		"version":1,
+		"viewName":"listPerson"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Person",
+		"isSQL":false,
 		"keyString":"本科生",
 		"needToQuery":true,
 		"paramsString":"[max, offset, titleList]",
@@ -198,6 +372,18 @@
 		"queryString":"from Person person\r\nwhere person.personTitle in (:titleList)",
 		"updateTime":1563332443000,
 		"version":2,
+		"viewName":"listPerson"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Person",
+		"isSQL":false,
+		"keyString":"研究生",
+		"needToQuery":true,
+		"paramsString":"[like, max, offset, titleList]",
+		"queryString":"from Person person\r\nwhere person.personTitle in (:titleList) \r\nand ((person.code like :like) or (person.name like :like))",
+		"updateTime":1563434156000,
+		"version":1,
 		"viewName":"listPerson"
 	},
 	{
@@ -272,7 +458,40 @@
 		"actionName":"count",
 		"controllerName":"operation4Progress",
 		"isSQL":false,
+		"keyString":"所有的",
+		"needToQuery":true,
+		"paramsString":"[]",
+		"queryString":"select count(*) from Progress progress",
+		"updateTime":1563418816000,
+		"version":0
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4Progress",
+		"isSQL":false,
 		"keyString":"教学任务",
+		"needToQuery":true,
+		"paramsString":"[thingTypeList]",
+		"queryString":"select count(*) from Progress progress\r\nwhere progress.team.thing.thingType in (:thingTypeList)",
+		"updateTime":1563348484000,
+		"version":1
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4Progress",
+		"isSQL":false,
+		"keyString":"教学任务",
+		"needToQuery":true,
+		"paramsString":"[like, thingTypeList]",
+		"queryString":"select count(*) from Progress progress\r\nwhere \r\nprogress.team.thing.thingType in (:thingTypeList)\r\nand \r\n((progress.team.leader.name like :like) or (progress.team.thing.name like :like))",
+		"updateTime":1563443773000,
+		"version":1
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4Progress",
+		"isSQL":false,
+		"keyString":"科研项目",
 		"needToQuery":true,
 		"paramsString":"[thingTypeList]",
 		"queryString":"select count(*) from Progress progress\r\nwhere progress.team.thing.thingType in (:thingTypeList)",
@@ -285,9 +504,9 @@
 		"isSQL":false,
 		"keyString":"科研项目",
 		"needToQuery":true,
-		"paramsString":"[thingTypeList]",
-		"queryString":"select count(*) from Progress progress\r\nwhere progress.team.thing.thingType in (:thingTypeList)",
-		"updateTime":1563348484000,
+		"paramsString":"[like, thingTypeList]",
+		"queryString":"select count(*) from Progress progress\r\nwhere \r\nprogress.team.thing.thingType in (:thingTypeList)\r\nand \r\n((progress.team.leader.name like :like) or (progress.team.thing.name like :like))",
+		"updateTime":1563441612000,
 		"version":1
 	},
 	{
@@ -318,11 +537,35 @@
 		"actionName":"list",
 		"controllerName":"operation4Progress",
 		"isSQL":false,
+		"keyString":"所有的",
+		"needToQuery":true,
+		"paramsString":"[max, offset]",
+		"queryString":"from Progress progress",
+		"updateTime":1563418816000,
+		"version":0,
+		"viewName":"listProgress"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Progress",
+		"isSQL":false,
 		"keyString":"教学任务",
 		"needToQuery":true,
 		"paramsString":"[max, offset, thingTypeList]",
 		"queryString":"from Progress progress\r\nwhere progress.team.thing.thingType in (:thingTypeList)",
 		"updateTime":1563348484000,
+		"version":1,
+		"viewName":"listProgress"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Progress",
+		"isSQL":false,
+		"keyString":"教学任务",
+		"needToQuery":true,
+		"paramsString":"[like, max, offset, thingTypeList]",
+		"queryString":"from Progress progress\r\nwhere \r\nprogress.team.thing.thingType in (:thingTypeList)\r\nand \r\n((progress.team.leader.name like :like) or (progress.team.thing.name like :like))",
+		"updateTime":1563443773000,
 		"version":1,
 		"viewName":"listProgress"
 	},
@@ -337,6 +580,41 @@
 		"updateTime":1563348484000,
 		"version":1,
 		"viewName":"listProgress"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Progress",
+		"isSQL":false,
+		"keyString":"科研项目",
+		"needToQuery":true,
+		"paramsString":"[like, max, offset, thingTypeList]",
+		"queryString":"from Progress progress\r\nwhere \r\nprogress.team.thing.thingType in (:thingTypeList)\r\nand \r\n((progress.team.leader.name like :like) or (progress.team.thing.name like :like))",
+		"updateTime":1563441612000,
+		"version":1,
+		"viewName":"listProgress"
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4ProjectPlan",
+		"isSQL":false,
+		"keyString":"团队计划维护",
+		"needToQuery":true,
+		"paramsString":"[]",
+		"queryString":"select count(*) from ProjectPlan projectPlan",
+		"updateTime":1563419047000,
+		"version":0
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4ProjectPlan",
+		"isSQL":false,
+		"keyString":"团队计划维护",
+		"needToQuery":true,
+		"paramsString":"[max, offset]",
+		"queryString":"from ProjectPlan projectPlan",
+		"updateTime":1563419047000,
+		"version":0,
+		"viewName":"listProjectPlan"
 	},
 	{
 		"actionName":"count",
@@ -468,11 +746,33 @@
 		"actionName":"count",
 		"controllerName":"operation4Team",
 		"isSQL":false,
+		"keyString":"全部教学任务",
+		"needToQuery":true,
+		"paramsString":"[like, thingTypeList]",
+		"queryString":"select count(*) from Team team\r\nwhere \r\nteam.thing.thingType in (:thingTypeList)\r\nand \r\n((team.leader.name like :like) or (team.thing.name like :like))",
+		"updateTime":1563441482000,
+		"version":1
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4Team",
+		"isSQL":false,
 		"keyString":"全部科研项目",
 		"needToQuery":true,
 		"paramsString":"[thingTypeList]",
 		"queryString":"select count(*) from Team team\r\nwhere team.thing.thingType in (:thingTypeList)",
 		"updateTime":1563345922000,
+		"version":1
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4Team",
+		"isSQL":false,
+		"keyString":"全部科研项目",
+		"needToQuery":true,
+		"paramsString":"[like, thingTypeList]",
+		"queryString":"select count(*) from Team team\r\nwhere \r\nteam.thing.thingType in (:thingTypeList)\r\nand \r\n((team.leader.name like :like) or (team.thing.name like :like))",
+		"updateTime":1563441449000,
 		"version":1
 	},
 	{
@@ -490,12 +790,34 @@
 		"actionName":"count",
 		"controllerName":"operation4Team",
 		"isSQL":false,
+		"keyString":"教学任务",
+		"needToQuery":true,
+		"paramsString":"[like, thingTypeList]",
+		"queryString":"select count(*) from Team team\r\nwhere \r\nteam.thing.thingType in (:thingTypeList)\r\nand \r\n((team.leader.name like :like) or (team.thing.name like :like))",
+		"updateTime":1563441232000,
+		"version":1
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4Team",
+		"isSQL":false,
 		"keyString":"科研项目",
 		"needToQuery":true,
 		"paramsString":"[thingTypeList]",
 		"queryString":"select count(*) from Team team\r\nwhere team.thing.thingType in (:thingTypeList)",
 		"updateTime":1563345920000,
 		"version":1
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4Team",
+		"isSQL":false,
+		"keyString":"科研项目",
+		"needToQuery":true,
+		"paramsString":"[like, thingTypeList]",
+		"queryString":"select count(*) from Team team\r\nwhere \r\nteam.thing.thingType in (:thingTypeList)\r\nand \r\n((team.leader.name like :like) or (team.thing.name like :like))",
+		"updateTime":1563440446000,
+		"version":2
 	},
 	{
 		"actionName":"list",
@@ -513,11 +835,35 @@
 		"actionName":"list",
 		"controllerName":"operation4Team",
 		"isSQL":false,
+		"keyString":"全部教学任务",
+		"needToQuery":true,
+		"paramsString":"[like, max, offset, thingTypeList]",
+		"queryString":"from Team team\r\nwhere \r\nteam.thing.thingType in (:thingTypeList)\r\nand \r\n((team.leader.name like :like) or (team.thing.name like :like))",
+		"updateTime":1563441482000,
+		"version":1,
+		"viewName":"listTeam"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Team",
+		"isSQL":false,
 		"keyString":"全部科研项目",
 		"needToQuery":true,
 		"paramsString":"[max, offset, thingTypeList]",
 		"queryString":"from Team team\r\nwhere team.thing.thingType in (:thingTypeList)",
 		"updateTime":1563345922000,
+		"version":1,
+		"viewName":"listTeam"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Team",
+		"isSQL":false,
+		"keyString":"全部科研项目",
+		"needToQuery":true,
+		"paramsString":"[like, max, offset, thingTypeList]",
+		"queryString":"from Team team\r\nwhere \r\nteam.thing.thingType in (:thingTypeList)\r\nand \r\n((team.leader.name like :like) or (team.thing.name like :like))",
+		"updateTime":1563441449000,
 		"version":1,
 		"viewName":"listTeam"
 	},
@@ -537,6 +883,18 @@
 		"actionName":"list",
 		"controllerName":"operation4Team",
 		"isSQL":false,
+		"keyString":"教学任务",
+		"needToQuery":true,
+		"paramsString":"[like, max, offset, thingTypeList]",
+		"queryString":"from Team team\r\nwhere \r\nteam.thing.thingType in (:thingTypeList)\r\nand \r\n((team.leader.name like :like) or (team.thing.name like :like))",
+		"updateTime":1563441232000,
+		"version":1,
+		"viewName":"listTeam"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Team",
+		"isSQL":false,
 		"keyString":"科研项目",
 		"needToQuery":true,
 		"paramsString":"[max, offset, thingTypeList]",
@@ -544,6 +902,95 @@
 		"updateTime":1563345920000,
 		"version":1,
 		"viewName":"listTeam"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Team",
+		"isSQL":false,
+		"keyString":"科研项目",
+		"needToQuery":true,
+		"paramsString":"[like, max, offset, thingTypeList]",
+		"queryString":"from Team team\r\nwhere \r\nteam.thing.thingType in (:thingTypeList)\r\nand \r\n((team.leader.name like :like) or (team.thing.name like :like))",
+		"updateTime":1563440446000,
+		"version":2,
+		"viewName":"listTeam"
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4Thing",
+		"isSQL":false,
+		"keyString":"全部任务",
+		"needToQuery":true,
+		"paramsString":"[]",
+		"queryString":"select count(*) from Thing thing",
+		"updateTime":1563432548000,
+		"version":0
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4Thing",
+		"isSQL":false,
+		"keyString":"全部教学任务",
+		"needToQuery":true,
+		"paramsString":"[]",
+		"queryString":"select count(*) from Thing thing",
+		"updateTime":1563432746000,
+		"version":0
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4Thing",
+		"isSQL":false,
+		"keyString":"全部教学任务",
+		"needToQuery":true,
+		"paramsString":"[like]",
+		"queryString":"select count(*) from Thing thing\r\nwhere\r\n(name like :like) or (sponsor.name like :like) or (thing.thingType.name like :like)",
+		"updateTime":1563434264000,
+		"version":1
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4Thing",
+		"isSQL":false,
+		"keyString":"全部科研项目",
+		"needToQuery":true,
+		"paramsString":"[]",
+		"queryString":"select count(*) from Thing thing",
+		"updateTime":1563432745000,
+		"version":0
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4Thing",
+		"isSQL":false,
+		"keyString":"全部科研项目",
+		"needToQuery":true,
+		"paramsString":"[like]",
+		"queryString":"select count(*) from Thing thing\r\nwhere\r\n(name like :like) or (sponsor.name like :like) or (thing.thingType.name like :like)",
+		"updateTime":1563435017000,
+		"version":1
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4Thing",
+		"isSQL":false,
+		"keyString":"所有的",
+		"needToQuery":true,
+		"paramsString":"[]",
+		"queryString":"select count(*) from Thing thing",
+		"updateTime":1563432747000,
+		"version":0
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4Thing",
+		"isSQL":false,
+		"keyString":"所有的",
+		"needToQuery":true,
+		"paramsString":"[like]",
+		"queryString":"select count(*) from Thing thing\r\nwhere\r\n(name like :like) or (sponsor.name like :like) or (thing.thingType.name like :like)",
+		"updateTime":1563435018000,
+		"version":1
 	},
 	{
 		"actionName":"count",
@@ -588,6 +1035,90 @@
 		"queryString":"select count(*) from Thing thing \r\nwhere thing.thingType in (:thingTypeList)\r\nand \r\n(name like :like) or (sponsor.name like :like) or (thing.thingType.name like :like)",
 		"updateTime":1563286887000,
 		"version":1
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Thing",
+		"isSQL":false,
+		"keyString":"全部任务",
+		"needToQuery":true,
+		"paramsString":"[max, offset]",
+		"queryString":"from Thing thing",
+		"updateTime":1563432548000,
+		"version":0,
+		"viewName":"listThing"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Thing",
+		"isSQL":false,
+		"keyString":"全部教学任务",
+		"needToQuery":true,
+		"paramsString":"[max, offset]",
+		"queryString":"from Thing thing",
+		"updateTime":1563432746000,
+		"version":0,
+		"viewName":"listThing"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Thing",
+		"isSQL":false,
+		"keyString":"全部教学任务",
+		"needToQuery":true,
+		"paramsString":"[like, max, offset]",
+		"queryString":"from Thing thing\r\nwhere\r\n(name like :like) or (sponsor.name like :like) or (thing.thingType.name like :like)",
+		"updateTime":1563434264000,
+		"version":1,
+		"viewName":"listThing"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Thing",
+		"isSQL":false,
+		"keyString":"全部科研项目",
+		"needToQuery":true,
+		"paramsString":"[max, offset]",
+		"queryString":"from Thing thing",
+		"updateTime":1563432745000,
+		"version":0,
+		"viewName":"listThing"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Thing",
+		"isSQL":false,
+		"keyString":"全部科研项目",
+		"needToQuery":true,
+		"paramsString":"[like, max, offset]",
+		"queryString":"from Thing thing\r\nwhere\r\n(name like :like) or (sponsor.name like :like) or (thing.thingType.name like :like)",
+		"updateTime":1563435017000,
+		"version":1,
+		"viewName":"listThing"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Thing",
+		"isSQL":false,
+		"keyString":"所有的",
+		"needToQuery":true,
+		"paramsString":"[max, offset]",
+		"queryString":"from Thing thing",
+		"updateTime":1563432747000,
+		"version":0,
+		"viewName":"listThing"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Thing",
+		"isSQL":false,
+		"keyString":"所有的",
+		"needToQuery":true,
+		"paramsString":"[like, max, offset]",
+		"queryString":"from Thing thing\r\nwhere\r\n(name like :like) or (sponsor.name like :like) or (thing.thingType.name like :like)",
+		"updateTime":1563435018000,
+		"version":1,
+		"viewName":"listThing"
 	},
 	{
 		"actionName":"list",

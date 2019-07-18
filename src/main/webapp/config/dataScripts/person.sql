@@ -3,15 +3,15 @@
 
  Source Server         : sample
  Source Server Type    : MySQL
- Source Server Version : 50725
+ Source Server Version : 80016
  Source Host           : localhost:3306
- Source Schema         : lims2019dba
+ Source Schema         : lims2019dbb
 
  Target Server Type    : MySQL
- Target Server Version : 50725
+ Target Server Version : 80016
  File Encoding         : 65001
 
- Date: 06/06/2019 11:14:18
+ Date: 18/07/2019 15:09:40
 */
 
 SET NAMES utf8mb4;
@@ -31,7 +31,7 @@ CREATE TABLE `person`  (
   UNIQUE INDEX `UK_4gr67lk0t9mc9aoqfbo9mdmtw`(`code`) USING BTREE,
   INDEX `FKgp5bmxhm3l9bb8l2oymygnfed`(`person_title_id`) USING BTREE,
   CONSTRAINT `FKgp5bmxhm3l9bb8l2oymygnfed` FOREIGN KEY (`person_title_id`) REFERENCES `person_title` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 268 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 269 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of person
@@ -303,5 +303,6 @@ INSERT INTO `person` VALUES (264, 0, 17, '2016214080', '李蛟鸾');
 INSERT INTO `person` VALUES (265, 0, 17, '2018214572', '陈汉');
 INSERT INTO `person` VALUES (266, 0, 17, '2018214551', '时浩');
 INSERT INTO `person` VALUES (267, 0, 17, '2017214058', '刘莹莹');
+INSERT INTO `person` VALUES (268, 0, 4, '2360', '王玮');
 
 SET FOREIGN_KEY_CHECKS = 1;

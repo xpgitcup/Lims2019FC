@@ -89,16 +89,8 @@ function setupTabsBootStrap(tabsDiv) {
     // 处理缺省标签
     if (sessionStorage.hasOwnProperty(currentTabName)) {
         var title = sessionStorage.getItem(currentTabName);
-        //console.info("激活" + title);
-        var url = "a.nav-link:contains('" + title + "')"
-        var tab = tabsDiv.find(url);
-        if (tab != undefined) {
-            tab.click()
-        } else {
-            // 激活第一个
-            //$("a.nav-link:first").click()
-            tabsDiv.find("a.nav-link:first").click();
-        }
+        console.info("激活" + title);
+        selectTabByTitle(tabsDiv, title);
     } else {
         // 激活第一个
         //$("a.nav-link:first").click()
@@ -121,9 +113,15 @@ function getCurrentTabTitle(tabsDiv) {
 /*
 * 激活指定的标题
 * */
-function selectTabByTitle(title) {
-    var url = "a.nav-link:contains('" + title + "')"
-    var tab = $(url)
+function selectTabByTitle(tabsDiv, title) {
+    //var url = "a.nav-link:contains('" + title + "')"
+    //var tab = $(url)
+    var url = "a.nav-link"  //不能用contains
+    console.info(url);
+    var tab = tabsDiv.find(url).filter(function (index, e) {
+        //console.info(e);
+        return e.innerText == title;
+    });
     if (tab != undefined) {
         tab.click()
     } else {
