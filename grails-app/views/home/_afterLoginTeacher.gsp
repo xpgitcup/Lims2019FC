@@ -1,3 +1,6 @@
+<div class="alert alert-success">
+    <strong>登录成功!</strong> 日常操作可以直接点击下面标签页中的链接。其他操作点击左侧菜单！
+</div>
 <!-- 设置查询 -->
 <ul id="query登录后UL" class="nav navbar bg-light">
     <li><span class="form-inline">筛选:<div id="currentFilter登录后" class="text-danger">${keyString}</div></span></li>

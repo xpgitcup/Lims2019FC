@@ -13,4 +13,5 @@
             <a class="breadcrumb-item" href="${item.menuAction}">${item.menuContext}</a>
         </g:else>
     </g:each>
+    <a class="breadcrumb-item" href="/home">返回</a>
 </nav>
