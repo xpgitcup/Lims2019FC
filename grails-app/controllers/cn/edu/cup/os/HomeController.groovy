@@ -264,6 +264,7 @@ class HomeController extends CommonController {
                 session.userStatus = systemUser.personTitle().status()
             }
             systemCommonService.updateSystemStatus(request, params)
+
             redirect(uri: "/home")
             //redirect(uri: "/")
         } else {
