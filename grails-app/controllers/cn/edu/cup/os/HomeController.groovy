@@ -43,12 +43,23 @@ class HomeController extends CommonController {
 
     protected void prepareParams() {
         if (session.systemUser) {
+            params.myself = session.systemUser.person()
             switch (params.key) {
-                case "我的进展":
-                    params.myself = session.systemUser.person()
+                case "参与的项目":
                     break
-                case "我的登录":
-                    params.myself = session.userName
+                case "在研项目":
+                    break
+                case "学业论文":
+                    break
+                case "研究生论文":
+                    break
+                case "管理的项目":
+                    break
+                case "课堂教学":
+                    break
+                case "课程作业":
+                    break
+                case "领导的项目":
                     break
             }
         }
