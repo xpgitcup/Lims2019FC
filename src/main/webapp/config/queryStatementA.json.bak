@@ -3,10 +3,20 @@
 		"actionName":"count",
 		"controllerName":"home",
 		"isSQL":false,
-		"keyString":"参与的项目",
+		"keyString":"全部教学",
 		"needToQuery":true,
 		"paramsString":"[]",
-		"updateTime":1563616782000,
+		"updateTime":1563432964000,
+		"version":0
+	},
+	{
+		"actionName":"count",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"全部项目",
+		"needToQuery":true,
+		"paramsString":"[]",
+		"updateTime":1563432963000,
 		"version":0
 	},
 	{
@@ -16,27 +26,47 @@
 		"keyString":"在研项目",
 		"needToQuery":true,
 		"paramsString":"[]",
-		"updateTime":1563616607000,
+		"updateTime":1562913018000,
 		"version":0
 	},
 	{
 		"actionName":"count",
 		"controllerName":"home",
 		"isSQL":false,
-		"keyString":"学业论文",
+		"keyString":"当前教学",
 		"needToQuery":true,
 		"paramsString":"[]",
-		"updateTime":1563616836000,
+		"updateTime":1563432963000,
 		"version":0
 	},
 	{
 		"actionName":"count",
 		"controllerName":"home",
 		"isSQL":false,
-		"keyString":"研究生论文",
+		"keyString":"教学进展",
 		"needToQuery":true,
 		"paramsString":"[]",
-		"updateTime":1563616782000,
+		"updateTime":1563432965000,
+		"version":0
+	},
+	{
+		"actionName":"count",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"登录统计",
+		"needToQuery":true,
+		"paramsString":"[]",
+		"updateTime":1563432966000,
+		"version":0
+	},
+	{
+		"actionName":"count",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"科研进展",
+		"needToQuery":true,
+		"paramsString":"[]",
+		"updateTime":1563432964000,
 		"version":0
 	},
 	{
@@ -46,47 +76,37 @@
 		"keyString":"管理的项目",
 		"needToQuery":true,
 		"paramsString":"[]",
-		"updateTime":1563616750000,
+		"updateTime":1562913022000,
 		"version":0
 	},
 	{
 		"actionName":"count",
 		"controllerName":"home",
 		"isSQL":false,
-		"keyString":"课堂教学",
+		"keyString":"进展统计",
 		"needToQuery":true,
 		"paramsString":"[]",
-		"updateTime":1563616783000,
-		"version":0
-	},
-	{
-		"actionName":"count",
-		"controllerName":"home",
-		"isSQL":false,
-		"keyString":"课程作业",
-		"needToQuery":true,
-		"paramsString":"[]",
-		"updateTime":1563616837000,
-		"version":0
-	},
-	{
-		"actionName":"count",
-		"controllerName":"home",
-		"isSQL":false,
-		"keyString":"领导的项目",
-		"needToQuery":true,
-		"paramsString":"[]",
-		"updateTime":1563616780000,
+		"updateTime":1563432965000,
 		"version":0
 	},
 	{
 		"actionName":"list",
 		"controllerName":"home",
 		"isSQL":false,
-		"keyString":"参与的项目",
+		"keyString":"全部教学",
 		"needToQuery":true,
 		"paramsString":"[max, offset]",
-		"updateTime":1563616782000,
+		"updateTime":1563432964000,
+		"version":0
+	},
+	{
+		"actionName":"list",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"全部项目",
+		"needToQuery":true,
+		"paramsString":"[max, offset]",
+		"updateTime":1563432963000,
 		"version":0
 	},
 	{
@@ -96,27 +116,47 @@
 		"keyString":"在研项目",
 		"needToQuery":true,
 		"paramsString":"[max, offset]",
-		"updateTime":1563616607000,
+		"updateTime":1562913018000,
 		"version":0
 	},
 	{
 		"actionName":"list",
 		"controllerName":"home",
 		"isSQL":false,
-		"keyString":"学业论文",
+		"keyString":"当前教学",
 		"needToQuery":true,
 		"paramsString":"[max, offset]",
-		"updateTime":1563616836000,
+		"updateTime":1563432963000,
 		"version":0
 	},
 	{
 		"actionName":"list",
 		"controllerName":"home",
 		"isSQL":false,
-		"keyString":"研究生论文",
+		"keyString":"教学进展",
 		"needToQuery":true,
 		"paramsString":"[max, offset]",
-		"updateTime":1563616782000,
+		"updateTime":1563432965000,
+		"version":0
+	},
+	{
+		"actionName":"list",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"登录统计",
+		"needToQuery":true,
+		"paramsString":"[max, offset]",
+		"updateTime":1563432966000,
+		"version":0
+	},
+	{
+		"actionName":"list",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"科研进展",
+		"needToQuery":true,
+		"paramsString":"[max, offset]",
+		"updateTime":1563432964000,
 		"version":0
 	},
 	{
@@ -126,37 +166,17 @@
 		"keyString":"管理的项目",
 		"needToQuery":true,
 		"paramsString":"[max, offset]",
-		"updateTime":1563616750000,
+		"updateTime":1562913022000,
 		"version":0
 	},
 	{
 		"actionName":"list",
 		"controllerName":"home",
 		"isSQL":false,
-		"keyString":"课堂教学",
+		"keyString":"进展统计",
 		"needToQuery":true,
 		"paramsString":"[max, offset]",
-		"updateTime":1563616783000,
-		"version":0
-	},
-	{
-		"actionName":"list",
-		"controllerName":"home",
-		"isSQL":false,
-		"keyString":"课程作业",
-		"needToQuery":true,
-		"paramsString":"[max, offset]",
-		"updateTime":1563616837000,
-		"version":0
-	},
-	{
-		"actionName":"list",
-		"controllerName":"home",
-		"isSQL":false,
-		"keyString":"领导的项目",
-		"needToQuery":true,
-		"paramsString":"[max, offset]",
-		"updateTime":1563616780000,
+		"updateTime":1563432965000,
 		"version":0
 	},
 	{

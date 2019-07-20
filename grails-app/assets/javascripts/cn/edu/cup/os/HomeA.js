@@ -1,14 +1,36 @@
 bootStrapPaginationSetting.identifier = "Home"
 bootStrapPaginationSetting.controller = "home"
+bootStrapPaginationSetting.appendFunction = "appendParamsBootStrap";
 //bootStrapPaginationSetting.defaultPageSize = 5	//设置缺省的页长度
 
-var tabs登录后Div;
+var tabs登陆后Div;
 
 $(function(){
     console.info(document.title + "加载了...")
-    tabs登录后Div = $("#tabs登录后Div");
-    setupTabsBootStrap(tabs登录后Div);
+    tabs登陆后Div = $("#tabs登陆后Div");
+    setupTabsBootStrap(tabs登陆后Div);
 })
+
+/*
+* 查询--需要各个页面自定义
+* */
+function queryStatementBootStrap() {
+    var keyString = document.getElementById("keyString");
+    console.info("查询..." + keyString.value);
+    var title = getCurrentTabTitle(tabs登陆后Div);
+    sessionStorage.setItem("filter" + document.title, title);
+    sessionStorage.setItem("keyString" + document.title, keyString.value);
+    location.reload();
+}
+
+/*
+* 清除过滤条件
+* */
+function clearFilterBootStrap() {
+    sessionStorage.setItem("filter" + document.title, false)
+    $("#currentFilter").html("")
+    location.reload();
+}
 
 
 /*
@@ -19,11 +41,15 @@ function appendParamsBootStrap(title) {
     var append = ""
     var filter = readStorage("filter" + document.title, "false");
     var keyString = readStorage("keyString" + document.title, "");
-    switch (filter) {
-        case "like":
-            append = "&like=" + keyString;
-            $("#currentFilter登录后").html(keyString)
-            break
+
+    console.info("当前关键字：" + keyString);
+
+    if (filter == title) {
+        // 更新显示
+        $("#currentFilter").html(filter + "." + keyString)
+        append = "&like=" + keyString;
+        //console.info("更新了吗？.....")
     }
+
     return  append;
 }
