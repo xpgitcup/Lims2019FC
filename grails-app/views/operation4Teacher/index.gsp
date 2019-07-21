@@ -29,9 +29,7 @@
 
 <body>
 <div class="container-fluid">
-    <div class="row">
-        <g:render template="teacherPanel"/>
-    </div>
+    <g:render template="teacherPanel"/>
 </div>
 </body>
 </html>

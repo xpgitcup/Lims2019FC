@@ -223,10 +223,14 @@ class DatabaseController {
     }
 
     def importTeamMember() {
+
+        def controller = params.next
+
         def logFileName = "${commonService.webRootPath}/config/out/db_team_members.log"
         def lofFile = new File(logFileName)
         def printWriter = new PrintWriter(lofFile, "utf-8")
 
+        theSQL = Sql.newInstance(url, username, password, driverClassName);
         def qstring = "select a.team_members_id, d.name, c.code from team_person a, team b, person c, thing d where a.team_members_id=b.id and a.person_id=c.id and b.thing_id=d.id"
         def mlist = []
         theSQL.eachRow(qstring) { e ->
@@ -260,12 +264,12 @@ class DatabaseController {
                 if (!(t.members.contains(e.person))) {
                     t.members.add(e.person)
                     teamService.save(t)
-                    println("${t.members}")
+                    println("${t.members}加入...")
                 }
             }
         }
 
-        redirect(action: "index")
+        redirect(action: "index", controller: controller)
     }
 
     def importTeam() {

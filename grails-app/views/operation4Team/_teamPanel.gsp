@@ -7,6 +7,13 @@
             </span>
         </li>
     </g:if>
+    <g:if test="${cn.edu.cup.lims.Team.count() > 1}">
+        <li>
+            <span class="form-inline">
+                <a href="database/importTeamMember?next=operation4Team">导入队员</a>
+            </span>
+        </li>
+    </g:if>
     <li>
         <span class="form-inline">
             筛选:<div id="currentFilter" class="text-danger">${keyString}</div>

@@ -276,7 +276,16 @@ class HomeController extends CommonController {
             }
             systemCommonService.updateSystemStatus(request, params)
 
-            redirect(uri: "/home")
+            switch (session.userStatus) {
+                case "Teacher":
+                    redirect(uri: "/operation4Teacher")
+                    break
+                case "Student":
+                    redirect(uri: "/operation4Student")
+                    break
+                default:
+                    redirect(uri: "/home")
+            }
             //redirect(uri: "/")
         } else {
             flash.message = "用户名或密码错误！"
@@ -291,6 +300,17 @@ class HomeController extends CommonController {
 
     def loginUI() {}
 
-    def index() {}
+    def index() {
+        switch (session.userStatus) {
+            case "Teacher":
+                redirect(uri: "/operation4Teacher")
+                break
+            case "Student":
+                redirect(uri: "/operation4Student")
+                break
+            default:
+                redirect(uri: "/home")
+        }
+    }
 
 }

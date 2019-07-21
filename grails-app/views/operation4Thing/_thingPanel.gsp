@@ -7,6 +7,15 @@
             </span>
         </li>
     </g:if>
+    <g:if test="${cn.edu.cup.lims.Thing.countByRelatedPersonsIsEmpty() > 1}">
+        <li>
+            <span class="form-inline">
+                ${cn.edu.cup.lims.Thing.countByRelatedPersonsIsEmpty()}
+                ${cn.edu.cup.lims.Thing.findAllByRelatedPersonsIsEmpty()}
+                <a href="operation4Thing/updateRelatedPersons">更新项目相关人员</a>
+            </span>
+        </li>
+    </g:if>
     <li>
         <span class="form-inline">
             筛选:<div id="currentFilter" class="text-danger">${keyString}</div>
@@ -70,13 +79,13 @@
                 <li class="page-item">
                     <a class="page-link" href="javascript: loadPreviousPageBootStrap('科研项目')">&laquo</a>
                 </li>
-                <li class="page-item" >
+                <li class="page-item">
                     <a class="page-link" id="currentPageThing科研项目"></a>
                 </li>
-                <li class="page-item" >
+                <li class="page-item">
                     <a class="page-link">/</a>
                 </li>
-                <li class="page-item" >
+                <li class="page-item">
                     <a class="page-link" id="totalPageThing科研项目"></a>
                 </li>
                 <li>
@@ -113,13 +122,13 @@
                 <li class="page-item">
                     <a class="page-link" href="javascript: loadPreviousPageBootStrap('教学任务')">&laquo</a>
                 </li>
-                <li class="page-item" >
+                <li class="page-item">
                     <a class="page-link" id="currentPageThing教学任务"></a>
                 </li>
-                <li class="page-item" >
+                <li class="page-item">
                     <a class="page-link">/</a>
                 </li>
-                <li class="page-item" >
+                <li class="page-item">
                     <a class="page-link" id="totalPageThing教学任务"></a>
                 </li>
                 <li>
@@ -156,13 +165,13 @@
                 <li class="page-item">
                     <a class="page-link" href="javascript: loadPreviousPageBootStrap('全部科研项目')">&laquo</a>
                 </li>
-                <li class="page-item" >
+                <li class="page-item">
                     <a class="page-link" id="currentPageThing全部科研项目"></a>
                 </li>
-                <li class="page-item" >
+                <li class="page-item">
                     <a class="page-link">/</a>
                 </li>
-                <li class="page-item" >
+                <li class="page-item">
                     <a class="page-link" id="totalPageThing全部科研项目"></a>
                 </li>
                 <li>
@@ -199,13 +208,13 @@
                 <li class="page-item">
                     <a class="page-link" href="javascript: loadPreviousPageBootStrap('全部教学任务')">&laquo</a>
                 </li>
-                <li class="page-item" >
+                <li class="page-item">
                     <a class="page-link" id="currentPageThing全部教学任务"></a>
                 </li>
-                <li class="page-item" >
+                <li class="page-item">
                     <a class="page-link">/</a>
                 </li>
-                <li class="page-item" >
+                <li class="page-item">
                     <a class="page-link" id="totalPageThing全部教学任务"></a>
                 </li>
                 <li>
@@ -242,13 +251,13 @@
                 <li class="page-item">
                     <a class="page-link" href="javascript: loadPreviousPageBootStrap('所有的')">&laquo</a>
                 </li>
-                <li class="page-item" >
+                <li class="page-item">
                     <a class="page-link" id="currentPageThing所有的"></a>
                 </li>
-                <li class="page-item" >
+                <li class="page-item">
                     <a class="page-link">/</a>
                 </li>
-                <li class="page-item" >
+                <li class="page-item">
                     <a class="page-link" id="totalPageThing所有的"></a>
                 </li>
                 <li>
