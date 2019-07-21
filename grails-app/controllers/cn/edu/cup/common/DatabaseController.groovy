@@ -25,8 +25,8 @@ class DatabaseController {
     def driverClassName = "com.mysql.cj.jdbc.Driver";//    #升级到这个版本是为了适应MySQL 8.X
     def username = "sample";
     def password = "sample@chuyun";
-    def url = "jdbc:mysql://10.1.16.50:3306/lims2019dba?zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&serverTimezone=Asia/Shanghai"
-    //def url = "jdbc:mysql://localhost:3306/lims2019dba?zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&serverTimezone=Asia/Shanghai"
+    //def url = "jdbc:mysql://10.1.16.50:3306/lims2019dba?zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&serverTimezone=Asia/Shanghai"
+    def url = "jdbc:mysql://localhost:3306/lims2019dba?zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&serverTimezone=Asia/Shanghai"
 
     def importSystemStatus() {
         def logFileName = "${commonService.webRootPath}/config/out/db_status.log"
