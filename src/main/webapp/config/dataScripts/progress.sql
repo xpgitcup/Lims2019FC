@@ -11,7 +11,7 @@
  Target Server Version : 50627
  File Encoding         : 65001
 
- Date: 21/07/2019 18:01:41
+ Date: 22/07/2019 14:31:19
 */
 
 SET NAMES utf8mb4;
@@ -38,7 +38,7 @@ CREATE TABLE `progress`  (
   CONSTRAINT `FK3gfg3qw93o00sgybjd3nuy1v0` FOREIGN KEY (`contributor_id`) REFERENCES `person` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK9rdflrh05eu15ao9mldbr2eqg` FOREIGN KEY (`team_id`) REFERENCES `team` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FKaegt6dto4gjcsiy0xhfy491dx` FOREIGN KEY (`prev_progress_id`) REFERENCES `progress` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 652 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 659 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of progress
@@ -694,5 +694,12 @@ INSERT INTO `progress` VALUES (648, 0, '现场流速', 5, 626, NULL, '流速换�
 INSERT INTO `progress` VALUES (649, 0, '最新报告', 5, 648, NULL, '0716冲蚀项目研究报告-总.docx', 75, '2019-07-16 14:14:00');
 INSERT INTO `progress` VALUES (650, 0, '最新报告', 5, 626, NULL, '0715冲蚀项目研究报告-总-新.docx', 69, '2019-07-16 14:21:00');
 INSERT INTO `progress` VALUES (651, 0, '腐蚀冲蚀协同资料整理', 5, 650, NULL, '冲蚀腐蚀协同作用调研.docx', 69, '2019-07-16 14:23:00');
+INSERT INTO `progress` VALUES (652, 0, '采集气管道模拟ppt', 70, 639, NULL, '马必东采、集气管线积液模拟情况.pptx', 97, '2019-07-22 09:26:00');
+INSERT INTO `progress` VALUES (653, 0, '论文大纲终版', 3, 645, NULL, '论文大纲.docx', 80, '2019-07-22 09:29:00');
+INSERT INTO `progress` VALUES (654, 0, '材料参数', 5, 651, NULL, '管材参数.xlsx', 75, '2019-07-22 09:37:00');
+INSERT INTO `progress` VALUES (655, 0, '材料参数', 5, 654, NULL, '中外钢号对照 材料性能表 硬度与强度近似换算.xls', 75, '2019-07-22 09:38:00');
+INSERT INTO `progress` VALUES (656, 0, '7.22 崔雪萌 规范总结', 3, NULL, NULL, '7.22 崔雪萌 多气合采规范总结.pptx', 93, '2019-07-22 09:54:00');
+INSERT INTO `progress` VALUES (657, 0, '需求', 68, 644, NULL, '需求设计书.docx', 94, '2019-07-22 09:58:00');
+INSERT INTO `progress` VALUES (658, 0, '临兴区块井场', 3, 653, NULL, '临兴区块.xlsx', 80, '2019-07-22 10:33:00');
 
 SET FOREIGN_KEY_CHECKS = 1;
