@@ -15,8 +15,8 @@ class QueryStatementA {
 
     static mapping = {
         sort('controllerName')
-        sort('actionName')
         sort('keyString')
+        sort('actionName')
     }
 
     static constraints = {

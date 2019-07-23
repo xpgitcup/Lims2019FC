@@ -2,6 +2,7 @@ package cn.edu.cup.operation
 
 import cn.edu.cup.basic.GroupInfo
 import cn.edu.cup.lims.ProgressController
+import cn.edu.cup.lims.Team
 import cn.edu.cup.lims.ThingType
 
 class Operation4TeacherController extends ProgressController {
@@ -28,8 +29,12 @@ class Operation4TeacherController extends ProgressController {
                     params.thingTypeList = ThingType.findByName("科研项目").relatedThingTypeList()
                     break
                 case "参与的项目":
-                    params.myself = myself
-                    params.thingTypeList = ThingType.findByName("科研项目").relatedThingTypeList()
+                    params.myself = myself.id
+                    def idlist = []
+                    ThingType.findByName("科研项目").relatedThingTypeList().each { e->
+                        idlist.add(e.id)
+                    }
+                    params.thingTypeList = idlist
                     break
                 case "研究生论文":
                     params.myself = myself
@@ -37,11 +42,28 @@ class Operation4TeacherController extends ProgressController {
                     break
                 case "课堂教学":
                     params.myself = myself
-                    params.thingTypeList = ThingType.findByName("科研项目").relatedThingTypeList()
+                    params.thingTypeList = ThingType.findByName("课程设计").relatedThingTypeList()
                     break
             }
         }
     }
+
+    protected def processResult(result, params) {
+        switch (params.key) {
+            case "参与的项目":
+                def teams = []
+                println("结果：${result}")
+                result.objectList.each { e ->
+                    println("查找 ${e}")
+                    teams.add(Team.get(e.team_members_id))
+                }
+                println("转换后：${teams}")
+                result.objectList = teams
+                break
+        }
+        return result
+    }
+
 
     def index() {}
 }

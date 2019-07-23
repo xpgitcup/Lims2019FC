@@ -16,11 +16,6 @@
             <td>${cn.edu.cup.lims.Team.countByThing(item)}</td>
             <td>
                 <g:if test="${cn.edu.cup.lims.Team.countByThing(item) > 0}">
-                    ${cn.edu.cup.lims.Progress.countByTeamInList(cn.edu.cup.lims.Team.findAllByThing(item))}
-                </g:if>
-            </td>
-            <td>
-                <g:if test="${cn.edu.cup.lims.Team.countByThing(item) > 0}">
                     ${cn.edu.cup.lims.Progress.findByTeamInList(cn.edu.cup.lims.Team.findAllByThing(item), [sort: "regDate", order: "desc"])}
                 </g:if>
             </td>

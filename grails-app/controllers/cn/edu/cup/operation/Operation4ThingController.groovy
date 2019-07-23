@@ -66,6 +66,12 @@ class Operation4ThingController extends ThingController {
             case "教学任务":
                 params.thingTypeList = ThingType.findByName("教学任务").relatedThingTypeList()
                 break
+            case "全部科研项目":
+                params.thingTypeList = ThingType.findByName("科研项目").relatedThingTypeList()
+                break
+            case "全部教学任务":
+                params.thingTypeList = ThingType.findByName("教学任务").relatedThingTypeList()
+                break
         }
     }
 

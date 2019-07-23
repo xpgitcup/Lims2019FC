@@ -3,16 +3,6 @@
 		"actionName":"count",
 		"controllerName":"home",
 		"isSQL":false,
-		"keyString":"参与的项目",
-		"needToQuery":true,
-		"paramsString":"[]",
-		"updateTime":1563616782000,
-		"version":0
-	},
-	{
-		"actionName":"count",
-		"controllerName":"home",
-		"isSQL":false,
 		"keyString":"在研项目",
 		"needToQuery":true,
 		"paramsString":"[]",
@@ -33,60 +23,10 @@
 		"actionName":"count",
 		"controllerName":"home",
 		"isSQL":false,
-		"keyString":"研究生论文",
-		"needToQuery":true,
-		"paramsString":"[]",
-		"updateTime":1563616782000,
-		"version":0
-	},
-	{
-		"actionName":"count",
-		"controllerName":"home",
-		"isSQL":false,
-		"keyString":"管理的项目",
-		"needToQuery":true,
-		"paramsString":"[]",
-		"updateTime":1563616750000,
-		"version":0
-	},
-	{
-		"actionName":"count",
-		"controllerName":"home",
-		"isSQL":false,
-		"keyString":"课堂教学",
-		"needToQuery":true,
-		"paramsString":"[]",
-		"updateTime":1563616783000,
-		"version":0
-	},
-	{
-		"actionName":"count",
-		"controllerName":"home",
-		"isSQL":false,
 		"keyString":"课程作业",
 		"needToQuery":true,
 		"paramsString":"[]",
 		"updateTime":1563616837000,
-		"version":0
-	},
-	{
-		"actionName":"count",
-		"controllerName":"home",
-		"isSQL":false,
-		"keyString":"领导的项目",
-		"needToQuery":true,
-		"paramsString":"[]",
-		"updateTime":1563616780000,
-		"version":0
-	},
-	{
-		"actionName":"list",
-		"controllerName":"home",
-		"isSQL":false,
-		"keyString":"参与的项目",
-		"needToQuery":true,
-		"paramsString":"[max, offset]",
-		"updateTime":1563616782000,
 		"version":0
 	},
 	{
@@ -113,50 +53,10 @@
 		"actionName":"list",
 		"controllerName":"home",
 		"isSQL":false,
-		"keyString":"研究生论文",
-		"needToQuery":true,
-		"paramsString":"[max, offset]",
-		"updateTime":1563616782000,
-		"version":0
-	},
-	{
-		"actionName":"list",
-		"controllerName":"home",
-		"isSQL":false,
-		"keyString":"管理的项目",
-		"needToQuery":true,
-		"paramsString":"[max, offset]",
-		"updateTime":1563616750000,
-		"version":0
-	},
-	{
-		"actionName":"list",
-		"controllerName":"home",
-		"isSQL":false,
-		"keyString":"课堂教学",
-		"needToQuery":true,
-		"paramsString":"[max, offset]",
-		"updateTime":1563616783000,
-		"version":0
-	},
-	{
-		"actionName":"list",
-		"controllerName":"home",
-		"isSQL":false,
 		"keyString":"课程作业",
 		"needToQuery":true,
 		"paramsString":"[max, offset]",
 		"updateTime":1563616837000,
-		"version":0
-	},
-	{
-		"actionName":"list",
-		"controllerName":"home",
-		"isSQL":false,
-		"keyString":"领导的项目",
-		"needToQuery":true,
-		"paramsString":"[max, offset]",
-		"updateTime":1563616780000,
 		"version":0
 	},
 	{
@@ -710,6 +610,121 @@
 		"updateTime":1563089815000,
 		"version":2,
 		"viewName":"listSystemUser"
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4Teacher",
+		"isSQL":true,
+		"keyString":"参与的项目",
+		"needToQuery":true,
+		"paramsString":"[myself, thingTypeList]",
+		"queryString":"SELECT count(*) FROM team_person\r\nINNER JOIN team ON team_person.team_members_id = team.id\r\nINNER JOIN thing ON team.thing_id = thing.id\r\nINNER JOIN thing_type ON thing.thing_type_id = thing_type.id\r\nWHERE team_person.person_id=myself  AND\r\nthing.thing_type_id IN (thingTypeList)",
+		"updateTime":1563868781000,
+		"version":1
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4Teacher",
+		"isSQL":false,
+		"keyString":"研究生论文",
+		"needToQuery":true,
+		"paramsString":"[myself, thingTypeList]",
+		"queryString":"select count(*) from Thing thing\r\nwhere \r\nthing.thingType in (:thingTypeList)\r\nand\r\nthing.sponsor = :myself",
+		"updateTime":1563868782000,
+		"version":1
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4Teacher",
+		"isSQL":false,
+		"keyString":"管理的项目",
+		"needToQuery":true,
+		"paramsString":"[leaders, thingTypeList]",
+		"queryString":"select count(*) from Thing thing\r\nwhere \r\nthing.thingType in (:thingTypeList)\r\nand\r\nthing.sponsor in (:leaders)",
+		"updateTime":1563869411000,
+		"version":2
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4Teacher",
+		"isSQL":false,
+		"keyString":"课堂教学",
+		"needToQuery":true,
+		"paramsString":"[myself, thingTypeList]",
+		"queryString":"select count(*) from Thing thing\r\nwhere \r\nthing.thingType in (:thingTypeList)\r\nand\r\nthing.sponsor = :myself",
+		"updateTime":1563868782000,
+		"version":1
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4Teacher",
+		"isSQL":false,
+		"keyString":"领导的项目",
+		"needToQuery":true,
+		"paramsString":"[myself, thingTypeList]",
+		"queryString":"select count(*) from Team team\r\nwhere \r\nteam.thing.thingType in (:thingTypeList)\r\nand\r\nteam.leader = :myself",
+		"updateTime":1563868780000,
+		"version":1
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Teacher",
+		"isSQL":true,
+		"keyString":"参与的项目",
+		"needToQuery":true,
+		"paramsString":"[max, myself, offset, thingTypeList]",
+		"queryString":"SELECT team_person.team_members_id\r\nFROM team_person INNER JOIN team ON team_person.team_members_id = team.id \r\nINNER JOIN thing ON team.thing_id = thing.id\r\nINNER JOIN thing_type ON thing.thing_type_id = thing_type.id\r\nWHERE team_person.person_id=myself AND\r\nthing.thing_type_id IN (thingTypeList)\r\nlimit %d,%d",
+		"updateTime":1563868781000,
+		"version":2,
+		"viewName":"listTeam4Teacher"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Teacher",
+		"isSQL":false,
+		"keyString":"研究生论文",
+		"needToQuery":true,
+		"paramsString":"[max, myself, offset, thingTypeList]",
+		"queryString":"from Thing thing\r\nwhere \r\nthing.sponsor = :myself\r\nand\r\nthing.thingType in (:thingTypeList)",
+		"updateTime":1563868782000,
+		"version":3,
+		"viewName":"listCourse4Teacher"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Teacher",
+		"isSQL":false,
+		"keyString":"管理的项目",
+		"needToQuery":true,
+		"paramsString":"[leaders, max, offset, thingTypeList]",
+		"queryString":"from Thing thing\r\nwhere \r\nthing.thingType in (:thingTypeList)\r\nand\r\nthing.sponsor in (:leaders)\r\norder by thing.startDate desc",
+		"updateTime":1563869411000,
+		"version":3,
+		"viewName":"listThing4Teacher"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Teacher",
+		"isSQL":false,
+		"keyString":"课堂教学",
+		"needToQuery":true,
+		"paramsString":"[max, myself, offset, thingTypeList]",
+		"queryString":"from Thing thing\r\nwhere \r\nthing.sponsor = :myself\r\nand\r\nthing.thingType in (:thingTypeList)",
+		"updateTime":1563868782000,
+		"version":1,
+		"viewName":"listCourse4Teacher"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Teacher",
+		"isSQL":false,
+		"keyString":"领导的项目",
+		"needToQuery":true,
+		"paramsString":"[max, myself, offset, thingTypeList]",
+		"queryString":"from Team team\r\nwhere \r\nteam.thing.thingType in (:thingTypeList)\r\nand\r\nteam.leader = :myself\r\norder by team.thing.startDate desc",
+		"updateTime":1563868780000,
+		"version":2,
+		"viewName":"listTeam4Teacher"
 	},
 	{
 		"actionName":"count",
