@@ -3,6 +3,16 @@
 		"actionName":"count",
 		"controllerName":"home",
 		"isSQL":false,
+		"keyString":"参与的项目",
+		"needToQuery":true,
+		"paramsString":"[]",
+		"updateTime":1563616782000,
+		"version":0
+	},
+	{
+		"actionName":"count",
+		"controllerName":"home",
+		"isSQL":false,
 		"keyString":"在研项目",
 		"needToQuery":true,
 		"paramsString":"[]",
@@ -33,6 +43,16 @@
 		"actionName":"count",
 		"controllerName":"home",
 		"isSQL":false,
+		"keyString":"管理的项目",
+		"needToQuery":true,
+		"paramsString":"[]",
+		"updateTime":1563616750000,
+		"version":0
+	},
+	{
+		"actionName":"count",
+		"controllerName":"home",
+		"isSQL":false,
 		"keyString":"课堂教学",
 		"needToQuery":true,
 		"paramsString":"[]",
@@ -47,6 +67,26 @@
 		"needToQuery":true,
 		"paramsString":"[]",
 		"updateTime":1563616837000,
+		"version":0
+	},
+	{
+		"actionName":"count",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"领导的项目",
+		"needToQuery":true,
+		"paramsString":"[]",
+		"updateTime":1563616780000,
+		"version":0
+	},
+	{
+		"actionName":"list",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"参与的项目",
+		"needToQuery":true,
+		"paramsString":"[max, offset]",
+		"updateTime":1563616782000,
 		"version":0
 	},
 	{
@@ -83,6 +123,16 @@
 		"actionName":"list",
 		"controllerName":"home",
 		"isSQL":false,
+		"keyString":"管理的项目",
+		"needToQuery":true,
+		"paramsString":"[max, offset]",
+		"updateTime":1563616750000,
+		"version":0
+	},
+	{
+		"actionName":"list",
+		"controllerName":"home",
+		"isSQL":false,
 		"keyString":"课堂教学",
 		"needToQuery":true,
 		"paramsString":"[max, offset]",
@@ -97,6 +147,16 @@
 		"needToQuery":true,
 		"paramsString":"[max, offset]",
 		"updateTime":1563616837000,
+		"version":0
+	},
+	{
+		"actionName":"list",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"领导的项目",
+		"needToQuery":true,
+		"paramsString":"[max, offset]",
+		"updateTime":1563616780000,
 		"version":0
 	},
 	{
@@ -680,9 +740,9 @@
 		"keyString":"管理的项目",
 		"needToQuery":true,
 		"paramsString":"[leaders, thingTypeList]",
-		"queryString":"select count(*) from Thing thing\r\nwhere \r\nthing.thingType in (:thingTypeList)\r\nand\r\nthing.sponsor in (:leaders)",
+		"queryString":"select count(*) from Thing thing\r\nwhere （thing.thingType in (:thingTypeList)）\r\nand\r\n(thing.sponsor in (:leaders))",
 		"updateTime":1563869411000,
-		"version":2
+		"version":1
 	},
 	{
 		"actionName":"count",
@@ -702,9 +762,9 @@
 		"keyString":"领导的项目",
 		"needToQuery":true,
 		"paramsString":"[myself, thingTypeList]",
-		"queryString":"select count(*) from Team team\r\nwhere \r\nteam.thing.thingType in (:thingTypeList)\r\nand\r\nteam.leader = :myself",
+		"queryString":"select count(*) from Teacher teacher",
 		"updateTime":1563868780000,
-		"version":1
+		"version":0
 	},
 	{
 		"actionName":"list",
@@ -737,9 +797,9 @@
 		"keyString":"管理的项目",
 		"needToQuery":true,
 		"paramsString":"[leaders, max, offset, thingTypeList]",
-		"queryString":"from Thing thing\r\nwhere \r\nthing.thingType in (:thingTypeList)\r\nand\r\nthing.sponsor in (:leaders)\r\norder by thing.startDate desc",
+		"queryString":"from Thing thing\r\nwhere （thing.thingType in (:thingTypeList)）\r\nand\r\n(thing.sponsor in (:leaders))",
 		"updateTime":1563869411000,
-		"version":3,
+		"version":1,
 		"viewName":"listThing4Teacher"
 	},
 	{
@@ -761,10 +821,10 @@
 		"keyString":"领导的项目",
 		"needToQuery":true,
 		"paramsString":"[max, myself, offset, thingTypeList]",
-		"queryString":"from Team team\r\nwhere \r\nteam.thing.thingType in (:thingTypeList)\r\nand\r\nteam.leader = :myself\r\norder by team.thing.startDate desc",
+		"queryString":"from Teacher teacher",
 		"updateTime":1563868780000,
-		"version":2,
-		"viewName":"listTeam4Teacher"
+		"version":0,
+		"viewName":"listTeacher"
 	},
 	{
 		"actionName":"count",

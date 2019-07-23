@@ -3,6 +3,16 @@
 		"actionName":"count",
 		"controllerName":"home",
 		"isSQL":false,
+		"keyString":"参与的项目",
+		"needToQuery":true,
+		"paramsString":"[]",
+		"updateTime":1563616782000,
+		"version":0
+	},
+	{
+		"actionName":"count",
+		"controllerName":"home",
+		"isSQL":false,
 		"keyString":"在研项目",
 		"needToQuery":true,
 		"paramsString":"[]",
@@ -47,6 +57,16 @@
 		"needToQuery":true,
 		"paramsString":"[]",
 		"updateTime":1563616837000,
+		"version":0
+	},
+	{
+		"actionName":"list",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"参与的项目",
+		"needToQuery":true,
+		"paramsString":"[max, offset]",
+		"updateTime":1563616782000,
 		"version":0
 	},
 	{
