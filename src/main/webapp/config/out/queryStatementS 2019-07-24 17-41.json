@@ -1,26 +1,203 @@
 [
 	{
 		"actionName":"count",
-		"controllerName":"Home",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"人员贡献",
+		"needToQuery":true,
+		"paramsString":"[]",
+		"updateTime":1563960926000,
+		"version":0
+	},
+	{
+		"actionName":"count",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"全部教学",
+		"needToQuery":true,
+		"paramsString":"[]",
+		"updateTime":1563960518000,
+		"version":0
+	},
+	{
+		"actionName":"count",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"全部项目",
+		"needToQuery":true,
+		"paramsString":"[]",
+		"updateTime":1563960517000,
+		"version":0
+	},
+	{
+		"actionName":"count",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"当前教学",
+		"needToQuery":true,
+		"paramsString":"[]",
+		"updateTime":1563960517000,
+		"version":0
+	},
+	{
+		"actionName":"count",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"教学进展",
+		"needToQuery":true,
+		"paramsString":"[]",
+		"updateTime":1563960925000,
+		"version":0
+	},
+	{
+		"actionName":"count",
+		"controllerName":"home",
 		"isSQL":false,
 		"keyString":"整体进展",
 		"needToQuery":true,
 		"paramsString":"[]",
-		"queryString":"select count(*) from Progress progress",
-		"updateTime":1563961602000,
-		"version":1
+		"updateTime":1563960924000,
+		"version":0
+	},
+	{
+		"actionName":"count",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"登录情况",
+		"needToQuery":true,
+		"paramsString":"[]",
+		"updateTime":1563960926000,
+		"version":0
+	},
+	{
+		"actionName":"count",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"登录统计",
+		"needToQuery":true,
+		"paramsString":"[]",
+		"updateTime":1563960927000,
+		"version":0
+	},
+	{
+		"actionName":"count",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"科研进展",
+		"needToQuery":true,
+		"paramsString":"[]",
+		"updateTime":1563960519000,
+		"version":0
+	},
+	{
+		"actionName":"count",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"项目进展",
+		"needToQuery":true,
+		"paramsString":"[]",
+		"updateTime":1563960925000,
+		"version":0
 	},
 	{
 		"actionName":"list",
-		"controllerName":"Home",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"人员贡献",
+		"needToQuery":true,
+		"paramsString":"[max, offset]",
+		"updateTime":1563960926000,
+		"version":0
+	},
+	{
+		"actionName":"list",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"全部教学",
+		"needToQuery":true,
+		"paramsString":"[max, offset]",
+		"updateTime":1563960518000,
+		"version":0
+	},
+	{
+		"actionName":"list",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"全部项目",
+		"needToQuery":true,
+		"paramsString":"[max, offset]",
+		"updateTime":1563960517000,
+		"version":0
+	},
+	{
+		"actionName":"list",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"当前教学",
+		"needToQuery":true,
+		"paramsString":"[max, offset]",
+		"updateTime":1563960517000,
+		"version":0
+	},
+	{
+		"actionName":"list",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"教学进展",
+		"needToQuery":true,
+		"paramsString":"[max, offset]",
+		"updateTime":1563960925000,
+		"version":0
+	},
+	{
+		"actionName":"list",
+		"controllerName":"home",
 		"isSQL":false,
 		"keyString":"整体进展",
 		"needToQuery":true,
 		"paramsString":"[max, offset]",
-		"queryString":"from Progress progress order by regDate desc",
-		"updateTime":1563961603000,
-		"version":1,
-		"viewName":"listProgressHome"
+		"updateTime":1563960924000,
+		"version":0
+	},
+	{
+		"actionName":"list",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"登录情况",
+		"needToQuery":true,
+		"paramsString":"[max, offset]",
+		"updateTime":1563960926000,
+		"version":0
+	},
+	{
+		"actionName":"list",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"登录统计",
+		"needToQuery":true,
+		"paramsString":"[max, offset]",
+		"updateTime":1563960927000,
+		"version":0
+	},
+	{
+		"actionName":"list",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"科研进展",
+		"needToQuery":true,
+		"paramsString":"[max, offset]",
+		"updateTime":1563960519000,
+		"version":0
+	},
+	{
+		"actionName":"list",
+		"controllerName":"home",
+		"isSQL":false,
+		"keyString":"项目进展",
+		"needToQuery":true,
+		"paramsString":"[max, offset]",
+		"updateTime":1563960925000,
+		"version":0
 	},
 	{
 		"actionName":"count",

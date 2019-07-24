@@ -1,8 +1,10 @@
 <!-- 设置查询 -->
 <ul id="query登录前UL" class="nav navbar bg-light">
-    <li><span class="form-inline">筛选:<div id="currentFilter登录前" class="text-danger">${keyString}</div></span></li>
     <li>
-        <a href="javascript: clearFilterBootStrap()">清除筛选</a>
+        <span class="form-inline">
+            筛选:<div id="currentFilter" class="text-danger">${keyString}</div>
+            <a href="javascript: clearFilterBootStrap()">清除</a>
+        </span>
     </li>
     <li>
         <g:form onsubmit="return queryStatementBootStrap()">
@@ -18,32 +20,24 @@
     <!-- 选项卡 -->
     <ul class="nav nav-tabs" role="tablist">
         <li class="nav-item">
-            <a href="#div在研项目" class="nav-link" data-toggle="tab">
-                在研项目
+            <a href="#div整体进展" class="nav-link" data-toggle="tab">
+                整体进展
             </a>
         </li><li class="nav-item">
-        <a href="#div全部项目" class="nav-link" data-toggle="tab">
-            全部项目
-        </a>
-    </li><li class="nav-item">
-        <a href="#div当前教学" class="nav-link" data-toggle="tab">
-            当前教学
-        </a>
-    </li><li class="nav-item">
-        <a href="#div全部教学" class="nav-link" data-toggle="tab">
-            全部教学
-        </a>
-    </li><li class="nav-item">
-        <a href="#div科研进展" class="nav-link" data-toggle="tab">
-            科研进展
+        <a href="#div项目进展" class="nav-link" data-toggle="tab">
+            项目进展
         </a>
     </li><li class="nav-item">
         <a href="#div教学进展" class="nav-link" data-toggle="tab">
             教学进展
         </a>
     </li><li class="nav-item">
-        <a href="#div进展统计" class="nav-link" data-toggle="tab">
-            进展统计
+        <a href="#div人员贡献" class="nav-link" data-toggle="tab">
+            人员贡献
+        </a>
+    </li><li class="nav-item">
+        <a href="#div登录情况" class="nav-link" data-toggle="tab">
+            登录情况
         </a>
     </li><li class="nav-item">
         <a href="#div登录统计" class="nav-link" data-toggle="tab">
@@ -54,10 +48,10 @@
 
     <!-- 具体卡片-->
     <div class="tab-content">
-        <!--具体的在研项目标签-->
-        <div id="div在研项目" class="tab-pane">
-            <div id="display在研项目Div">
-                <br> 在这里显示在研项目所需的信息</br>
+        <!--具体的整体进展标签-->
+        <div id="div整体进展" class="tab-pane">
+            <div id="display整体进展Div">
+                <br> 在这里显示整体进展所需的信息</br>
             </div>
             <!-- 这里是分页设置-->
             <ul class="pagination pagination-sm">
@@ -65,42 +59,42 @@
                     <a class="page-link">页长</a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" id="pageSizeHome在研项目"></a>
+                    <a class="page-link" id="pageSizeHome整体进展"></a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" href="javascript: loadFirstPageBootStrap('在研项目')">首页</a>
+                    <a class="page-link" href="javascript: loadFirstPageBootStrap('整体进展')">首页</a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" href="javascript: loadPreviousPageBootStrap('在研项目')">&laquo</a>
+                    <a class="page-link" href="javascript: loadPreviousPageBootStrap('整体进展')">&laquo</a>
                 </li>
                 <li class="page-item" >
-                    <a class="page-link" id="currentPageHome在研项目"></a>
+                    <a class="page-link" id="currentPageHome整体进展"></a>
                 </li>
                 <li class="page-item" >
                     <a class="page-link">/</a>
                 </li>
                 <li class="page-item" >
-                    <a class="page-link" id="totalPageHome在研项目"></a>
+                    <a class="page-link" id="totalPageHome整体进展"></a>
                 </li>
                 <li>
-                    <a class="page-link" href="javascript: loadNextPageBootStrap('在研项目')">&raquo</a>
+                    <a class="page-link" href="javascript: loadNextPageBootStrap('整体进展')">&raquo</a>
                 </li>
                 <li>
-                    <a class="page-link" href="javascript: loadLastPageBootStrap('在研项目')">尾页</a>
+                    <a class="page-link" href="javascript: loadLastPageBootStrap('整体进展')">尾页</a>
                 </li>
                 <li class="page-item">
                     <a class="page-link">总记录数</a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" id="totalCountHome在研项目"></a>
+                    <a class="page-link" id="totalCountHome整体进展"></a>
                 </li>
             </ul>
         </div>
-        <!--具体的在研项目标签结束======-->
-        <!--具体的全部项目标签-->
-        <div id="div全部项目" class="tab-pane">
-            <div id="display全部项目Div">
-                <br> 在这里显示全部项目所需的信息</br>
+        <!--具体的整体进展标签结束======-->
+        <!--具体的项目进展标签-->
+        <div id="div项目进展" class="tab-pane">
+            <div id="display项目进展Div">
+                <br> 在这里显示项目进展所需的信息</br>
             </div>
             <!-- 这里是分页设置-->
             <ul class="pagination pagination-sm">
@@ -108,167 +102,38 @@
                     <a class="page-link">页长</a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" id="pageSizeHome全部项目"></a>
+                    <a class="page-link" id="pageSizeHome项目进展"></a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" href="javascript: loadFirstPageBootStrap('全部项目')">首页</a>
+                    <a class="page-link" href="javascript: loadFirstPageBootStrap('项目进展')">首页</a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" href="javascript: loadPreviousPageBootStrap('全部项目')">&laquo</a>
+                    <a class="page-link" href="javascript: loadPreviousPageBootStrap('项目进展')">&laquo</a>
                 </li>
                 <li class="page-item" >
-                    <a class="page-link" id="currentPageHome全部项目"></a>
-                </li>
-                <li class="page-item" >
-                    <a class="page-link">/</a>
-                </li>
-                <li class="page-item" >
-                    <a class="page-link" id="totalPageHome全部项目"></a>
-                </li>
-                <li>
-                    <a class="page-link" href="javascript: loadNextPageBootStrap('全部项目')">&raquo</a>
-                </li>
-                <li>
-                    <a class="page-link" href="javascript: loadLastPageBootStrap('全部项目')">尾页</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link">总记录数</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" id="totalCountHome全部项目"></a>
-                </li>
-            </ul>
-        </div>
-        <!--具体的全部项目标签结束======-->
-        <!--具体的当前教学标签-->
-        <div id="div当前教学" class="tab-pane">
-            <div id="display当前教学Div">
-                <br> 在这里显示当前教学所需的信息</br>
-            </div>
-            <!-- 这里是分页设置-->
-            <ul class="pagination pagination-sm">
-                <li class="page-item">
-                    <a class="page-link">页长</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" id="pageSizeHome当前教学"></a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="javascript: loadFirstPageBootStrap('当前教学')">首页</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="javascript: loadPreviousPageBootStrap('当前教学')">&laquo</a>
-                </li>
-                <li class="page-item" >
-                    <a class="page-link" id="currentPageHome当前教学"></a>
+                    <a class="page-link" id="currentPageHome项目进展"></a>
                 </li>
                 <li class="page-item" >
                     <a class="page-link">/</a>
                 </li>
                 <li class="page-item" >
-                    <a class="page-link" id="totalPageHome当前教学"></a>
+                    <a class="page-link" id="totalPageHome项目进展"></a>
                 </li>
                 <li>
-                    <a class="page-link" href="javascript: loadNextPageBootStrap('当前教学')">&raquo</a>
+                    <a class="page-link" href="javascript: loadNextPageBootStrap('项目进展')">&raquo</a>
                 </li>
                 <li>
-                    <a class="page-link" href="javascript: loadLastPageBootStrap('当前教学')">尾页</a>
+                    <a class="page-link" href="javascript: loadLastPageBootStrap('项目进展')">尾页</a>
                 </li>
                 <li class="page-item">
                     <a class="page-link">总记录数</a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" id="totalCountHome当前教学"></a>
+                    <a class="page-link" id="totalCountHome项目进展"></a>
                 </li>
             </ul>
         </div>
-        <!--具体的当前教学标签结束======-->
-        <!--具体的全部教学标签-->
-        <div id="div全部教学" class="tab-pane">
-            <div id="display全部教学Div">
-                <br> 在这里显示全部教学所需的信息</br>
-            </div>
-            <!-- 这里是分页设置-->
-            <ul class="pagination pagination-sm">
-                <li class="page-item">
-                    <a class="page-link">页长</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" id="pageSizeHome全部教学"></a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="javascript: loadFirstPageBootStrap('全部教学')">首页</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="javascript: loadPreviousPageBootStrap('全部教学')">&laquo</a>
-                </li>
-                <li class="page-item" >
-                    <a class="page-link" id="currentPageHome全部教学"></a>
-                </li>
-                <li class="page-item" >
-                    <a class="page-link">/</a>
-                </li>
-                <li class="page-item" >
-                    <a class="page-link" id="totalPageHome全部教学"></a>
-                </li>
-                <li>
-                    <a class="page-link" href="javascript: loadNextPageBootStrap('全部教学')">&raquo</a>
-                </li>
-                <li>
-                    <a class="page-link" href="javascript: loadLastPageBootStrap('全部教学')">尾页</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link">总记录数</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" id="totalCountHome全部教学"></a>
-                </li>
-            </ul>
-        </div>
-        <!--具体的全部教学标签结束======-->
-        <!--具体的科研进展标签-->
-        <div id="div科研进展" class="tab-pane">
-            <div id="display科研进展Div">
-                <br> 在这里显示科研进展所需的信息</br>
-            </div>
-            <!-- 这里是分页设置-->
-            <ul class="pagination pagination-sm">
-                <li class="page-item">
-                    <a class="page-link">页长</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" id="pageSizeHome科研进展"></a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="javascript: loadFirstPageBootStrap('科研进展')">首页</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="javascript: loadPreviousPageBootStrap('科研进展')">&laquo</a>
-                </li>
-                <li class="page-item" >
-                    <a class="page-link" id="currentPageHome科研进展"></a>
-                </li>
-                <li class="page-item" >
-                    <a class="page-link">/</a>
-                </li>
-                <li class="page-item" >
-                    <a class="page-link" id="totalPageHome科研进展"></a>
-                </li>
-                <li>
-                    <a class="page-link" href="javascript: loadNextPageBootStrap('科研进展')">&raquo</a>
-                </li>
-                <li>
-                    <a class="page-link" href="javascript: loadLastPageBootStrap('科研进展')">尾页</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link">总记录数</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" id="totalCountHome科研进展"></a>
-                </li>
-            </ul>
-        </div>
-        <!--具体的科研进展标签结束======-->
+        <!--具体的项目进展标签结束======-->
         <!--具体的教学进展标签-->
         <div id="div教学进展" class="tab-pane">
             <div id="display教学进展Div">
@@ -312,10 +177,10 @@
             </ul>
         </div>
         <!--具体的教学进展标签结束======-->
-        <!--具体的进展统计标签-->
-        <div id="div进展统计" class="tab-pane">
-            <div id="display进展统计Div">
-                <br> 在这里显示进展统计所需的信息</br>
+        <!--具体的人员贡献标签-->
+        <div id="div人员贡献" class="tab-pane">
+            <div id="display人员贡献Div">
+                <br> 在这里显示人员贡献所需的信息</br>
             </div>
             <!-- 这里是分页设置-->
             <ul class="pagination pagination-sm">
@@ -323,38 +188,81 @@
                     <a class="page-link">页长</a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" id="pageSizeHome进展统计"></a>
+                    <a class="page-link" id="pageSizeHome人员贡献"></a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" href="javascript: loadFirstPageBootStrap('进展统计')">首页</a>
+                    <a class="page-link" href="javascript: loadFirstPageBootStrap('人员贡献')">首页</a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" href="javascript: loadPreviousPageBootStrap('进展统计')">&laquo</a>
+                    <a class="page-link" href="javascript: loadPreviousPageBootStrap('人员贡献')">&laquo</a>
                 </li>
                 <li class="page-item" >
-                    <a class="page-link" id="currentPageHome进展统计"></a>
+                    <a class="page-link" id="currentPageHome人员贡献"></a>
                 </li>
                 <li class="page-item" >
                     <a class="page-link">/</a>
                 </li>
                 <li class="page-item" >
-                    <a class="page-link" id="totalPageHome进展统计"></a>
+                    <a class="page-link" id="totalPageHome人员贡献"></a>
                 </li>
                 <li>
-                    <a class="page-link" href="javascript: loadNextPageBootStrap('进展统计')">&raquo</a>
+                    <a class="page-link" href="javascript: loadNextPageBootStrap('人员贡献')">&raquo</a>
                 </li>
                 <li>
-                    <a class="page-link" href="javascript: loadLastPageBootStrap('进展统计')">尾页</a>
+                    <a class="page-link" href="javascript: loadLastPageBootStrap('人员贡献')">尾页</a>
                 </li>
                 <li class="page-item">
                     <a class="page-link">总记录数</a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" id="totalCountHome进展统计"></a>
+                    <a class="page-link" id="totalCountHome人员贡献"></a>
                 </li>
             </ul>
         </div>
-        <!--具体的进展统计标签结束======-->
+        <!--具体的人员贡献标签结束======-->
+        <!--具体的登录情况标签-->
+        <div id="div登录情况" class="tab-pane">
+            <div id="display登录情况Div">
+                <br> 在这里显示登录情况所需的信息</br>
+            </div>
+            <!-- 这里是分页设置-->
+            <ul class="pagination pagination-sm">
+                <li class="page-item">
+                    <a class="page-link">页长</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" id="pageSizeHome登录情况"></a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="javascript: loadFirstPageBootStrap('登录情况')">首页</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="javascript: loadPreviousPageBootStrap('登录情况')">&laquo</a>
+                </li>
+                <li class="page-item" >
+                    <a class="page-link" id="currentPageHome登录情况"></a>
+                </li>
+                <li class="page-item" >
+                    <a class="page-link">/</a>
+                </li>
+                <li class="page-item" >
+                    <a class="page-link" id="totalPageHome登录情况"></a>
+                </li>
+                <li>
+                    <a class="page-link" href="javascript: loadNextPageBootStrap('登录情况')">&raquo</a>
+                </li>
+                <li>
+                    <a class="page-link" href="javascript: loadLastPageBootStrap('登录情况')">尾页</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link">总记录数</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" id="totalCountHome登录情况"></a>
+                </li>
+            </ul>
+        </div>
+        <!--具体的登录情况标签结束======-->
         <!--具体的登录统计标签-->
         <div id="div登录统计" class="tab-pane">
             <div id="display登录统计Div">

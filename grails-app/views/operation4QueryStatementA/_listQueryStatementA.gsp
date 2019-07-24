@@ -4,9 +4,9 @@
     <thead>
     <th>id</th>
     <th width="10%">Controller</th>
-    <th>Action</th>
     <th width="7%">关键字</th>
     <th width="10%">参数</th>
+    <th>Action</th>
     <th width="45%">查询</th>
     <th>视图</th>
     <th>执行</th>
@@ -22,9 +22,9 @@
             <td>
                 <a href="operation4QueryStatementA/edit/${item.id}">${item.controllerName}</a>
             </td>
-            <td>${item.actionName}</td>
             <td>${item.keyString}</td>
             <td>${item.paramsString}</td>
+            <td>${item.actionName}</td>
             <td>
                 ${item.queryString}
             </td>

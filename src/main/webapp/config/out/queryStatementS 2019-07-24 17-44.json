@@ -6,9 +6,8 @@
 		"keyString":"整体进展",
 		"needToQuery":true,
 		"paramsString":"[]",
-		"queryString":"select count(*) from Progress progress",
-		"updateTime":1563961602000,
-		"version":1
+		"updateTime":1563961379000,
+		"version":0
 	},
 	{
 		"actionName":"list",
@@ -17,10 +16,8 @@
 		"keyString":"整体进展",
 		"needToQuery":true,
 		"paramsString":"[max, offset]",
-		"queryString":"from Progress progress order by regDate desc",
-		"updateTime":1563961603000,
-		"version":1,
-		"viewName":"listProgressHome"
+		"updateTime":1563961379000,
+		"version":0
 	},
 	{
 		"actionName":"count",

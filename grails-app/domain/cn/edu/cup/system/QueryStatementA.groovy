@@ -16,6 +16,7 @@ class QueryStatementA {
     static mapping = {
         sort('controllerName')
         sort('keyString')
+        sort('paramsString')
         sort('actionName')
     }
 
