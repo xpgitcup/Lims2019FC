@@ -2,6 +2,7 @@ package cn.edu.cup.os
 
 import cn.edu.cup.basic.Caption
 import cn.edu.cup.common.CommonController
+import cn.edu.cup.lims.ThingType
 import cn.edu.cup.system.SystemMenu
 import cn.edu.cup.system.SystemStatus
 import cn.edu.cup.system.SystemUser
@@ -43,23 +44,21 @@ class HomeController extends CommonController {
 
     protected void prepareParams() {
         if (session.systemUser) {
-            params.myself = session.systemUser.person()
+        } else {
             switch (params.key) {
-                case "参与的项目":
+                case "整体进展":
                     break
-                case "在研项目":
+                case "项目进展":
+                    params.thingTypeList = ThingType.findByName("科研项目").relatedThingTypeList()
                     break
-                case "学业论文":
+                case "教学进展":
+                    params.thingTypeList = ThingType.findByName("教学任务").relatedThingTypeList()
                     break
-                case "研究生论文":
+                case "人员贡献":
                     break
-                case "管理的项目":
+                case "登录情况":
                     break
-                case "课堂教学":
-                    break
-                case "课程作业":
-                    break
-                case "领导的项目":
+                case "登录统计":
                     break
             }
         }

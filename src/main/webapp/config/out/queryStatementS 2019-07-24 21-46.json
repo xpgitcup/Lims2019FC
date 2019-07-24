@@ -105,9 +105,8 @@
 		"keyString":"登录统计",
 		"needToQuery":true,
 		"paramsString":"[like]",
-		"queryString":"select count(*) from SystemStatus systemStatus \r\nwhere systemStatus.userName like :like",
 		"updateTime":1563975978000,
-		"version":2
+		"version":0
 	},
 	{
 		"actionName":"count",
@@ -246,10 +245,8 @@
 		"keyString":"登录统计",
 		"needToQuery":true,
 		"paramsString":"[like, max, offset]",
-		"queryString":"select systemStatus, count(systemStatus.userName) as CC\r\nfrom SystemStatus systemStatus \r\nwhere systemStatus.userName like :like",
 		"updateTime":1563975978000,
-		"version":2,
-		"viewName":"listSystemStatusCount"
+		"version":0
 	},
 	{
 		"actionName":"list",

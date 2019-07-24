@@ -6,20 +6,8 @@
 		"keyString":"人员贡献",
 		"needToQuery":true,
 		"paramsString":"[]",
-		"queryString":"select count(*) from Progress progress\r\ngroup by progress.contributor",
 		"updateTime":1563971472000,
-		"version":1
-	},
-	{
-		"actionName":"count",
-		"controllerName":"Home",
-		"isSQL":false,
-		"keyString":"人员贡献",
-		"needToQuery":true,
-		"paramsString":"[like]",
-		"queryString":"select count(*) from Progress progress\r\nwhere progress.contributor.name like :like",
-		"updateTime":1563975720000,
-		"version":2
+		"version":0
 	},
 	{
 		"actionName":"count",
@@ -31,17 +19,6 @@
 		"queryString":"select count(*) from Progress progress\r\nwhere progress.team.thing.thingType in (:thingTypeList)",
 		"updateTime":1563972074000,
 		"version":1
-	},
-	{
-		"actionName":"count",
-		"controllerName":"Home",
-		"isSQL":false,
-		"keyString":"教学进展",
-		"needToQuery":true,
-		"paramsString":"[like, thingTypeList]",
-		"queryString":"select count(*) from Progress progress\r\nwhere progress.team.thing.thingType in (:thingTypeList)\r\nand\r\n((progress.currentStatus like :like)\r\nor\r\n(progress.contributor.name like :like) \r\nor\r\n(progress.supportFileName like :like)\r\nor\r\n(progress.team.thing.name like :like))",
-		"updateTime":1563974759000,
-		"version":2
 	},
 	{
 		"actionName":"count",
@@ -58,34 +35,11 @@
 		"actionName":"count",
 		"controllerName":"Home",
 		"isSQL":false,
-		"keyString":"整体进展",
-		"needToQuery":true,
-		"paramsString":"[like]",
-		"queryString":"select count(*) from Progress progress\r\nwhere \r\n(progress.currentStatus like :like)\r\nor\r\n(progress.contributor.name like :like) \r\nor\r\n(progress.supportFileName like :like)\r\nor\r\n(progress.team.thing.name like :like)",
-		"updateTime":1563974744000,
-		"version":2
-	},
-	{
-		"actionName":"count",
-		"controllerName":"Home",
-		"isSQL":false,
 		"keyString":"登录情况",
 		"needToQuery":true,
 		"paramsString":"[]",
-		"queryString":"select count(*) from SystemStatus systemStatus where systemStatus.userName is not null",
 		"updateTime":1563971473000,
-		"version":1
-	},
-	{
-		"actionName":"count",
-		"controllerName":"Home",
-		"isSQL":false,
-		"keyString":"登录情况",
-		"needToQuery":true,
-		"paramsString":"[like]",
-		"queryString":"select count(*) from SystemStatus systemStatus where systemStatus.userName like :like",
-		"updateTime":1563975855000,
-		"version":2
+		"version":0
 	},
 	{
 		"actionName":"count",
@@ -94,20 +48,8 @@
 		"keyString":"登录统计",
 		"needToQuery":true,
 		"paramsString":"[]",
-		"queryString":"select count(*) from SystemStatus systemStatus \r\nwhere systemStatus.userName is not null\r\ngroup by systemStatus.userName",
 		"updateTime":1563971473000,
-		"version":2
-	},
-	{
-		"actionName":"count",
-		"controllerName":"Home",
-		"isSQL":false,
-		"keyString":"登录统计",
-		"needToQuery":true,
-		"paramsString":"[like]",
-		"queryString":"select count(*) from SystemStatus systemStatus \r\nwhere systemStatus.userName like :like",
-		"updateTime":1563975978000,
-		"version":2
+		"version":0
 	},
 	{
 		"actionName":"count",
@@ -121,39 +63,14 @@
 		"version":1
 	},
 	{
-		"actionName":"count",
-		"controllerName":"Home",
-		"isSQL":false,
-		"keyString":"项目进展",
-		"needToQuery":true,
-		"paramsString":"[like, thingTypeList]",
-		"queryString":"select count(*) from Progress progress\r\nwhere progress.team.thing.thingType in (:thingTypeList)\r\nand\r\n((progress.currentStatus like :like)\r\nor\r\n(progress.contributor.name like :like) \r\nor\r\n(progress.supportFileName like :like)\r\nor\r\n(progress.team.thing.name like :like))",
-		"updateTime":1563974753000,
-		"version":4
-	},
-	{
 		"actionName":"list",
 		"controllerName":"Home",
 		"isSQL":false,
 		"keyString":"人员贡献",
 		"needToQuery":true,
 		"paramsString":"[max, offset]",
-		"queryString":"select progress, count(contributor) as CC from  Progress progress\r\ngroup by progress.contributor\r\norder by CC desc",
 		"updateTime":1563971472000,
-		"version":4,
-		"viewName":"listProgress4Person"
-	},
-	{
-		"actionName":"list",
-		"controllerName":"Home",
-		"isSQL":false,
-		"keyString":"人员贡献",
-		"needToQuery":true,
-		"paramsString":"[like, max, offset]",
-		"queryString":"select progress, count(contributor) as CC from  Progress progress\r\nwhere progress.contributor.name like :like",
-		"updateTime":1563975720000,
-		"version":2,
-		"viewName":"listProgress4Person"
+		"version":0
 	},
 	{
 		"actionName":"list",
@@ -165,18 +82,6 @@
 		"queryString":"from Progress progress\r\nwhere progress.team.thing.thingType in (:thingTypeList)",
 		"updateTime":1563972074000,
 		"version":1,
-		"viewName":"listProgressHome"
-	},
-	{
-		"actionName":"list",
-		"controllerName":"Home",
-		"isSQL":false,
-		"keyString":"教学进展",
-		"needToQuery":true,
-		"paramsString":"[like, max, offset, thingTypeList]",
-		"queryString":"from Progress progress\r\nwhere progress.team.thing.thingType in (:thingTypeList)\r\nand \r\n((progress.currentStatus like :like)\r\nor\r\n(progress.contributor.name like :like) \r\nor\r\n(progress.supportFileName like :like)\r\nor\r\n(progress.team.thing.name like :like))",
-		"updateTime":1563974759000,
-		"version":2,
 		"viewName":"listProgressHome"
 	},
 	{
@@ -195,49 +100,11 @@
 		"actionName":"list",
 		"controllerName":"Home",
 		"isSQL":false,
-		"keyString":"整体进展",
-		"needToQuery":true,
-		"paramsString":"[like, max, offset]",
-		"queryString":"from Progress progress\r\nwhere \r\n(progress.currentStatus like :like)\r\nor\r\n(progress.contributor.name like :like) \r\nor\r\n(progress.supportFileName like :like)\r\nor\r\n(progress.team.thing.name like :like)",
-		"updateTime":1563974744000,
-		"version":3,
-		"viewName":"listProgressHome"
-	},
-	{
-		"actionName":"list",
-		"controllerName":"Home",
-		"isSQL":false,
 		"keyString":"登录情况",
 		"needToQuery":true,
 		"paramsString":"[max, offset]",
-		"queryString":"from SystemStatus systemStatus  where systemStatus.userName is not null order by loginTime desc",
-		"updateTime":1563972624000,
-		"version":1,
-		"viewName":"listSystemStatus"
-	},
-	{
-		"actionName":"list",
-		"controllerName":"Home",
-		"isSQL":false,
-		"keyString":"登录情况",
-		"needToQuery":true,
-		"paramsString":"[like, max, offset]",
-		"queryString":"from SystemStatus systemStatus  where systemStatus.userName like :like order by loginTime desc",
-		"updateTime":1563975855000,
-		"version":2,
-		"viewName":"listSystemStatus"
-	},
-	{
-		"actionName":"list",
-		"controllerName":"Home",
-		"isSQL":false,
-		"keyString":"登录统计",
-		"needToQuery":true,
-		"paramsString":"[max, offset]",
-		"queryString":"select systemStatus, count(systemStatus.userName) as CC\r\nfrom SystemStatus systemStatus \r\nwhere systemStatus.userName is not null\r\ngroup by systemStatus.userName\r\norder by CC desc",
 		"updateTime":1563971473000,
-		"version":3,
-		"viewName":"listSystemStatusCount"
+		"version":0
 	},
 	{
 		"actionName":"list",
@@ -245,11 +112,9 @@
 		"isSQL":false,
 		"keyString":"登录统计",
 		"needToQuery":true,
-		"paramsString":"[like, max, offset]",
-		"queryString":"select systemStatus, count(systemStatus.userName) as CC\r\nfrom SystemStatus systemStatus \r\nwhere systemStatus.userName like :like",
-		"updateTime":1563975978000,
-		"version":2,
-		"viewName":"listSystemStatusCount"
+		"paramsString":"[max, offset]",
+		"updateTime":1563971473000,
+		"version":0
 	},
 	{
 		"actionName":"list",
@@ -261,18 +126,6 @@
 		"queryString":"from Progress progress\r\nwhere progress.team.thing.thingType in (:thingTypeList)",
 		"updateTime":1563972073000,
 		"version":1,
-		"viewName":"listProgressHome"
-	},
-	{
-		"actionName":"list",
-		"controllerName":"Home",
-		"isSQL":false,
-		"keyString":"项目进展",
-		"needToQuery":true,
-		"paramsString":"[like, max, offset, thingTypeList]",
-		"queryString":"from Progress progress\r\nwhere progress.team.thing.thingType in (:thingTypeList)\r\nand \r\n((progress.currentStatus like :like)\r\nor\r\n(progress.contributor.name like :like) \r\nor\r\n(progress.supportFileName like :like)\r\nor\r\n(progress.team.thing.name like :like))",
-		"updateTime":1563974753000,
-		"version":4,
 		"viewName":"listProgressHome"
 	},
 	{
