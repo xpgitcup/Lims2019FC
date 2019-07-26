@@ -62,9 +62,8 @@ function appendParamsBootStrap(title) {
 /*
 * 选择当前项目
 * */
-function selectCurrentKey(id) {
-    var title = getCurrentTabTitle(tabs教师日常Div);
-    console.info("当前：" + title);
-    sessionStorage.setItem("currentKey" + document.title, title + "=" + id);
+function selectCurrentThing(id) {
+    sessionStorage.setItem("currentKey" + document.title, "Thing");
+    sessionStorage.setItem("currentThing" + document.title, title + "=" + id);
     location.reload();
 }

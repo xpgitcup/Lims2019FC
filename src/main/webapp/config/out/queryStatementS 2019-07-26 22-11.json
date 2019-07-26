@@ -730,9 +730,9 @@
 		"keyString":"查询维护",
 		"needToQuery":true,
 		"paramsString":"[like]",
-		"queryString":"select count(*) from QueryStatementA queryStatementA where queryStatementA.keyString like :like",
+		"queryString":"select count(*) from QueryStatementA queryStatementA where (queryStatementA.keyString like :like) or (queryStatementA.controllerName like :like)",
 		"updateTime":1562914565000,
-		"version":1
+		"version":2
 	},
 	{
 		"actionName":"count",
@@ -764,9 +764,9 @@
 		"keyString":"查询维护",
 		"needToQuery":true,
 		"paramsString":"[like, max, offset]",
-		"queryString":"from QueryStatementA queryStatementA where queryStatementA.keyString like :like",
+		"queryString":"from QueryStatementA queryStatementA where (queryStatementA.keyString like :like)  or (queryStatementA.controllerName like :like)",
 		"updateTime":1562914566000,
-		"version":1,
+		"version":2,
 		"viewName":"listQueryStatementA"
 	},
 	{
