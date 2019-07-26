@@ -132,7 +132,7 @@
     ]
   },
   {
-    "menuContext": "日常工作",
+    "menuContext": "通用服务",
     "menuAction": "#",
     "menuDescription": "用户的日常工作",
     "menuOrder": 3,

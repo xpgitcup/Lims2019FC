@@ -1,7 +1,3 @@
-<div class="alert alert-success">
-    <strong>登录成功!</strong> 日常操作可以直接点击下面标签页中的链接。其他操作点击左侧菜单！
-</div>
-
 <!-- 设置查询 -->
 <ul id="query教师日常UL" class="nav navbar bg-light">
     <li>
@@ -42,6 +38,14 @@
     </li><li class="nav-item">
         <a href="#div课堂教学" class="nav-link" data-toggle="tab">
             课堂教学
+        </a>
+    </li><li class="nav-item">
+        <a href="#div毕业设计" class="nav-link" data-toggle="tab">
+            毕业设计
+        </a>
+    </li><li class="nav-item">
+        <a href="#div课程设计" class="nav-link" data-toggle="tab">
+            课程设计
         </a>
     </li>
     </ul>
@@ -263,6 +267,92 @@
             </ul>
         </div>
         <!--具体的课堂教学标签结束======-->
+        <!--具体的毕业设计标签-->
+        <div id="div毕业设计" class="tab-pane">
+            <div id="display毕业设计Div">
+                <br> 在这里显示毕业设计所需的信息</br>
+            </div>
+            <!-- 这里是分页设置-->
+            <ul class="pagination pagination-sm">
+                <li class="page-item">
+                    <a class="page-link">页长</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" id="pageSizeTeacher毕业设计"></a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="javascript: loadFirstPageBootStrap('毕业设计')">首页</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="javascript: loadPreviousPageBootStrap('毕业设计')">&laquo</a>
+                </li>
+                <li class="page-item" >
+                    <a class="page-link" id="currentPageTeacher毕业设计"></a>
+                </li>
+                <li class="page-item" >
+                    <a class="page-link">/</a>
+                </li>
+                <li class="page-item" >
+                    <a class="page-link" id="totalPageTeacher毕业设计"></a>
+                </li>
+                <li>
+                    <a class="page-link" href="javascript: loadNextPageBootStrap('毕业设计')">&raquo</a>
+                </li>
+                <li>
+                    <a class="page-link" href="javascript: loadLastPageBootStrap('毕业设计')">尾页</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link">总记录数</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" id="totalCountTeacher毕业设计"></a>
+                </li>
+            </ul>
+        </div>
+        <!--具体的毕业设计标签结束======-->
+        <!--具体的课程设计标签-->
+        <div id="div课程设计" class="tab-pane">
+            <div id="display课程设计Div">
+                <br> 在这里显示课程设计所需的信息</br>
+            </div>
+            <!-- 这里是分页设置-->
+            <ul class="pagination pagination-sm">
+                <li class="page-item">
+                    <a class="page-link">页长</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" id="pageSizeTeacher课程设计"></a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="javascript: loadFirstPageBootStrap('课程设计')">首页</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="javascript: loadPreviousPageBootStrap('课程设计')">&laquo</a>
+                </li>
+                <li class="page-item" >
+                    <a class="page-link" id="currentPageTeacher课程设计"></a>
+                </li>
+                <li class="page-item" >
+                    <a class="page-link">/</a>
+                </li>
+                <li class="page-item" >
+                    <a class="page-link" id="totalPageTeacher课程设计"></a>
+                </li>
+                <li>
+                    <a class="page-link" href="javascript: loadNextPageBootStrap('课程设计')">&raquo</a>
+                </li>
+                <li>
+                    <a class="page-link" href="javascript: loadLastPageBootStrap('课程设计')">尾页</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link">总记录数</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" id="totalCountTeacher课程设计"></a>
+                </li>
+            </ul>
+        </div>
+        <!--具体的课程设计标签结束======-->
 
     </div>
 </div>

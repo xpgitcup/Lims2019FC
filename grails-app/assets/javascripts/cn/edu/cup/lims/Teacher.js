@@ -5,10 +5,15 @@ bootStrapPaginationSetting.appendFunction = "appendParamsBootStrap";
 
 var tabs教师日常Div;
 
-$(function(){
-    console.info(document.title + "加载了...")
-    tabs教师日常Div = $("#tabs教师日常Div");
-    setupTabsBootStrap(tabs教师日常Div);
+$(function () {
+    console.info(document.title + "加载了...");
+    var currentKey = readStorage("currentKey" + document.title, "");
+    if (currentKey != "") {
+        window.location.href = "/operation4Teacher/teacherJob?currentKey=" + currentKey;
+    } else {
+        tabs教师日常Div = $("#tabs教师日常Div");
+        setupTabsBootStrap(tabs教师日常Div);
+    }
 })
 
 /*
@@ -51,5 +56,15 @@ function appendParamsBootStrap(title) {
         //console.info("更新了吗？.....")
     }
 
-    return  append;
+    return append;
+}
+
+/*
+* 选择当前项目
+* */
+function selectCurrentKey(id) {
+    var title = getCurrentTabTitle(tabs教师日常Div);
+    console.info("当前：" + title);
+    sessionStorage.setItem("currentKey" + document.title, title + "=" + id);
+    location.reload();
 }
