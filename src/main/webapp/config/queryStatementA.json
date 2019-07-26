@@ -138,9 +138,9 @@
 		"keyString":"人员贡献",
 		"needToQuery":true,
 		"paramsString":"[max, offset]",
-		"queryString":"select progress, count(contributor) as CC from  Progress progress\r\ngroup by progress.contributor\r\norder by CC desc",
+		"queryString":"select progress.contributor, count(progress.contributor) as CC from  Progress progress\r\ngroup by progress.contributor\r\norder by CC desc",
 		"updateTime":1563971472000,
-		"version":4,
+		"version":7,
 		"viewName":"listProgress4Person"
 	},
 	{
@@ -162,9 +162,9 @@
 		"keyString":"教学进展",
 		"needToQuery":true,
 		"paramsString":"[max, offset, thingTypeList]",
-		"queryString":"from Progress progress\r\nwhere progress.team.thing.thingType in (:thingTypeList)",
+		"queryString":"from Progress progress\r\nwhere progress.team.thing.thingType in (:thingTypeList)\r\norder by regDate desc",
 		"updateTime":1563972074000,
-		"version":1,
+		"version":2,
 		"viewName":"listProgressHome"
 	},
 	{
@@ -174,9 +174,9 @@
 		"keyString":"教学进展",
 		"needToQuery":true,
 		"paramsString":"[like, max, offset, thingTypeList]",
-		"queryString":"from Progress progress\r\nwhere progress.team.thing.thingType in (:thingTypeList)\r\nand \r\n((progress.currentStatus like :like)\r\nor\r\n(progress.contributor.name like :like) \r\nor\r\n(progress.supportFileName like :like)\r\nor\r\n(progress.team.thing.name like :like))",
+		"queryString":"from Progress progress\r\nwhere progress.team.thing.thingType in (:thingTypeList)\r\nand \r\n((progress.currentStatus like :like)\r\nor\r\n(progress.contributor.name like :like) \r\nor\r\n(progress.supportFileName like :like)\r\nor\r\n(progress.team.thing.name like :like))\r\norder by regDate desc",
 		"updateTime":1563974759000,
-		"version":2,
+		"version":3,
 		"viewName":"listProgressHome"
 	},
 	{
@@ -198,9 +198,9 @@
 		"keyString":"整体进展",
 		"needToQuery":true,
 		"paramsString":"[like, max, offset]",
-		"queryString":"from Progress progress\r\nwhere \r\n(progress.currentStatus like :like)\r\nor\r\n(progress.contributor.name like :like) \r\nor\r\n(progress.supportFileName like :like)\r\nor\r\n(progress.team.thing.name like :like)",
+		"queryString":"from Progress progress\r\nwhere \r\n(progress.currentStatus like :like)\r\nor\r\n(progress.contributor.name like :like) \r\nor\r\n(progress.supportFileName like :like)\r\nor\r\n(progress.team.thing.name like :like)\r\norder by regDate desc",
 		"updateTime":1563974744000,
-		"version":3,
+		"version":4,
 		"viewName":"listProgressHome"
 	},
 	{
@@ -234,9 +234,9 @@
 		"keyString":"登录统计",
 		"needToQuery":true,
 		"paramsString":"[max, offset]",
-		"queryString":"select systemStatus, count(systemStatus.userName) as CC\r\nfrom SystemStatus systemStatus \r\nwhere systemStatus.userName is not null\r\ngroup by systemStatus.userName\r\norder by CC desc",
+		"queryString":"select systemStatus.userName, count(systemStatus.userName) as CC\r\nfrom SystemStatus systemStatus \r\nwhere systemStatus.userName is not null\r\ngroup by systemStatus.userName\r\norder by CC desc",
 		"updateTime":1563971473000,
-		"version":3,
+		"version":4,
 		"viewName":"listSystemStatusCount"
 	},
 	{
@@ -246,9 +246,9 @@
 		"keyString":"登录统计",
 		"needToQuery":true,
 		"paramsString":"[like, max, offset]",
-		"queryString":"select systemStatus, count(systemStatus.userName) as CC\r\nfrom SystemStatus systemStatus \r\nwhere systemStatus.userName like :like",
+		"queryString":"select systemStatus.userName, count(systemStatus.userName) as CC\r\nfrom SystemStatus systemStatus \r\nwhere systemStatus.userName like :like",
 		"updateTime":1563975978000,
-		"version":2,
+		"version":3,
 		"viewName":"listSystemStatusCount"
 	},
 	{
@@ -258,9 +258,9 @@
 		"keyString":"项目进展",
 		"needToQuery":true,
 		"paramsString":"[max, offset, thingTypeList]",
-		"queryString":"from Progress progress\r\nwhere progress.team.thing.thingType in (:thingTypeList)",
+		"queryString":"from Progress progress\r\nwhere progress.team.thing.thingType in (:thingTypeList)\r\norder by regDate desc",
 		"updateTime":1563972073000,
-		"version":1,
+		"version":2,
 		"viewName":"listProgressHome"
 	},
 	{
@@ -270,9 +270,9 @@
 		"keyString":"项目进展",
 		"needToQuery":true,
 		"paramsString":"[like, max, offset, thingTypeList]",
-		"queryString":"from Progress progress\r\nwhere progress.team.thing.thingType in (:thingTypeList)\r\nand \r\n((progress.currentStatus like :like)\r\nor\r\n(progress.contributor.name like :like) \r\nor\r\n(progress.supportFileName like :like)\r\nor\r\n(progress.team.thing.name like :like))",
+		"queryString":"from Progress progress\r\nwhere progress.team.thing.thingType in (:thingTypeList)\r\nand \r\n((progress.currentStatus like :like)\r\nor\r\n(progress.contributor.name like :like) \r\nor\r\n(progress.supportFileName like :like)\r\nor\r\n(progress.team.thing.name like :like))\r\norder by regDate desc",
 		"updateTime":1563974753000,
-		"version":4,
+		"version":5,
 		"viewName":"listProgressHome"
 	},
 	{

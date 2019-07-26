@@ -8,7 +8,7 @@
     <tbody>
     <g:each in="${objectList}" var="item" status="i">
         <tr class="${(i % 2 == 0 ? 'even' : 'odd')}">
-            <td>${item[0].userName}</td>
+            <td>${item[0]}</td>
             <td>${item[1]}</td>
         </tr>
     </g:each>
