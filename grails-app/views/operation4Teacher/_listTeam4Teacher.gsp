@@ -11,7 +11,7 @@
     <tbody>
     <g:each in="${objectList}" var="item" status="i">
         <tr>
-            <td><a href="javascript: selectCurrentKey(${item.id})">${item.thing}->详情</a></td>
+            <td><a href="/operation4Teacher?currentStatus=team&currentId=${item.id}">${item.thing}->详情</a></td>
             <td>${cn.edu.cup.lims.Progress.countByTeam(item)}</td>
             <td>${cn.edu.cup.lims.Progress.findByTeam(item, [sort: "regDate", order: "desc"])}</td>
             <td>${item.thing.startDate}</td>

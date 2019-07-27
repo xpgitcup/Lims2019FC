@@ -47,6 +47,9 @@ function appendParamsBootStrap(title) {
     var filter = readStorage("filter" + document.title, "false");
     var keyString = readStorage("keyString" + document.title, "");
 
+    var currentStatus = $("#currentStatus").text().trim()
+    append += "&currentStatus=" + currentStatus;
+
     console.info("当前关键字：" + keyString);
 
     if (filter == title) {
@@ -59,11 +62,3 @@ function appendParamsBootStrap(title) {
     return append;
 }
 
-/*
-* 选择当前项目
-* */
-function selectCurrentThing(id) {
-    sessionStorage.setItem("currentKey" + document.title, "Thing");
-    sessionStorage.setItem("currentThing" + document.title, title + "=" + id);
-    location.reload();
-}

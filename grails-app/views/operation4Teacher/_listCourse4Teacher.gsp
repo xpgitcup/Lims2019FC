@@ -12,7 +12,7 @@
     <tbody>
     <g:each in="${objectList}" var="item" status="i">
         <tr>
-            <td><a href="javascript: selectCurrentKey(${item.id})">${item.name}->详情</a></td>
+            <td><a href="/operation4Teacher?currentStatus=team&currentId=${item.id}">${item.name}->详情</a></td>
             <td>${cn.edu.cup.lims.Team.countByThing(item)}</td>
             <td>
                 <g:if test="${cn.edu.cup.lims.Team.countByThing(item) > 0}">

@@ -1,20 +1,3 @@
-<!-- 设置查询 -->
-<ul id="query教师日常UL" class="nav navbar bg-light">
-    <li>
-        <span class="form-inline">
-            筛选:<div id="currentFilter" class="text-danger">${keyString}</div>
-            <a href="javascript: clearFilterBootStrap()">清除</a>
-        </span>
-    </li>
-    <li>
-        <g:form onsubmit="return queryStatementBootStrap()">
-            <label>关键字</label>
-            <input type="text" id="keyString" name="keyString" value=""/>
-            <input type="submit" name="查询" value="查询">
-        </g:form>
-    </li>
-</ul>
-
 <!-- 关于 教师日常 的自动生成代码 -->
 <div class="card" id="tabs教师日常Div" title="教师日常">
     <!-- 选项卡 -->

@@ -1017,9 +1017,9 @@
 		"keyString":"进度维护",
 		"needToQuery":true,
 		"paramsString":"[currentId, max, offset]",
-		"queryString":"from Progress progress where progress.team=:currentId\r\norder by regDate desc",
+		"queryString":"from Progress progress where progress.team=:currentId",
 		"updateTime":1564198442000,
-		"version":2,
+		"version":1,
 		"viewName":"listProgress4Teacher"
 	},
 	{

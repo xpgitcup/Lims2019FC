@@ -1,21 +1,3 @@
-<!-- 设置查询 -->
-<ul id="query团队选择UL" class="nav navbar bg-light">
-    <li><a href="javascript: clearCurrentKey()">返回上级</a></li>
-    <li>
-        <span class="form-inline">
-            筛选:<div id="currentFilter" class="text-danger">${keyString}</div>
-            <a href="javascript: clearFilterBootStrap()">清除</a>
-        </span>
-    </li>
-    <li>
-        <g:form onsubmit="return queryStatementBootStrap()">
-            <label>关键字</label>
-            <input type="text" id="keyString" name="keyString" value=""/>
-            <input type="submit" name="查询" value="查询">
-        </g:form>
-    </li>
-</ul>
-
 <!--具体的团队选择标签-->
 <div id="card团队选择Div" class="card" title="团队选择">
     <div id="display团队选择Div" class="card-body">

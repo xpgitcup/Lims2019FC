@@ -845,9 +845,9 @@
 		"keyString":"团队选择",
 		"needToQuery":true,
 		"paramsString":"[currentId]",
-		"queryString":"select count(*) from Team team where team.thing = :currentId",
+		"queryString":"select count(*) from Team team where team = :currentId",
 		"updateTime":1564198251000,
-		"version":3
+		"version":2
 	},
 	{
 		"actionName":"count",
@@ -911,9 +911,9 @@
 		"keyString":"进度维护",
 		"needToQuery":true,
 		"paramsString":"[currentId]",
-		"queryString":"select count(*) from Progress progress where progress.team=:currentId",
+		"queryString":"select count(*) from Teacher teacher",
 		"updateTime":1564198442000,
-		"version":1
+		"version":0
 	},
 	{
 		"actionName":"count",
@@ -945,9 +945,9 @@
 		"keyString":"团队选择",
 		"needToQuery":true,
 		"paramsString":"[currentId, max, offset]",
-		"queryString":"from Team team where team.thing = :currentId",
+		"queryString":"from Team team where team = :currentId",
 		"updateTime":1564198251000,
-		"version":3,
+		"version":2,
 		"viewName":"listTeam4Teacher"
 	},
 	{
@@ -1017,10 +1017,10 @@
 		"keyString":"进度维护",
 		"needToQuery":true,
 		"paramsString":"[currentId, max, offset]",
-		"queryString":"from Progress progress where progress.team=:currentId\r\norder by regDate desc",
+		"queryString":"from Teacher teacher",
 		"updateTime":1564198442000,
-		"version":2,
-		"viewName":"listProgress4Teacher"
+		"version":0,
+		"viewName":"listTeacher"
 	},
 	{
 		"actionName":"list",

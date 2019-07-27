@@ -19,7 +19,12 @@ function appendParamsBootStrap(title) {
     var filter = readStorage("filter" + document.title, "false");
     var keyString = readStorage("keyString" + document.title, "");
 
-    if (filter!="false") {
+    var currentStatus = $("#currentStatus").text().trim()
+    append += "&currentStatus=" + currentStatus;
+
+    var currentId = $("#currentId").text().trim();
+
+    if (filter != "false") {
         // 更新显示
         $("#currentFilter").html(keyString)
     }
@@ -29,6 +34,7 @@ function appendParamsBootStrap(title) {
             append = "&like=" + keyString;
             break
     }
+    append += "&currentId=" + currentId;
     return append;
 }
 
@@ -59,10 +65,3 @@ function clearFilterBootStrap() {
     location.reload();
 }
 
-/*
-* 清除当前关键字
-* */
-function clearCurrentKey() {
-    sessionStorage.removeItem("currentKeyTeacher");
-    window.location.href = "/home";
-}

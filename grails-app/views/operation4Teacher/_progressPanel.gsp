@@ -1,21 +1,3 @@
-<!-- 设置查询 -->
-<ul id="query进度维护UL" class="nav navbar bg-light">
-    <li><a href="javascript: clearCurrentKey()">返回上级</a></li>
-    <li>
-        <span class="form-inline">
-            筛选:<div id="currentFilter" class="text-danger">${keyString}</div>
-            <a href="javascript: clearFilterBootStrap()">清除</a>
-        </span>
-    </li>
-    <li>
-        <g:form onsubmit="return queryStatementBootStrap()">
-            <label>关键字</label>
-            <input type="text" id="keyString" name="keyString" value=""/>
-            <input type="submit" name="查询" value="查询">
-        </g:form>
-    </li>
-</ul>
-
 <!--具体的进度维护标签-->
 <div id="card进度维护Div" class="card" title="进度维护">
     <div id="display进度维护Div" class="card-body">
