@@ -4,7 +4,7 @@
 <table class="table table-striped table-sm m-0 p-0">
     <thead>
     <th>ID</th>
-    <th width="30%">状态</th>
+    <th width="20%">状态</th>
     <th width="20%">前情</th>
     <th width="30%">支撑文件</th>
     <th>作者</th>
