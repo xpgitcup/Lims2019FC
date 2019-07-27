@@ -864,17 +864,6 @@
 		"actionName":"count",
 		"controllerName":"operation4Teacher",
 		"isSQL":false,
-		"keyString":"团队选择",
-		"needToQuery":true,
-		"paramsString":"[currentId, like]",
-		"queryString":"select count(*) from Team team where team.thing = :currentId\r\nand \r\n((team.leader.name like :like) or (team.thing.name like :like))",
-		"updateTime":1564223382000,
-		"version":2
-	},
-	{
-		"actionName":"count",
-		"controllerName":"operation4Teacher",
-		"isSQL":false,
 		"keyString":"毕业设计",
 		"needToQuery":true,
 		"paramsString":"[myself, thingTypeList]",
@@ -886,34 +875,12 @@
 		"actionName":"count",
 		"controllerName":"operation4Teacher",
 		"isSQL":false,
-		"keyString":"毕业设计",
-		"needToQuery":true,
-		"paramsString":"[like, myself, thingTypeList]",
-		"queryString":"select count(*) from Thing thing\r\nwhere \r\nthing.thingType in (:thingTypeList)\r\nand\r\nthing.sponsor = :myself\r\nand \r\nthing.name like :like",
-		"updateTime":1564223580000,
-		"version":2
-	},
-	{
-		"actionName":"count",
-		"controllerName":"operation4Teacher",
-		"isSQL":false,
 		"keyString":"研究生论文",
 		"needToQuery":true,
 		"paramsString":"[myself, thingTypeList]",
 		"queryString":"select count(*) from Thing thing\r\nwhere \r\nthing.thingType in (:thingTypeList)\r\nand\r\nthing.sponsor = :myself",
 		"updateTime":1563868782000,
 		"version":1
-	},
-	{
-		"actionName":"count",
-		"controllerName":"operation4Teacher",
-		"isSQL":false,
-		"keyString":"研究生论文",
-		"needToQuery":true,
-		"paramsString":"[like, myself, thingTypeList]",
-		"queryString":"select count(*) from Thing thing\r\nwhere \r\nthing.thingType in (:thingTypeList)\r\nand\r\nthing.sponsor = :myself\r\nand \r\nthing.name like :like",
-		"updateTime":1564223023000,
-		"version":2
 	},
 	{
 		"actionName":"count",
@@ -946,17 +913,6 @@
 		"paramsString":"[myself, thingTypeList]",
 		"queryString":"select count(*) from Thing thing\r\nwhere \r\nthing.thingType in (:thingTypeList)\r\nand\r\nthing.sponsor = :myself",
 		"updateTime":1563868782000,
-		"version":1
-	},
-	{
-		"actionName":"count",
-		"controllerName":"operation4Teacher",
-		"isSQL":false,
-		"keyString":"课堂教学",
-		"needToQuery":true,
-		"paramsString":"[like, myself, thingTypeList]",
-		"queryString":"select count(*) from Thing thing\r\nwhere \r\nthing.thingType in (:thingTypeList)\r\nand\r\nthing.sponsor = :myself\r\nand \r\nthing.name like :like",
-		"updateTime":1564223114000,
 		"version":1
 	},
 	{
@@ -1043,18 +999,6 @@
 		"actionName":"list",
 		"controllerName":"operation4Teacher",
 		"isSQL":false,
-		"keyString":"团队选择",
-		"needToQuery":true,
-		"paramsString":"[currentId, like, max, offset]",
-		"queryString":"from Team team where team.thing = :currentId\r\nand \r\n((team.leader.name like :like) or (team.thing.name like :like))",
-		"updateTime":1564223382000,
-		"version":2,
-		"viewName":"listTeam4Teacher"
-	},
-	{
-		"actionName":"list",
-		"controllerName":"operation4Teacher",
-		"isSQL":false,
 		"keyString":"毕业设计",
 		"needToQuery":true,
 		"paramsString":"[max, myself, offset, thingTypeList]",
@@ -1067,36 +1011,12 @@
 		"actionName":"list",
 		"controllerName":"operation4Teacher",
 		"isSQL":false,
-		"keyString":"毕业设计",
-		"needToQuery":true,
-		"paramsString":"[like, max, myself, offset, thingTypeList]",
-		"queryString":"from Thing thing\r\nwhere \r\nthing.sponsor = :myself\r\nand\r\nthing.thingType in (:thingTypeList)\r\nand \r\nthing.name like :like",
-		"updateTime":1564223580000,
-		"version":2,
-		"viewName":"listThing4Teacher"
-	},
-	{
-		"actionName":"list",
-		"controllerName":"operation4Teacher",
-		"isSQL":false,
 		"keyString":"研究生论文",
 		"needToQuery":true,
 		"paramsString":"[max, myself, offset, thingTypeList]",
 		"queryString":"from Thing thing\r\nwhere \r\nthing.sponsor = :myself\r\nand\r\nthing.thingType in (:thingTypeList)",
 		"updateTime":1563868782000,
 		"version":6,
-		"viewName":"listThing4Teacher"
-	},
-	{
-		"actionName":"list",
-		"controllerName":"operation4Teacher",
-		"isSQL":false,
-		"keyString":"研究生论文",
-		"needToQuery":true,
-		"paramsString":"[like, max, myself, offset, thingTypeList]",
-		"queryString":"from Thing thing\r\nwhere \r\nthing.sponsor = :myself\r\nand\r\nthing.thingType in (:thingTypeList)\r\nand \r\nthing.name like :like",
-		"updateTime":1564223023000,
-		"version":2,
 		"viewName":"listThing4Teacher"
 	},
 	{
@@ -1133,18 +1053,6 @@
 		"queryString":"from Thing thing\r\nwhere \r\nthing.sponsor = :myself\r\nand\r\nthing.thingType in (:thingTypeList)",
 		"updateTime":1563868782000,
 		"version":2,
-		"viewName":"listThing4Teacher"
-	},
-	{
-		"actionName":"list",
-		"controllerName":"operation4Teacher",
-		"isSQL":false,
-		"keyString":"课堂教学",
-		"needToQuery":true,
-		"paramsString":"[like, max, myself, offset, thingTypeList]",
-		"queryString":"from Thing thing\r\nwhere \r\nthing.sponsor = :myself\r\nand\r\nthing.thingType in (:thingTypeList)\r\nand \r\nthing.name like :like",
-		"updateTime":1564223114000,
-		"version":1,
 		"viewName":"listThing4Teacher"
 	},
 	{
