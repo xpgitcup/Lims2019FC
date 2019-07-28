@@ -1,12 +1,82 @@
 package cn.edu.cup.operation
 
 import cn.edu.cup.basic.GroupInfo
+import cn.edu.cup.lims.Progress
 import cn.edu.cup.lims.ProgressController
 import cn.edu.cup.lims.Team
 import cn.edu.cup.lims.Thing
 import cn.edu.cup.lims.ThingType
+import grails.validation.ValidationException
 
 class Operation4TeacherController extends ProgressController {
+
+    def commonService
+
+    def saveProgress(Progress progress) {
+        if (progress == null) {
+            notFound()
+            return
+        }
+        try {
+            progressService.save(progress)
+            flash.message = message(code: 'default.created.message', args: [message(code: 'progress.label', default: 'Progress'), progress.id])
+            if (!params.uploadedFile.empty) {
+                //处理文件上传
+                def destDir = progress.realSupportFileDir()
+                params.destDir = destDir
+                println("准备上传...")
+                println(destDir)
+                def sf = commonService.upload(params)
+                println("上传${sf}成功...")
+            }
+        } catch (ValidationException e) {
+            flash.message = e.message
+        }
+        redirect(action: "index", params: [currentStatus: "team", currentId: "${progress.team.id}"])
+    }
+
+    def create() {
+        def view = "create"
+        if (params.view) {
+            view = params.view
+        }
+        def progress = new Progress(params)
+        //参数处理
+        def pre = progressService.get(params.preProgress)
+        if (pre) {
+            progress.prevProgress = pre
+            progress.team = pre.team
+        } else {
+            progress.prevProgress = null
+        }
+
+        if (params.team) {
+            progress.team = Team.get(params.team)
+        }
+
+        progress.contributor = session.systemUser.person()
+
+        if (request.xhr) {
+            render(template: view, model: [progress: progress])
+        } else {
+            respond progress
+        }
+    }
+
+    /*
+    这个有问题，尚未解决！！
+    * */
+
+    def downloadFile(params) {
+        println("------${params}")
+        commonService.downLoadFile(params)
+    }
+
+    def download(Progress progress) {
+        params.downLoadFileName = progress.realSupportFileName()
+        println("下载:${params}")
+        commonService.downLoadFile(params)
+    }
 
     def teacherJob() {
         def (title, id) = params.currentKey.split("=")
