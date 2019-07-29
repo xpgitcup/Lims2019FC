@@ -1,14 +1,14 @@
-bootStrapPaginationSetting.identifier = "Teacher"
-bootStrapPaginationSetting.controller = "operation4Teacher"
+bootStrapPaginationSetting.identifier = "Student"
+bootStrapPaginationSetting.controller = "operation4Student"
 bootStrapPaginationSetting.appendFunction = "appendParamsBootStrap";
 //bootStrapPaginationSetting.defaultPageSize = 5	//设置缺省的页长度
 
-var tabs教师日常Div;
+var tabs学生日常Div;
 
-$(function () {
-    console.info(document.title + "加载了...");
-    tabs教师日常Div = $("#tabs教师日常Div");
-    setupTabsBootStrap(tabs教师日常Div);
+$(function(){
+    console.info(document.title + "加载了...")
+    tabs学生日常Div = $("#tabs学生日常Div");
+    setupTabsBootStrap(tabs学生日常Div);
 })
 
 /*
@@ -17,7 +17,7 @@ $(function () {
 function queryStatementBootStrap() {
     var keyString = document.getElementById("keyString");
     console.info("查询..." + keyString.value);
-    var title = getCurrentTabTitle(tabs教师日常Div);
+    var title = getCurrentTabTitle(tabs学生日常Div);
     sessionStorage.setItem("filter" + document.title, title);
     sessionStorage.setItem("keyString" + document.title, keyString.value);
     location.reload();
@@ -42,9 +42,6 @@ function appendParamsBootStrap(title) {
     var filter = readStorage("filter" + document.title, "false");
     var keyString = readStorage("keyString" + document.title, "");
 
-    var currentStatus = $("#currentStatus").text().trim()
-    append += "&currentStatus=" + currentStatus;
-
     console.info("当前关键字：" + keyString);
 
     if (filter == title) {
@@ -54,6 +51,5 @@ function appendParamsBootStrap(title) {
         //console.info("更新了吗？.....")
     }
 
-    return append;
+    return  append;
 }
-

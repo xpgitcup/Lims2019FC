@@ -21,7 +21,7 @@
         </g:else>
     </g:else>
 <!-- end 实现可定制的布局 -->
-    <g:set var="entityName" value="Teacher"/>
+    <g:set var="entityName" value="Student"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>${entityName}</title>
     <asset:javascript src="cn/edu/cup/lims/${jsName}.js"/>
@@ -32,7 +32,7 @@
 <div class="container-fluid">
     <div class="alert alert-info m-0 p-0">
         <!-- 设置查询 -->
-        <ul id="query教师日常UL" class="nav navbar bg-light">
+        <ul id="query学生日常UL" class="nav navbar bg-light">
             <li>
                 <span class="form-inline">
                     当前状态：
@@ -59,7 +59,7 @@
                     </li>
                 </g:else>
             </g:each>
-            <li><a href="/operation4Teacher">返回</a></li>
+            <li><a href="/operation4Student">返回</a></li>
             <li>||</li>
             <li>
                 <span class="form-inline">

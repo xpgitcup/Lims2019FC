@@ -274,7 +274,7 @@ class HomeController extends CommonController {
                 session.userStatus = systemUser.personTitle().status()
             }
             systemCommonService.updateSystemStatus(request, params)
-
+            println("当前状态：${session.userStatus}")
             switch (session.userStatus) {
                 case "Teacher":
                     redirect(uri: "/operation4Teacher")

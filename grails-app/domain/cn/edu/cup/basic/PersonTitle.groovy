@@ -52,17 +52,18 @@ class PersonTitle implements SelfCheck {
     }
 
     boolean bePartOfByName(String aTitleName) {
-        //println("检查归属：${this} ${aTitleName}")
+        println("检查归属：${this} ${aTitleName}")
         def aTitle = PersonTitle.findByName(aTitleName)
-        //println("${aTitle}")
+        println("${aTitle}")
         return bePartOf(aTitle)
     }
 
     boolean bePartOf(PersonTitle aTitle) {
         boolean isThis = aTitle.name == this.name
         println("是自己：${isThis} ??  ${aTitle.subTitles}")
-        boolean isMember = aTitle.subTitles.toString().contains(this.name)
-        println("是成员：${isMember}")
+        //boolean isMember = aTitle.subTitles.toString().contains(this.name) //无法区分博士、博士后
+        boolean isMember = aTitle.subTitles.contains(this)
+        println("${this} 是成员：${isMember} ")
         return (isThis || isMember)
     }
 
