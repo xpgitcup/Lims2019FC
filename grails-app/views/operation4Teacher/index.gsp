@@ -33,15 +33,15 @@
     <div class="alert alert-info m-0 p-0">
         <!-- 设置查询 -->
         <ul id="query教师日常UL" class="nav navbar bg-light">
-            <li>
+            <li class="nav-item">
                 <span class="form-inline">
-                    当前状态：
+                    当前：
                     ${statusInfo}
                 </span>
             </li>
             <g:each in="${statusName}" var="item" status="i">
                 <g:if test="${currentStatusIndex == i}">
-                    <li>
+                    <li class="nav-item">
                         <span class="form-inline">
                             <div class="btn btn-info">${item}</div>
                             <g:if test="${i < 2}">
@@ -59,15 +59,18 @@
                     </li>
                 </g:else>
             </g:each>
-            <li><a href="/operation4Teacher">返回</a></li>
+            <g:if test="${currentStatusIndex == 2}">
+                <li class="nav-item"><a id="createProgress" href="#" class="btn btn-info">新进展</a></li>
+            </g:if>
+            <li class="nav-item"><a href="/operation4Teacher" class="nav-link">返回</a></li>
             <li>||</li>
-            <li>
+            <li class="nav-item">
                 <span class="form-inline">
                     筛选:<div id="currentFilter" class="text-danger">${keyString}</div>
                     <a href="javascript: clearFilterBootStrap()">清除</a>
                 </span>
             </li>
-            <li>
+            <li class="nav-item">
                 <g:form onsubmit="return queryStatementBootStrap()">
                     <label>关键字</label>
                     <input type="text" id="keyString" name="keyString" value=""/>

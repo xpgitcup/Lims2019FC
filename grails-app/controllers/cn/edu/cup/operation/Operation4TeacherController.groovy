@@ -78,45 +78,6 @@ class Operation4TeacherController extends ProgressController {
         commonService.downLoadFile(params)
     }
 
-    def teacherJob() {
-        def (title, id) = params.currentKey.split("=")
-        println(title)
-        println(id)
-        def gotoProgress = true
-        def currentTitle = ""
-        switch (title) {
-            case "管理的项目":
-                def thing = Thing.get(id)
-                def teamCount = Team.countByThing(thing)
-                gotoProgress = teamCount == 1
-                currentTitle = "当前项目：${thing}"
-                break
-            case "领导的项目":
-            case "参与的项目":
-                gotoProgress = true
-                def team = Team.get(id)
-                currentTitle = "当前团队：${team}"
-                break
-            case "研究生论文":
-            case "课堂教学":
-            case "毕业设计":
-            case "课程设计":
-                def thing = Thing.get(id)
-                def teamCount = Team.countByThing(thing)
-                gotoProgress = teamCount == 1
-                currentTitle = "当前项目：${thing}"
-                break
-        }
-        println("${gotoProgress} ${currentTitle}")
-        model:
-        [
-                title       : title,
-                currentTitle: currentTitle,
-                id          : id,
-                gotoProgress: gotoProgress
-        ]
-    }
-
     protected void prepareParams() {
 
         println("教师日常操作：")
@@ -215,10 +176,10 @@ class Operation4TeacherController extends ProgressController {
                 statusInfo = "请选择项目/课程："
                 break
             case 1:
-                statusInfo = "项目：${Thing.get(currentId)}，请选择团队："
+                statusInfo = "项目=${Thing.get(currentId)}，请选择团队："
                 break
             case 2:
-                statusInfo = "团队：${Team.get(currentId)}"
+                statusInfo = "团队=${Team.get(currentId)}"
                 break
         }
         model:

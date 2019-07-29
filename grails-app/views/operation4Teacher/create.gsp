@@ -33,6 +33,8 @@
 </g:javascript>
 
 <div class="card">
+    <div class="alert alert-info">${this.progress.team} 团队进展情况</div>
+
     <div id="create-progress" class="content scaffold-create" role="main">
         <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
@@ -52,7 +54,10 @@
                     <label for="prevProgress">
                         <g:message code="progress.prevProgress.label" default="前情回顾"/>
                     </label>
-                    <g:textField name="prevProgress.id" value="${this.progress?.prevProgress?.id}"/>
+                    <span>
+                        <g:textField name="prevProgress.id" value="${this.progress?.prevProgress?.id}"/>
+                        ${this.progress?.prevProgress?.currentStatus}
+                    </span>
                 </div>
 
                 <div class="fieldcontain ${hasErrors(bean: this.progress, field: 'currentStatus', 'error')} required">

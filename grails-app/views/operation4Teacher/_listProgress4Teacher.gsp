@@ -17,8 +17,7 @@
             <td>${item.id}</td>
             <td>
                 ${item?.currentStatus}
-                <a href="/operation4Teacher/create?team=${item.team.id}">新进展</a>
-                <a href="/operation4Teacher/create?preProgress=${item.id}">连续进展</a>
+                <a href="/operation4Teacher/create?preProgress=${item.id}">下一步</a>
             </td>
             <td>${item.problemEncounter}</td>
             <td>

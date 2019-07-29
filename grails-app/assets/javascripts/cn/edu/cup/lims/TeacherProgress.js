@@ -9,6 +9,10 @@ $(function () {
     card进度维护Div = $("#card进度维护Div");
     setupPagination4Card(card进度维护Div);
     loadCurrentPageBootStrap("进度维护")
+
+    var currentId = $("#currentId").text().trim();
+    $("#createProgress").attr("href", "/operation4Teacher/create?team=" + currentId);
+
 })
 
 /*
