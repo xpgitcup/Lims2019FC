@@ -1,6 +1,5 @@
 package cn.edu.cup.operation
 
-import cn.edu.cup.basic.GroupInfo
 import cn.edu.cup.lims.Team
 import cn.edu.cup.lims.Thing
 import cn.edu.cup.lims.ThingType

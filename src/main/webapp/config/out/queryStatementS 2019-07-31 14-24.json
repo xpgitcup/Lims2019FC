@@ -870,8 +870,8 @@
 		"paramsString":"[currentId, max, offset]",
 		"queryString":"from Progress progress where progress.team=:currentId\r\norder by regDate desc",
 		"updateTime":1564554113000,
-		"version":2,
-		"viewName":"listProgress4Student"
+		"version":1,
+		"viewName":"listProgress4Teacher"
 	},
 	{
 		"actionName":"count",

@@ -59,6 +59,9 @@
                     </li>
                 </g:else>
             </g:each>
+            <g:if test="${currentStatusIndex == 2}">
+                <li class="nav-item"><a id="createProgress" href="#" class="btn btn-info">新进展</a></li>
+            </g:if>
             <li><a href="/operation4Student">返回</a></li>
             <li>||</li>
             <li>
