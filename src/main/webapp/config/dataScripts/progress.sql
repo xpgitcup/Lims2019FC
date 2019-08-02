@@ -11,7 +11,7 @@
  Target Server Version : 50627
  File Encoding         : 65001
 
- Date: 22/07/2019 14:31:19
+ Date: 02/08/2019 11:22:55
 */
 
 SET NAMES utf8mb4;
@@ -38,7 +38,7 @@ CREATE TABLE `progress`  (
   CONSTRAINT `FK3gfg3qw93o00sgybjd3nuy1v0` FOREIGN KEY (`contributor_id`) REFERENCES `person` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK9rdflrh05eu15ao9mldbr2eqg` FOREIGN KEY (`team_id`) REFERENCES `team` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FKaegt6dto4gjcsiy0xhfy491dx` FOREIGN KEY (`prev_progress_id`) REFERENCES `progress` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 659 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 660 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of progress
@@ -701,5 +701,6 @@ INSERT INTO `progress` VALUES (655, 0, '材料参数', 5, 654, NULL, '中外钢�
 INSERT INTO `progress` VALUES (656, 0, '7.22 崔雪萌 规范总结', 3, NULL, NULL, '7.22 崔雪萌 多气合采规范总结.pptx', 93, '2019-07-22 09:54:00');
 INSERT INTO `progress` VALUES (657, 0, '需求', 68, 644, NULL, '需求设计书.docx', 94, '2019-07-22 09:58:00');
 INSERT INTO `progress` VALUES (658, 0, '临兴区块井场', 3, 653, NULL, '临兴区块.xlsx', 80, '2019-07-22 10:33:00');
+INSERT INTO `progress` VALUES (659, 0, '2019.7.31 崔雪萌 引射器算例', 3, NULL, NULL, '2019.7.31 崔雪萌 引射器算例分析.pptx', 93, '2019-07-31 10:38:00');
 
 SET FOREIGN_KEY_CHECKS = 1;

@@ -828,6 +828,18 @@
 	{
 		"actionName":"list",
 		"controllerName":"operation4Student",
+		"isSQL":false,
+		"keyString":"全部任务",
+		"needToQuery":true,
+		"paramsString":"[max, offset]",
+		"queryString":"from Student student",
+		"updateTime":1564408010000,
+		"version":0,
+		"viewName":"listStudent"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Student",
 		"isSQL":true,
 		"keyString":"参与的",
 		"needToQuery":true,
@@ -836,6 +848,18 @@
 		"updateTime":1564715096000,
 		"version":1,
 		"viewName":"listTeam4Student"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Student",
+		"isSQL":false,
+		"keyString":"教学任务",
+		"needToQuery":true,
+		"paramsString":"[max, myself, offset, thingTypeList]",
+		"queryString":"from Student student",
+		"updateTime":1564408009000,
+		"version":0,
+		"viewName":"listStudent"
 	},
 	{
 		"actionName":"list",

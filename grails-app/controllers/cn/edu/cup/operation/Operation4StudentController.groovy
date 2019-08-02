@@ -16,19 +16,26 @@ class Operation4StudentController extends Operation4TeacherController {
             params.remove("currentStatus")
 
             def myself = session.systemUser.person()
+            def idlist = []
 
             switch (params.key) {
                 case "科研项目":
                     params.myself = myself.id
-                    def idlist = []
                     ThingType.findByName("科研项目").relatedThingTypeList().each { e ->
                         idlist.add(e.id)
                     }
                     params.thingTypeList = idlist
                     break
-                case "教学任务":
+                case "领导的":
                     params.myself = myself
                     params.thingTypeList = ThingType.findByName("教学任务").relatedThingTypeList()
+                    break
+                case "参与的":
+                    params.myself = myself.id
+                    ThingType.findByName("教学任务").relatedThingTypeList().each { e ->
+                        idlist.add(e.id)
+                    }
+                    params.thingTypeList = idlist
                     break
                 case "团队选择":
                     def thing = Thing.get(params.currentId)
@@ -45,6 +52,7 @@ class Operation4StudentController extends Operation4TeacherController {
     protected def processResult(result, params) {
         switch (params.key) {
             case "科研项目":
+            case "参与的":
                 def teams = []
                 println("结果：${result}")
                 result.objectList.each { e ->

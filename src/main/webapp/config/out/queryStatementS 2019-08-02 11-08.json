@@ -784,13 +784,35 @@
 	{
 		"actionName":"count",
 		"controllerName":"operation4Student",
-		"isSQL":true,
+		"isSQL":false,
+		"keyString":"全部任务",
+		"needToQuery":true,
+		"paramsString":"[]",
+		"queryString":"select count(*) from Student student",
+		"updateTime":1564408010000,
+		"version":0
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4Student",
+		"isSQL":false,
 		"keyString":"参与的",
 		"needToQuery":true,
 		"paramsString":"[myself, thingTypeList]",
-		"queryString":"SELECT count(*) FROM team_person\r\nINNER JOIN team ON team_person.team_members_id = team.id\r\nINNER JOIN thing ON team.thing_id = thing.id\r\nINNER JOIN thing_type ON thing.thing_type_id = thing_type.id\r\nWHERE team_person.person_id=myself  AND\r\nthing.thing_type_id IN (thingTypeList)",
+		"queryString":"select count(*) from Student student",
 		"updateTime":1564715096000,
-		"version":1
+		"version":0
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4Student",
+		"isSQL":false,
+		"keyString":"教学任务",
+		"needToQuery":true,
+		"paramsString":"[myself, thingTypeList]",
+		"queryString":"select count(*) from Student student",
+		"updateTime":1564408009000,
+		"version":0
 	},
 	{
 		"actionName":"count",
@@ -821,21 +843,45 @@
 		"keyString":"领导的",
 		"needToQuery":true,
 		"paramsString":"[myself, thingTypeList]",
-		"queryString":"select count(*) from Progress progress\r\nwhere \r\n(progress.team.leader=:myself)\r\nand\r\n(progress.team.thing.thingType in (:thingTypeList))",
+		"queryString":"select count(*) from Progress progress\r\nwhere \r\n(progress.team.leader=:myself)\r\nand\r\n(progress.thing.thingType in (:thingTypeList))",
 		"updateTime":1564715095000,
-		"version":2
+		"version":1
 	},
 	{
 		"actionName":"list",
 		"controllerName":"operation4Student",
-		"isSQL":true,
+		"isSQL":false,
+		"keyString":"全部任务",
+		"needToQuery":true,
+		"paramsString":"[max, offset]",
+		"queryString":"from Student student",
+		"updateTime":1564408010000,
+		"version":0,
+		"viewName":"listStudent"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Student",
+		"isSQL":false,
 		"keyString":"参与的",
 		"needToQuery":true,
 		"paramsString":"[max, myself, offset, thingTypeList]",
-		"queryString":"SELECT team_person.team_members_id\r\nFROM team_person INNER JOIN team ON team_person.team_members_id = team.id \r\nINNER JOIN thing ON team.thing_id = thing.id\r\nINNER JOIN thing_type ON thing.thing_type_id = thing_type.id\r\nWHERE team_person.person_id=myself AND\r\nthing.thing_type_id IN (thingTypeList)\r\nlimit %d,%d",
+		"queryString":"from Student student",
 		"updateTime":1564715096000,
-		"version":1,
-		"viewName":"listTeam4Student"
+		"version":0,
+		"viewName":"listStudent"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Student",
+		"isSQL":false,
+		"keyString":"教学任务",
+		"needToQuery":true,
+		"paramsString":"[max, myself, offset, thingTypeList]",
+		"queryString":"from Student student",
+		"updateTime":1564408009000,
+		"version":0,
+		"viewName":"listStudent"
 	},
 	{
 		"actionName":"list",
@@ -868,9 +914,9 @@
 		"keyString":"领导的",
 		"needToQuery":true,
 		"paramsString":"[max, myself, offset, thingTypeList]",
-		"queryString":"from Progress progress\r\nwhere \r\n(progress.team.leader=:myself)\r\nand\r\n(progress.team.thing.thingType in (:thingTypeList))\r\norder by progress.team.thing.thingType",
+		"queryString":"from Progress progress\r\nwhere \r\n(progress.team.leader=:myself)\r\nand\r\n(progress.thing.thingType in (:thingTypeList))\r\norder by progress.thing.thingType",
 		"updateTime":1564715095000,
-		"version":2,
+		"version":1,
 		"viewName":"listProgress4Student"
 	},
 	{

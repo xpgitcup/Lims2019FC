@@ -7,12 +7,12 @@
                 科研项目
             </a>
         </li><li class="nav-item">
-        <a href="#div教学任务" class="nav-link" data-toggle="tab">
-            教学任务
+        <a href="#div领导的" class="nav-link" data-toggle="tab">
+            领导的
         </a>
     </li><li class="nav-item">
-        <a href="#div全部任务" class="nav-link" data-toggle="tab">
-            全部任务
+        <a href="#div参与的" class="nav-link" data-toggle="tab">
+            参与的
         </a>
     </li>
     </ul>
@@ -62,10 +62,10 @@
             </ul>
         </div>
         <!--具体的科研项目标签结束======-->
-        <!--具体的教学任务标签-->
-        <div id="div教学任务" class="tab-pane">
-            <div id="display教学任务Div">
-                <br> 在这里显示教学任务所需的信息</br>
+        <!--具体的领导的标签-->
+        <div id="div领导的" class="tab-pane">
+            <div id="display领导的Div">
+                <br> 在这里显示领导的所需的信息</br>
             </div>
             <!-- 这里是分页设置-->
             <ul class="pagination pagination-sm">
@@ -73,42 +73,42 @@
                     <a class="page-link">页长</a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" id="pageSizeStudent教学任务"></a>
+                    <a class="page-link" id="pageSizeStudent领导的"></a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" href="javascript: loadFirstPageBootStrap('教学任务')">首页</a>
+                    <a class="page-link" href="javascript: loadFirstPageBootStrap('领导的')">首页</a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" href="javascript: loadPreviousPageBootStrap('教学任务')">&laquo</a>
+                    <a class="page-link" href="javascript: loadPreviousPageBootStrap('领导的')">&laquo</a>
                 </li>
                 <li class="page-item" >
-                    <a class="page-link" id="currentPageStudent教学任务"></a>
+                    <a class="page-link" id="currentPageStudent领导的"></a>
                 </li>
                 <li class="page-item" >
                     <a class="page-link">/</a>
                 </li>
                 <li class="page-item" >
-                    <a class="page-link" id="totalPageStudent教学任务"></a>
+                    <a class="page-link" id="totalPageStudent领导的"></a>
                 </li>
                 <li>
-                    <a class="page-link" href="javascript: loadNextPageBootStrap('教学任务')">&raquo</a>
+                    <a class="page-link" href="javascript: loadNextPageBootStrap('领导的')">&raquo</a>
                 </li>
                 <li>
-                    <a class="page-link" href="javascript: loadLastPageBootStrap('教学任务')">尾页</a>
+                    <a class="page-link" href="javascript: loadLastPageBootStrap('领导的')">尾页</a>
                 </li>
                 <li class="page-item">
                     <a class="page-link">总记录数</a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" id="totalCountStudent教学任务"></a>
+                    <a class="page-link" id="totalCountStudent领导的"></a>
                 </li>
             </ul>
         </div>
-        <!--具体的教学任务标签结束======-->
-        <!--具体的全部任务标签-->
-        <div id="div全部任务" class="tab-pane">
-            <div id="display全部任务Div">
-                <br> 在这里显示全部任务所需的信息</br>
+        <!--具体的领导的标签结束======-->
+        <!--具体的参与的标签-->
+        <div id="div参与的" class="tab-pane">
+            <div id="display参与的Div">
+                <br> 在这里显示参与的所需的信息</br>
             </div>
             <!-- 这里是分页设置-->
             <ul class="pagination pagination-sm">
@@ -116,38 +116,38 @@
                     <a class="page-link">页长</a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" id="pageSizeStudent全部任务"></a>
+                    <a class="page-link" id="pageSizeStudent参与的"></a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" href="javascript: loadFirstPageBootStrap('全部任务')">首页</a>
+                    <a class="page-link" href="javascript: loadFirstPageBootStrap('参与的')">首页</a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" href="javascript: loadPreviousPageBootStrap('全部任务')">&laquo</a>
+                    <a class="page-link" href="javascript: loadPreviousPageBootStrap('参与的')">&laquo</a>
                 </li>
                 <li class="page-item" >
-                    <a class="page-link" id="currentPageStudent全部任务"></a>
+                    <a class="page-link" id="currentPageStudent参与的"></a>
                 </li>
                 <li class="page-item" >
                     <a class="page-link">/</a>
                 </li>
                 <li class="page-item" >
-                    <a class="page-link" id="totalPageStudent全部任务"></a>
+                    <a class="page-link" id="totalPageStudent参与的"></a>
                 </li>
                 <li>
-                    <a class="page-link" href="javascript: loadNextPageBootStrap('全部任务')">&raquo</a>
+                    <a class="page-link" href="javascript: loadNextPageBootStrap('参与的')">&raquo</a>
                 </li>
                 <li>
-                    <a class="page-link" href="javascript: loadLastPageBootStrap('全部任务')">尾页</a>
+                    <a class="page-link" href="javascript: loadLastPageBootStrap('参与的')">尾页</a>
                 </li>
                 <li class="page-item">
                     <a class="page-link">总记录数</a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" id="totalCountStudent全部任务"></a>
+                    <a class="page-link" id="totalCountStudent参与的"></a>
                 </li>
             </ul>
         </div>
-        <!--具体的全部任务标签结束======-->
+        <!--具体的参与的标签结束======-->
 
     </div>
 </div>

@@ -29,12 +29,14 @@
                 </g:else>
             </td>
             <td>
-                <g:if test="${item.supportFileExists()}">
-                    <a href="/operation4Teacher/download/${item.id}">${item.supportFileName}</a>
+                <g:if test="${item.supportFileName}">
+                    <g:if test="${item.supportFileExists()}">
+                        <a href="/operation4Teacher/download/${item.id}">${item.supportFileName}</a>
+                    </g:if>
+                    <g:else>
+                        找不到：${item.supportFileName}
+                    </g:else>
                 </g:if>
-                <g:else>
-                    找不到：${item.supportFileName}
-                </g:else>
             </td>
             <td>${item.contributor.name}</td>
             <td>${item.regDate}</td>
