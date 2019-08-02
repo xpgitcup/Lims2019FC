@@ -15,7 +15,7 @@ class BootStrap {
             }
             production {
                 println("发布环境...")
-                initService.configureForDevelopment(servletContext);
+                //initService.configureForDevelopment(servletContext);
             }
         }
     }

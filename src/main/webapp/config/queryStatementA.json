@@ -150,10 +150,10 @@
 		"keyString":"人员贡献",
 		"needToQuery":true,
 		"paramsString":"[like, max, offset]",
-		"queryString":"select progress, count(contributor) as CC from  Progress progress\r\nwhere progress.contributor.name like :like",
+		"queryString":"from  Progress progress\r\nwhere progress.contributor.name like :like",
 		"updateTime":1563975720000,
-		"version":2,
-		"viewName":"listProgress4Person"
+		"version":4,
+		"viewName":"listProgress"
 	},
 	{
 		"actionName":"list",
@@ -246,10 +246,10 @@
 		"keyString":"登录统计",
 		"needToQuery":true,
 		"paramsString":"[like, max, offset]",
-		"queryString":"select systemStatus.userName, count(systemStatus.userName) as CC\r\nfrom SystemStatus systemStatus \r\nwhere systemStatus.userName like :like",
+		"queryString":"from SystemStatus systemStatus \r\nwhere systemStatus.userName like :like",
 		"updateTime":1563975978000,
-		"version":3,
-		"viewName":"listSystemStatusCount"
+		"version":4,
+		"viewName":"listSystemStatus"
 	},
 	{
 		"actionName":"list",
@@ -431,8 +431,8 @@
 		"paramsString":"[max, offset, titleList]",
 		"queryString":"from Person person\r\nwhere person.personTitle in (:titleList)",
 		"updateTime":1563332107000,
-		"version":2,
-		"viewName":"listPerson"
+		"version":3,
+		"viewName":"listTeacher"
 	},
 	{
 		"actionName":"list",
@@ -443,8 +443,8 @@
 		"paramsString":"[like, max, offset, titleList]",
 		"queryString":"from Person person\r\nwhere person.personTitle in (:titleList) \r\nand ((person.code like :like) or (person.name like :like))",
 		"updateTime":1563433910000,
-		"version":1,
-		"viewName":"listPerson"
+		"version":2,
+		"viewName":"listTeacher"
 	},
 	{
 		"actionName":"list",
@@ -455,8 +455,8 @@
 		"paramsString":"[max, offset, titleList]",
 		"queryString":"from Person person\r\nwhere person.personTitle in (:titleList)",
 		"updateTime":1563332443000,
-		"version":2,
-		"viewName":"listPerson"
+		"version":3,
+		"viewName":"listStudent"
 	},
 	{
 		"actionName":"list",
@@ -467,8 +467,8 @@
 		"paramsString":"[max, offset, titleList]",
 		"queryString":"from Person person\r\nwhere person.personTitle in (:titleList)",
 		"updateTime":1563332443000,
-		"version":2,
-		"viewName":"listPerson"
+		"version":3,
+		"viewName":"listStudent"
 	},
 	{
 		"actionName":"list",
@@ -479,8 +479,8 @@
 		"paramsString":"[like, max, offset, titleList]",
 		"queryString":"from Person person\r\nwhere person.personTitle in (:titleList) \r\nand ((person.code like :like) or (person.name like :like))",
 		"updateTime":1563434156000,
-		"version":1,
-		"viewName":"listPerson"
+		"version":2,
+		"viewName":"listStudent"
 	},
 	{
 		"actionName":"count",

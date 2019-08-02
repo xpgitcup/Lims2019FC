@@ -11,7 +11,7 @@ $(function () {
     loadCurrentPageBootStrap("进度维护");
 
     var currentId = $("#currentId").text().trim();
-    $("#createProgress").attr("href", "/operation4Student/create?team=" + currentId);
+    $("#createProgress").attr("href", "operation4Student/create?team=" + currentId);
 
 })
 

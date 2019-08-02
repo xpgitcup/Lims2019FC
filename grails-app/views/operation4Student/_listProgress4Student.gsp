@@ -17,7 +17,7 @@
             <td>${item.id}</td>
             <td>
                 ${item?.currentStatus}
-                <a href="/operation4Student/create?preProgress=${item.id}">下一步</a>
+                <a href="operation4Student/create?preProgress=${item.id}">下一步</a>
             </td>
             <td>${item.problemEncounter}</td>
             <td>
@@ -31,7 +31,7 @@
             <td>
                 <g:if test="${item.supportFileName}">
                     <g:if test="${item.supportFileExists()}">
-                        <a href="/operation4Teacher/download/${item.id}">${item.supportFileName}</a>
+                        <a href="operation4Teacher/download/${item.id}">${item.supportFileName}</a>
                     </g:if>
                     <g:else>
                         找不到：${item.supportFileName}

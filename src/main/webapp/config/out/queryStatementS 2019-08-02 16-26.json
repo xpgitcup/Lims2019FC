@@ -150,10 +150,10 @@
 		"keyString":"人员贡献",
 		"needToQuery":true,
 		"paramsString":"[like, max, offset]",
-		"queryString":"select progress, count(contributor) as CC from  Progress progress\r\nwhere progress.contributor.name like :like",
+		"queryString":"from  Progress progress\r\nwhere progress.contributor.name like :like",
 		"updateTime":1563975720000,
-		"version":2,
-		"viewName":"listProgress4Person"
+		"version":4,
+		"viewName":"listProgress"
 	},
 	{
 		"actionName":"list",
@@ -246,10 +246,10 @@
 		"keyString":"登录统计",
 		"needToQuery":true,
 		"paramsString":"[like, max, offset]",
-		"queryString":"select systemStatus.userName, count(systemStatus.userName) as CC\r\nfrom SystemStatus systemStatus \r\nwhere systemStatus.userName like :like",
+		"queryString":"from SystemStatus systemStatus \r\nwhere systemStatus.userName like :like",
 		"updateTime":1563975978000,
-		"version":3,
-		"viewName":"listSystemStatusCount"
+		"version":4,
+		"viewName":"listSystemStatus"
 	},
 	{
 		"actionName":"list",
@@ -783,6 +783,98 @@
 	},
 	{
 		"actionName":"count",
+		"controllerName":"operation4Student",
+		"isSQL":true,
+		"keyString":"参与的",
+		"needToQuery":true,
+		"paramsString":"[myself, thingTypeList]",
+		"queryString":"SELECT count(*) FROM team_person\r\nINNER JOIN team ON team_person.team_members_id = team.id\r\nINNER JOIN thing ON team.thing_id = thing.id\r\nINNER JOIN thing_type ON thing.thing_type_id = thing_type.id\r\nWHERE team_person.person_id=myself  AND\r\nthing.thing_type_id IN (thingTypeList)",
+		"updateTime":1564715096000,
+		"version":1
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4Student",
+		"isSQL":true,
+		"keyString":"科研项目",
+		"needToQuery":true,
+		"paramsString":"[myself, thingTypeList]",
+		"queryString":"SELECT count(*) FROM team_person\r\nINNER JOIN team ON team_person.team_members_id = team.id\r\nINNER JOIN thing ON team.thing_id = thing.id\r\nINNER JOIN thing_type ON thing.thing_type_id = thing_type.id\r\nWHERE team_person.person_id=myself  AND\r\nthing.thing_type_id IN (thingTypeList)",
+		"updateTime":1564408007000,
+		"version":2
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4Student",
+		"isSQL":false,
+		"keyString":"进度维护",
+		"needToQuery":true,
+		"paramsString":"[currentId]",
+		"queryString":"select count(*) from Progress progress where progress.team=:currentId",
+		"updateTime":1564554113000,
+		"version":1
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4Student",
+		"isSQL":false,
+		"keyString":"领导的",
+		"needToQuery":true,
+		"paramsString":"[myself, thingTypeList]",
+		"queryString":"select count(*) from Progress progress\r\nwhere \r\n(progress.team.leader=:myself)\r\nand\r\n(progress.team.thing.thingType in (:thingTypeList))",
+		"updateTime":1564715095000,
+		"version":2
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Student",
+		"isSQL":true,
+		"keyString":"参与的",
+		"needToQuery":true,
+		"paramsString":"[max, myself, offset, thingTypeList]",
+		"queryString":"SELECT team_person.team_members_id\r\nFROM team_person INNER JOIN team ON team_person.team_members_id = team.id \r\nINNER JOIN thing ON team.thing_id = thing.id\r\nINNER JOIN thing_type ON thing.thing_type_id = thing_type.id\r\nWHERE team_person.person_id=myself AND\r\nthing.thing_type_id IN (thingTypeList)\r\nlimit %d,%d",
+		"updateTime":1564715096000,
+		"version":1,
+		"viewName":"listTeam4Student"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Student",
+		"isSQL":true,
+		"keyString":"科研项目",
+		"needToQuery":true,
+		"paramsString":"[max, myself, offset, thingTypeList]",
+		"queryString":"SELECT team_person.team_members_id\r\nFROM team_person INNER JOIN team ON team_person.team_members_id = team.id \r\nINNER JOIN thing ON team.thing_id = thing.id\r\nINNER JOIN thing_type ON thing.thing_type_id = thing_type.id\r\nWHERE team_person.person_id=myself AND\r\nthing.thing_type_id IN (thingTypeList)\r\nlimit %d,%d",
+		"updateTime":1564408007000,
+		"version":3,
+		"viewName":"listTeam4Student"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Student",
+		"isSQL":false,
+		"keyString":"进度维护",
+		"needToQuery":true,
+		"paramsString":"[currentId, max, offset]",
+		"queryString":"from Progress progress where progress.team=:currentId\r\norder by regDate desc",
+		"updateTime":1564554113000,
+		"version":2,
+		"viewName":"listProgress4Student"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Student",
+		"isSQL":false,
+		"keyString":"领导的",
+		"needToQuery":true,
+		"paramsString":"[max, myself, offset, thingTypeList]",
+		"queryString":"from Progress progress\r\nwhere \r\n(progress.team.leader=:myself)\r\nand\r\n(progress.team.thing.thingType in (:thingTypeList))\r\norder by progress.team.thing.thingType",
+		"updateTime":1564715095000,
+		"version":2,
+		"viewName":"listProgress4Student"
+	},
+	{
+		"actionName":"count",
 		"controllerName":"operation4SystemUser",
 		"isSQL":false,
 		"keyString":"用户维护",
@@ -864,6 +956,17 @@
 		"actionName":"count",
 		"controllerName":"operation4Teacher",
 		"isSQL":false,
+		"keyString":"团队选择",
+		"needToQuery":true,
+		"paramsString":"[currentId, like]",
+		"queryString":"select count(*) from Team team where team.thing = :currentId\r\nand \r\n((team.leader.name like :like) or (team.thing.name like :like))",
+		"updateTime":1564223382000,
+		"version":2
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4Teacher",
+		"isSQL":false,
 		"keyString":"毕业设计",
 		"needToQuery":true,
 		"paramsString":"[myself, thingTypeList]",
@@ -875,12 +978,34 @@
 		"actionName":"count",
 		"controllerName":"operation4Teacher",
 		"isSQL":false,
+		"keyString":"毕业设计",
+		"needToQuery":true,
+		"paramsString":"[like, myself, thingTypeList]",
+		"queryString":"select count(*) from Thing thing\r\nwhere \r\nthing.thingType in (:thingTypeList)\r\nand\r\nthing.sponsor = :myself\r\nand \r\nthing.name like :like",
+		"updateTime":1564223580000,
+		"version":2
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4Teacher",
+		"isSQL":false,
 		"keyString":"研究生论文",
 		"needToQuery":true,
 		"paramsString":"[myself, thingTypeList]",
 		"queryString":"select count(*) from Thing thing\r\nwhere \r\nthing.thingType in (:thingTypeList)\r\nand\r\nthing.sponsor = :myself",
 		"updateTime":1563868782000,
 		"version":1
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4Teacher",
+		"isSQL":false,
+		"keyString":"研究生论文",
+		"needToQuery":true,
+		"paramsString":"[like, myself, thingTypeList]",
+		"queryString":"select count(*) from Thing thing\r\nwhere \r\nthing.thingType in (:thingTypeList)\r\nand\r\nthing.sponsor = :myself\r\nand \r\nthing.name like :like",
+		"updateTime":1564223023000,
+		"version":2
 	},
 	{
 		"actionName":"count",
@@ -913,6 +1038,17 @@
 		"paramsString":"[myself, thingTypeList]",
 		"queryString":"select count(*) from Thing thing\r\nwhere \r\nthing.thingType in (:thingTypeList)\r\nand\r\nthing.sponsor = :myself",
 		"updateTime":1563868782000,
+		"version":1
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4Teacher",
+		"isSQL":false,
+		"keyString":"课堂教学",
+		"needToQuery":true,
+		"paramsString":"[like, myself, thingTypeList]",
+		"queryString":"select count(*) from Thing thing\r\nwhere \r\nthing.thingType in (:thingTypeList)\r\nand\r\nthing.sponsor = :myself\r\nand \r\nthing.name like :like",
+		"updateTime":1564223114000,
 		"version":1
 	},
 	{
@@ -999,6 +1135,18 @@
 		"actionName":"list",
 		"controllerName":"operation4Teacher",
 		"isSQL":false,
+		"keyString":"团队选择",
+		"needToQuery":true,
+		"paramsString":"[currentId, like, max, offset]",
+		"queryString":"from Team team where team.thing = :currentId\r\nand \r\n((team.leader.name like :like) or (team.thing.name like :like))",
+		"updateTime":1564223382000,
+		"version":2,
+		"viewName":"listTeam4Teacher"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Teacher",
+		"isSQL":false,
 		"keyString":"毕业设计",
 		"needToQuery":true,
 		"paramsString":"[max, myself, offset, thingTypeList]",
@@ -1011,12 +1159,36 @@
 		"actionName":"list",
 		"controllerName":"operation4Teacher",
 		"isSQL":false,
+		"keyString":"毕业设计",
+		"needToQuery":true,
+		"paramsString":"[like, max, myself, offset, thingTypeList]",
+		"queryString":"from Thing thing\r\nwhere \r\nthing.sponsor = :myself\r\nand\r\nthing.thingType in (:thingTypeList)\r\nand \r\nthing.name like :like",
+		"updateTime":1564223580000,
+		"version":2,
+		"viewName":"listThing4Teacher"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Teacher",
+		"isSQL":false,
 		"keyString":"研究生论文",
 		"needToQuery":true,
 		"paramsString":"[max, myself, offset, thingTypeList]",
 		"queryString":"from Thing thing\r\nwhere \r\nthing.sponsor = :myself\r\nand\r\nthing.thingType in (:thingTypeList)",
 		"updateTime":1563868782000,
 		"version":6,
+		"viewName":"listThing4Teacher"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Teacher",
+		"isSQL":false,
+		"keyString":"研究生论文",
+		"needToQuery":true,
+		"paramsString":"[like, max, myself, offset, thingTypeList]",
+		"queryString":"from Thing thing\r\nwhere \r\nthing.sponsor = :myself\r\nand\r\nthing.thingType in (:thingTypeList)\r\nand \r\nthing.name like :like",
+		"updateTime":1564223023000,
+		"version":2,
 		"viewName":"listThing4Teacher"
 	},
 	{
@@ -1053,6 +1225,18 @@
 		"queryString":"from Thing thing\r\nwhere \r\nthing.sponsor = :myself\r\nand\r\nthing.thingType in (:thingTypeList)",
 		"updateTime":1563868782000,
 		"version":2,
+		"viewName":"listThing4Teacher"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Teacher",
+		"isSQL":false,
+		"keyString":"课堂教学",
+		"needToQuery":true,
+		"paramsString":"[like, max, myself, offset, thingTypeList]",
+		"queryString":"from Thing thing\r\nwhere \r\nthing.sponsor = :myself\r\nand\r\nthing.thingType in (:thingTypeList)\r\nand \r\nthing.name like :like",
+		"updateTime":1564223114000,
+		"version":1,
 		"viewName":"listThing4Teacher"
 	},
 	{

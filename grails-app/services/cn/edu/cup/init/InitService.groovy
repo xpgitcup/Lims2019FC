@@ -23,8 +23,6 @@ class InitService {
     def captionService
     def commonService
     def personTitleService
-    def teacherService
-    def systemCommonService
     def systemAttributeService
     def thingTypeService
     def planService
