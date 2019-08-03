@@ -13,12 +13,6 @@ class Operation4ThingTypeController extends ThingTypeController {
     def createProject() {
         println("${params}")
         def aThingType = thingTypeService.get(params.id)
-        /*
-        def project = new Project(
-                thingType: aThingType
-        )
-
-         */
 
         def view = "createProject"
         if (request.xhr) {

@@ -43,7 +43,7 @@
                        onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');"/>
             </g:if>
             <g:else>
-                <a>不能删除！项目：${this.thingType.things?.size()}，任务分配：${cn.edu.cup.lims.ThingTypeCircle.countByThingType(this.thingType)}</a>
+                <a>不能删除！项目：${this.thingType.things?.size()}，任务分配：</a>
             </g:else>
             <a>||</a>
             <g:if test="${ThingType.findByName("科研项目").bePartOf(thingType)}">
