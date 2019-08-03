@@ -1,55 +1,54 @@
-<!DOCTYPE html>
-<html>
-    <head>
-    <!-- 实现可定制的布局 -->
-        <g:if test="${layout}">
-            <meta name="layout" content="${layout}"/>
+<div class="card small">
+    <div id="create-thing" class="content scaffold-create" role="main">
+        <g:if test="${flash.message}">
+            <div class="message" role="status">${flash.message}</div>
         </g:if>
-        <g:else>
-            <g:if test="${session.layout}">
-                <meta name="layout" content="${session.layout}"/>
-            </g:if>
-            <g:else>
-                <meta name="layout" content="main"/>
-            </g:else>
-        </g:else>
-    <!-- end 实现可定制的布局 -->
-        <g:set var="entityName" value="${message(code: 'thing.label', default: 'Thing')}" />
-        <title><g:message code="default.create.label" args="[entityName]" /></title>
-    </head>
-    <body>
-    <div class="card">
-        <a href="#create-thing" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-        <div class="nav" role="navigation">
-            <ul>
-                <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-                <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+        <g:hasErrors bean="${this.thing}">
+            <ul class="errors" role="alert">
+                <g:eachError bean="${this.thing}" var="error">
+                    <li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message
+                            error="${error}"/></li>
+                </g:eachError>
             </ul>
-        </div>
-        <div id="create-thing" class="content scaffold-create" role="main">
-            <h1><g:message code="default.create.label" args="[entityName]" /></h1>
-            <g:if test="${flash.message}">
-                <div class="message" role="status">${flash.message}</div>
-            </g:if>
-            <g:hasErrors bean="${this.thing}">
-                <ul class="errors" role="alert">
-                    <g:eachError bean="${this.thing}" var="error">
-                        <li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
-                    </g:eachError>
-                </ul>
-            </g:hasErrors>
-            <g:form id="${this.thing.id}" action="save" controller="${params.controller}" method="POST">
-                <fieldset class="form">
-                    <f:all bean="thing"/>
-                    <g:hiddenField name="nextController" value="${params.nextController}"/>
-                    <g:hiddenField name="nextAction" value="${params.nextAction}"/>
-                    <g:hiddenField name="url" value=""/>
-                </fieldset>
-                <fieldset class="buttons">
-                    <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
-                </fieldset>
-            </g:form>
-        </div>
+        </g:hasErrors>
+        <g:form id="${this.thing.id}" action="save" controller="${params.controller}" method="POST">
+            <fieldset class="form">
+                <!--f:all bean="thing"/-->
+
+                <div class='fieldcontain'>
+                    <label for='name'>Name</label>
+                    <g:textField name="name" value="${this.thing.name}"/>
+                </div>
+
+                <div class='fieldcontain'>
+                    <label for='sponsor'>发起者</label>
+                    <g:textField name="sponsor" value="${this.thing.sponsor}"/>
+                </div>
+
+                <div class='fieldcontain'>
+                    <label for='thingType'>类型</label>
+                    <g:textField name="thingType" value="${this.thing.thingType}"/>
+                </div>
+
+                <div class='fieldcontain'>
+                    <label for='startDate'>开始</label>
+                    <g:datePicker name="startDate" value="${this.thing.startDate}"/>
+                </div>
+
+                <div class='fieldcontain'>
+                    <label for='endDate'>结束</label>
+                    <g:datePicker name="endDate" value="${this.thing.endDate}"/>
+                </div>
+
+
+                <g:hiddenField name="nextController" value="${params.nextController}"/>
+                <g:hiddenField name="nextAction" value="${params.nextAction}"/>
+                <g:hiddenField name="url" value=""/>
+            </fieldset>
+            <fieldset class="buttons">
+                <g:submitButton name="create" class="save"
+                                value="${message(code: 'default.button.create.label', default: 'Create')}"/>
+            </fieldset>
+        </g:form>
     </div>
-    </body>
-</html>
+</div>

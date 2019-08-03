@@ -1,15 +1,61 @@
 package cn.edu.cup.operation
 
+import cn.edu.cup.basic.GroupInfo
+import cn.edu.cup.lims.Team
 import cn.edu.cup.lims.Thing
 import cn.edu.cup.lims.ThingController
 import cn.edu.cup.lims.ThingType
 
 class Operation4TeacherProjectController extends ThingController {
 
-    def createNewThing(ThingType thingType) {
-        println("类型：${thingType}   ${params}")
+    def commonService
 
-        def thing = new Thing(thingType: thingType);
+    protected void prepareParams() {
+
+        println("教师服务：")
+        println("${params}")
+
+        if (session.systemUser) {
+
+            params.remove("currentStatus")
+
+            def myself = session.systemUser.person()
+            def thingType = ThingType.get(params.currentId)
+
+            switch (params.key) {
+                case "项目管理":
+                    params.currentId = thingType
+                    break
+            }
+        }
+    }
+
+    def createNewThing(ThingType thingType) {
+
+        println("类型：${thingType}   ${params}")
+        def thingName = ""
+        if (thingType.bePartOfName("教学任务")) {
+            Calendar c = Calendar.getInstance();
+            def year = c.get(Calendar.YEAR)
+            switch (thingType.name) {
+                case "硕士论文":
+                    thingName = "${year - 3}级.硕士论文"
+                    break
+                case "本科毕设":
+                    thingName = "${year - 1}~${year}-2.本科毕设"
+                    break
+                default:
+                    thingName = "${year - 1}~${year}-2.${thingType.name}"
+            }
+        }
+
+        println("---------${thingName}")
+
+        def thing = new Thing(
+                name: thingName,
+                sponsor: session.systemUser.person(),
+                thingType: thingType
+        );
         def viewName = params.viewName
 
         if (request.xhr) {

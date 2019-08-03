@@ -12,7 +12,7 @@ var zNodesThingType;
 * 项目列表相关的定义
 * */
 bootStrapPaginationSetting.identifier = "Thing"
-bootStrapPaginationSetting.controller = "operation4Thing"
+bootStrapPaginationSetting.controller = "operation4TeacherProject"
 bootStrapPaginationSetting.appendFunction = "appendParamsBootStrapThing";
 
 var card项目管理Div;
@@ -23,7 +23,7 @@ $(function () {
     zTreeObjThingType = $.fn.zTree.init($("#ztreeThingTypeUl"), settingThingType, zNodesThingType);
     zTreeObjThingType.expandAll(true);
 
-    //console.info(document.title + "加载了...")
+    console.info(document.title + "加载了...")
     card项目管理Div = $("#card项目管理Div");
     setupPagination4Card(card项目管理Div);
     loadCurrentPageBootStrap("项目管理");
@@ -104,6 +104,8 @@ function clearFilterBootStrap() {
     $("#currentFilter").html("")
     location.reload();
 }
+
+
 
 /*
 * 创建新的项目

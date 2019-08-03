@@ -1,7 +1,9 @@
 <%@ page import="cn.edu.cup.lims.ThingType" %>
 <g:if test="${currentId > 0}">
     <g:if test="${cn.edu.cup.lims.ThingType.get(currentId).subTypes?.size() > 0}">
-        <div class="alert-info">请选择具体的类型！</div>
+        <div class="card card-body">
+            <div class="alert-info">请选择具体的类型！</div>
+        </div>
     </g:if>
     <g:else>
         <!-- 设置查询 -->

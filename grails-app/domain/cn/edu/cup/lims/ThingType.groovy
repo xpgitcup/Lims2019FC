@@ -74,9 +74,17 @@ class ThingType implements SelfCheck {
 
     boolean bePartOf(ThingType athingType) {
         boolean isThis = athingType.equals(this)
+        println("isThis ${isThis} ${athingType}")
         //boolean isMember = subTypes.contains(athingType)
-        boolean isMember = relatedThingTypeList().contains(athingType)
+        boolean isMember = athingType.relatedThingTypeList().contains(this)
+        println("isMember ${isMember} ${athingType}")
         return (isThis || isMember)
+    }
+
+    boolean bePartOfName(String athingTypeName) {
+        def type = ThingType.findByName(athingTypeName)
+        println("隶属性判断：${type}")
+        return bePartOf(type)
     }
 
     @Override
