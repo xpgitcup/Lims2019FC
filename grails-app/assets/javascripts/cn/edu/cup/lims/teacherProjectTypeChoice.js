@@ -23,10 +23,13 @@ $(function () {
     zTreeObjThingType = $.fn.zTree.init($("#ztreeThingTypeUl"), settingThingType, zNodesThingType);
     zTreeObjThingType.expandAll(true);
 
-    console.info(document.title + "加载了...")
-    card项目管理Div = $("#card项目管理Div");
-    setupPagination4Card(card项目管理Div);
-    loadCurrentPageBootStrap("项目管理");
+    //console.info(document.title + "加载了...")
+    var currentId = parseInt($("#currentId").text().trim());
+    if (currentId>0) {
+        card项目管理Div = $("#card项目管理Div");
+        setupPagination4Card(card项目管理Div);
+        loadCurrentPageBootStrap("项目管理");
+    }
 
 });
 
@@ -105,13 +108,20 @@ function clearFilterBootStrap() {
     location.reload();
 }
 
-
-
 /*
 * 创建新的项目
 * */
 function createNewThing() {
     var url = "operation4TeacherProject/createNewThing?viewName=createThing";
+    var id = $("#currentId").text().trim();
+    ajaxRun(url, id, "newThingDiv");
+}
+
+/*
+* 创建新的项目
+* */
+function createThing() {
+    var url = "operation4TeacherProject/createThing?viewName=createThingA";
     var id = $("#currentId").text().trim();
     ajaxRun(url, id, "newThingDiv");
 }

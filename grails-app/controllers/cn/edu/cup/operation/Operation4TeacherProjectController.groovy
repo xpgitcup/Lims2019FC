@@ -1,7 +1,5 @@
 package cn.edu.cup.operation
 
-import cn.edu.cup.basic.GroupInfo
-import cn.edu.cup.lims.Team
 import cn.edu.cup.lims.Thing
 import cn.edu.cup.lims.ThingController
 import cn.edu.cup.lims.ThingType
@@ -27,6 +25,26 @@ class Operation4TeacherProjectController extends ThingController {
                     params.currentId = thingType
                     break
             }
+        }
+    }
+
+    def saveThings() {
+        println("开始创建：${params}")
+        def thingType = ThingType.get(params.thingType)
+        def startDate = params.startDate
+        def endDate = params.endDate
+        def relatedPersons = params.relatedPersons.split("\n")
+        println("${relatedPersons}")
+        redirect(action: "index", params: [currentId: params.thingType])
+    }
+
+    def createThing(ThingType thingType) {
+        def viewName = params.viewName
+        if (request.xhr) {
+            render(template: viewName, model: [thingType: thingType])
+        } else {
+            model:
+            [thingType: thingType]
         }
     }
 

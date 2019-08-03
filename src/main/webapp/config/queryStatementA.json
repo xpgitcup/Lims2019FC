@@ -1289,6 +1289,29 @@
 	},
 	{
 		"actionName":"count",
+		"controllerName":"operation4TeacherProject",
+		"isSQL":false,
+		"keyString":"项目管理",
+		"needToQuery":true,
+		"paramsString":"[currentId]",
+		"queryString":"select count(*) from Thing thing where thing.thingType=:currentId",
+		"updateTime":1564818363000,
+		"version":1
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4TeacherProject",
+		"isSQL":false,
+		"keyString":"项目管理",
+		"needToQuery":true,
+		"paramsString":"[currentId, max, offset]",
+		"queryString":"from Thing thing where thing.thingType=:currentId",
+		"updateTime":1564818363000,
+		"version":1,
+		"viewName":"listThing4Teacher"
+	},
+	{
+		"actionName":"count",
 		"controllerName":"operation4Team",
 		"isSQL":false,
 		"keyString":"全部教学任务",
@@ -1605,6 +1628,17 @@
 		"version":1
 	},
 	{
+		"actionName":"count",
+		"controllerName":"operation4Thing",
+		"isSQL":false,
+		"keyString":"项目管理",
+		"needToQuery":true,
+		"paramsString":"[currentId, currentStatus]",
+		"queryString":"select count(*) from Thing thing",
+		"updateTime":1564817576000,
+		"version":0
+	},
+	{
 		"actionName":"list",
 		"controllerName":"operation4Thing",
 		"isSQL":false,
@@ -1734,6 +1768,30 @@
 		"queryString":"from Thing thing\r\nwhere thing.thingType in (:thingTypeList)\r\nand \r\n(name like :like) or (sponsor.name like :like) or (thing.thingType.name like :like)",
 		"updateTime":1563286888000,
 		"version":1,
+		"viewName":"listThing"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Thing",
+		"isSQL":false,
+		"keyString":"项目管理",
+		"needToQuery":true,
+		"paramsString":"[currentStatus, max, offset]",
+		"queryString":"from Thing thing",
+		"updateTime":1564817573000,
+		"version":0,
+		"viewName":"listThing"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Thing",
+		"isSQL":false,
+		"keyString":"项目管理",
+		"needToQuery":true,
+		"paramsString":"[currentId, currentStatus, max, offset]",
+		"queryString":"from Thing thing",
+		"updateTime":1564817576000,
+		"version":0,
 		"viewName":"listThing"
 	}
 ]

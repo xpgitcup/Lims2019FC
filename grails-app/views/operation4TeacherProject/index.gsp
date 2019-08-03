@@ -67,6 +67,10 @@
 
     <!--这里渲染相应的视图-->
     <g:render template="${viewName}"/>
+
+    <g:if test="${flash.message}">
+        <div class="message" role="status">${flash.message}</div>
+    </g:if>
 </div>
 
 <div class="d-none" id="currentId">${currentId}</div>

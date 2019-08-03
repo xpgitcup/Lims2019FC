@@ -11,7 +11,7 @@
             <li>
                 <span class="form-inline">
                     <a id="createThing"
-                       href="javascript: createNewThing()">创建-${cn.edu.cup.lims.ThingType.get(currentId)}</a>
+                       href="javascript: createThing()">创建-${cn.edu.cup.lims.ThingType.get(currentId)}</a>
                 </span>
             </li>
             <li>
