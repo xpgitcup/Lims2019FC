@@ -132,7 +132,44 @@
     ]
   },
   {
-    "menuContext": "通用服务",
+    "menuContext": "教师服务",
+    "menuAction": "#",
+    "menuDescription": "用户的日常工作",
+    "menuOrder": 3,
+    "layout": "mainAfterLogin20190709",
+    "menuItems": [
+      {
+        "menuContext": "项目维护",
+        "menuAction": "operation4TeacherProject/index",
+        "menuDescription": "维护项目计划",
+        "layout": "mainAfterLogin20190709",
+        "menuOrder": 0
+      },
+      {
+        "menuContext": "计划维护",
+        "menuAction": "operation4ProjectPlan/index",
+        "menuDescription": "维护项目计划",
+        "layout": "mainAfterLogin20190709",
+        "menuOrder": 0
+      },
+      {
+        "menuContext": "进度维护",
+        "menuAction": "operation4Progress/index",
+        "menuDescription": "维护项目进度",
+        "layout": "mainAfterLogin20190709",
+        "menuOrder": 10
+      },
+      {
+        "menuContext": "团队管理",
+        "menuAction": "operation4Team/index",
+        "menuDescription": "维护团队信息",
+        "layout": "mainAfterLogin20190709",
+        "menuOrder": 20
+      }
+    ]
+  },
+  {
+    "menuContext": "学生服务",
     "menuAction": "#",
     "menuDescription": "用户的日常工作",
     "menuOrder": 3,
