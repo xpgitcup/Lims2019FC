@@ -104,3 +104,12 @@ function clearFilterBootStrap() {
     $("#currentFilter").html("")
     location.reload();
 }
+
+/*
+* 创建新的项目
+* */
+function createNewThing() {
+    var url = "operation4TeacherProject/createNewThing?viewName=createThing";
+    var id = $("#currentId").text().trim();
+    ajaxRun(url, id, "newThingDiv");
+}

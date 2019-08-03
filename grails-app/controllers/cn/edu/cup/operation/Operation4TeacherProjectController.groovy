@@ -1,8 +1,23 @@
 package cn.edu.cup.operation
 
+import cn.edu.cup.lims.Thing
 import cn.edu.cup.lims.ThingController
+import cn.edu.cup.lims.ThingType
 
 class Operation4TeacherProjectController extends ThingController {
+
+    def createNewThing(ThingType thingType) {
+        println("类型：${thingType}   ${params}")
+
+        def thing = new Thing(thingType: thingType);
+        def viewName = params.viewName
+
+        if (request.xhr) {
+            render(template: viewName, model: [thing: thing])
+        } else {
+            thing
+        }
+    }
 
     def index() {
         //状态定义
