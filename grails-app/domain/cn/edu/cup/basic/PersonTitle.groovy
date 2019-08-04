@@ -60,11 +60,11 @@ class PersonTitle implements SelfCheck {
 
     boolean bePartOf(PersonTitle aTitle) {
         boolean isThis = aTitle.name == this.name
-        println("是自己：${isThis} ??  ${aTitle.subTitles}")
+        //println("是自己：${isThis} ??  ${aTitle.subTitles}")
         //boolean isMember = aTitle.subTitles.toString().contains(this.name) //无法区分博士、博士后
         //boolean isMember = aTitle.subTitles.contains(this)
         boolean isMember = aTitle.subTitles.find { e -> e.name == this.name }
-        println("${this} 是成员：${isMember} ")
+        //println("${this} 是成员：${isMember} ")
         return (isThis || isMember)
     }
 

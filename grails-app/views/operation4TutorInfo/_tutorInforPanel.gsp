@@ -1,6 +1,20 @@
 <!-- 设置查询 -->
 <ul id="query导师信息维护UL" class="nav navbar bg-light">
     <li><a href="operation4TutorInfo/updateTutors">更新信息</a></li>
+    <li><a href="operation4TutorInfo/downloadTemplate">下载模板</a></li>
+    <li>
+        <g:uploadForm method="post" action="importFromFile">
+            <ul class="nav navbar p-0">
+                <li class="nav-item">
+                    <span>
+                        <label>导入</label>
+                        <input type="file" name="uploadedFile"/>
+                        <input type="submit" value="ok">
+                    </span>
+                </li>
+            </ul>
+        </g:uploadForm>
+    </li>
     <li>
         <span class="form-inline">
             筛选:<div id="currentFilter" class="text-danger">${keyString}</div>

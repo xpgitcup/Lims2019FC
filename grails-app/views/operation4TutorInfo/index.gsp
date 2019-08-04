@@ -36,6 +36,11 @@
             <g:render template="tutorInforPanel"/>
         </div>
     </div>
+    <div class="alert alert-info">
+        <g:if test="${flash.message}">
+            <div class="message" role="status">${flash.message}</div>
+        </g:if>
+    </div>
 </div>
 
 </body>

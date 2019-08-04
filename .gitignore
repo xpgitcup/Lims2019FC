@@ -12,3 +12,4 @@ out/
 .classpath
 !/src/main/webapp/config/out/
 /.nb-gradle/
+/src/main/webapp/file4import/
