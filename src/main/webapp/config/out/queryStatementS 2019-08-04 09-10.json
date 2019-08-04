@@ -1806,17 +1806,6 @@
 		"version":0
 	},
 	{
-		"actionName":"count",
-		"controllerName":"operation4TutorInfo",
-		"isSQL":false,
-		"keyString":"导师信息维护",
-		"needToQuery":true,
-		"paramsString":"[like]",
-		"queryString":"select count(*) from TutorInfo tutorInfo\r\nwhere \r\n(tutorInfo.teacher.name like :like) \r\nor\r\n(tutorInfo.teacher.code like :like)",
-		"updateTime":1564881128000,
-		"version":1
-	},
-	{
 		"actionName":"list",
 		"controllerName":"operation4TutorInfo",
 		"isSQL":false,
@@ -1826,18 +1815,6 @@
 		"queryString":"from TutorInfo tutorInfo",
 		"updateTime":1564880253000,
 		"version":0,
-		"viewName":"listTutorInfo"
-	},
-	{
-		"actionName":"list",
-		"controllerName":"operation4TutorInfo",
-		"isSQL":false,
-		"keyString":"导师信息维护",
-		"needToQuery":true,
-		"paramsString":"[like, max, offset]",
-		"queryString":"from TutorInfo tutorInfo\r\nwhere \r\n(tutorInfo.teacher.name like :like) \r\nor\r\n(tutorInfo.teacher.code like :like)",
-		"updateTime":1564881128000,
-		"version":1,
 		"viewName":"listTutorInfo"
 	}
 ]

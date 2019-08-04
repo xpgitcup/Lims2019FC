@@ -123,11 +123,25 @@
         "menuOrder": 30
       },
       {
+        "menuContext": "导师信息",
+        "menuAction": "operation4TutorInfo/index",
+        "menuDescription": "导师信息管理",
+        "layout": "mainAfterLogin20190709",
+        "menuOrder": 40
+      },
+      {
+        "menuContext": "班级信息",
+        "menuAction": "operation4GradeInfo/index",
+        "menuDescription": "导师信息管理",
+        "layout": "mainAfterLogin20190709",
+        "menuOrder": 50
+      },
+      {
         "menuContext": "进度维护",
         "menuAction": "operation4Progress/index",
         "menuDescription": "管理进度数据",
         "layout": "mainAfterLogin20190709",
-        "menuOrder": 40
+        "menuOrder": 60
       }
     ]
   },
@@ -150,21 +164,21 @@
         "menuAction": "operation4ProjectPlan/index",
         "menuDescription": "维护项目计划",
         "layout": "mainAfterLogin20190709",
-        "menuOrder": 0
+        "menuOrder": 10
       },
       {
         "menuContext": "进度维护",
         "menuAction": "operation4Progress/index",
         "menuDescription": "维护项目进度",
         "layout": "mainAfterLogin20190709",
-        "menuOrder": 10
+        "menuOrder": 20
       },
       {
         "menuContext": "团队管理",
         "menuAction": "operation4Team/index",
         "menuDescription": "维护团队信息",
         "layout": "mainAfterLogin20190709",
-        "menuOrder": 20
+        "menuOrder": 30
       }
     ]
   },
