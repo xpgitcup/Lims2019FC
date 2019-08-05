@@ -77,7 +77,7 @@ class Operation4TutorInfoController extends TutorInfoController {
                                             personTitle: title
                                     )
                                     personService.save(student)
-                                    flash.message += "<br>新增学生：${student}</br>"
+                                    flash.message += "新增学生：${student}"
                                 }
                                 if (!teacher.students.contains(student)) {
                                     teacher.students.add(student)
@@ -85,21 +85,21 @@ class Operation4TutorInfoController extends TutorInfoController {
                                     mCount++
                                 }
                             } else {
-                                flash.message += "<br>找不到学生类型：${e[2]}</br>"
+                                flash.message += "找不到学生类型：${e[2]}"
                             }
                         } else {
-                            flash.message += "<br>找不到教师：${e[3]}</br>"
+                            flash.message += "找不到教师：${e[3]}"
                         }
                     }
                 }
                 if (resultstr.empty) {
-                    flash.message = "<br>导入${mCount}个记录.</br>"
+                    flash.message = "导入${mCount}个记录."
                 } else {
                     flash.message += resultstr
                 }
             }
         } else {
-            flash.message = "<br>空文件！</br>"
+            flash.message = "空文件！"
         }
         redirect(action: "index", params: [flash: flash])
     }

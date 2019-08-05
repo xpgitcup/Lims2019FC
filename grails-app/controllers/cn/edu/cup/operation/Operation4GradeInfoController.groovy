@@ -62,6 +62,7 @@ class Operation4GradeInfoController extends GradeInfoController {
                                 )
                                 personService.save(student)
                                 flash.message += "新增学生：${student}"
+                                mCount++
                             }
                             if (!grade.students) {
                                 grade.students = []

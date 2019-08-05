@@ -39,7 +39,18 @@ class Operation4TeacherProjectController extends ThingController {
     }
 
     def createThing(ThingType thingType) {
+
         def viewName = params.viewName
+
+        switch (thingType.name) {
+            case "硕士论文":
+                viewName = "createThing4MasterPaper"
+                break
+            case "本科毕设":
+                viewName = "createThing4Paper"
+                break
+        }
+
         if (request.xhr) {
             render(template: viewName, model: [thingType: thingType])
         } else {
