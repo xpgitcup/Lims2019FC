@@ -69,3 +69,11 @@ function clearFilterBootStrap() {
     $("#currentFilter").html("")
     location.reload();
 }
+
+/*
+* 删除
+* */
+function deleteGrade(id) {
+    ajaxExecuteWithMethod("operation4GradeInfo/delete?id=" + id, "DELETE")
+    location.reload();
+}

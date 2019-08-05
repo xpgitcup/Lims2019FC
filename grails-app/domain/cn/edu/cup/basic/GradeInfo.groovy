@@ -7,7 +7,6 @@ class GradeInfo {
 
     String name
     Major major
-    Integer enrollmentYear
     PersonTitle personTitle
 
     static hasMany = [students: Person]
@@ -15,10 +14,9 @@ class GradeInfo {
     static constraints = {
         name()
         major()
-        enrollmentYear()
     }
 
     String toString() {
-        return "${major}.${personTitle.name}.${enrollmentYear}.${name}"
+        return "${major}.${personTitle.name}.${name}"
     }
 }

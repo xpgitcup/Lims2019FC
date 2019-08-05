@@ -84,6 +84,13 @@
         "menuDescription": "各种人员的基础数据",
         "layout": "mainAfterLogin20190709",
         "menuOrder": 20
+      },
+      {
+        "menuContext": "专业维护",
+        "menuAction": "major/index",
+        "menuDescription": "维护专业的相关信息",
+        "layout": "mainAfterLogin20190709",
+        "menuOrder": 30
       }
     ]
   },

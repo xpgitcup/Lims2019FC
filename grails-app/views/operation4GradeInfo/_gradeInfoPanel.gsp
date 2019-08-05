@@ -1,3 +1,4 @@
+<%@ page import="cn.edu.cup.basic.Major" %>
 <!-- 设置查询 -->
 <ul id="query班级信息UL" class="nav navbar bg-light">
     <li><a href="operation4GradeInfo/downloadTemplate">下载模板</a></li>
@@ -6,6 +7,17 @@
             <ul class="nav navbar p-0">
                 <li class="nav-item">
                     <span>
+                        <label>专业</label>
+                        <g:select
+                                name="major" from="${cn.edu.cup.basic.Major.list()}"
+                                optionValue="name" optionKey="id">
+                        </g:select>
+                        <label>类型</label>
+                        <g:select
+                                from="${cn.edu.cup.basic.PersonTitle.findByName("学生").relatedTitles()}"
+                                name="personTitle"
+                                optionValue="name" optionKey="id">
+                        </g:select>
                         <label>导入</label>
                         <input type="file" name="uploadedFile"/>
                         <input type="submit" value="ok">
