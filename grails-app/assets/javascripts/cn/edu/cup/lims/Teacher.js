@@ -57,3 +57,12 @@ function appendParamsBootStrap(title) {
     return append;
 }
 
+/*
+* 创建团队
+* */
+function createTeam(id) {
+    var url = "operation4Teacher/createTeam?thing=" + id;
+    ajaxExecute(url);
+    location.reload();
+}
+

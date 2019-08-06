@@ -58,7 +58,7 @@ function deleteTeam(id) {
     console.info("删除教学任务：" + id);
     ajaxExecuteWithMethod("operation4Team/delete?id=" + id, 'DELETE');
     console.log("删除：" + id + "了！");
-    //location.reload();
+    location.reload();
 }
 
 

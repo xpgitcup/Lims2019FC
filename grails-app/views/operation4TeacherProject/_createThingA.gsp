@@ -3,8 +3,14 @@
         <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
         </g:if>
-        <g:form action="saveThings" controller="${params.controller}" method="POST">
+        <g:form action="createProject" controller="${params.controller}" method="POST">
             <fieldset class="form">
+
+                <div class='fieldcontain'>
+                    <label for='name'>项目名称</label>
+                    <g:textField name="name"/>
+                </div>
+
                 <div class='fieldcontain'>
                     <label>类型</label>
                     <g:textField name="thingType" value="${thingType.id}"/> ${thingType}
@@ -18,16 +24,6 @@
                 <div class='fieldcontain'>
                     <label for='endDate'>结束</label>
                     <g:datePicker name="endDate"/>
-                </div>
-
-                <div class="fieldcontain">
-                    <label>新增(需要输入代码，姓名)</label>
-                    <g:checkBox name="personStatus" value="${true}" />
-                </div>
-
-                <div class='fieldcontain'>
-                    <label>相关人员</label>
-                    <g:textArea name="relatedPersons" style="width: 60%"/>
                 </div>
 
             </fieldset>

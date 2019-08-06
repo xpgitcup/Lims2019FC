@@ -25,8 +25,7 @@
                 ${item.leader}
                 <a href="team/edit?id=${item.id}&nextController=operation4Team&nextAction=index">编辑</a>
                 <g:if test="${(item.progresses?.size() < 1) && (cn.edu.cup.lims.ProjectPlan.countByTeam(item) < 1)}">
-                    <a href="javascript: deleteTeam(${item.id})">js删除</a>
-                    <a href="operation4Team/delete?id=${item.id}&method=DELETE">删除</a>
+                    <a href="javascript: deleteTeam(${item.id})">删除</a>
                 </g:if>
             </td>
             <td>${item.thing}</td>

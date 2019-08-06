@@ -65,3 +65,22 @@ function clearFilterBootStrap() {
     location.reload();
 }
 
+/*
+* 招募人员
+* */
+function enlist(id) {
+    console.info("招人了。。。。")
+    var name = $("#enlistName").value().trim();
+    var currentStatus = $("#currentStatus").text().trim();
+    var currentId = $("#currentId").text().trim();
+    var url = "operation4Teacher/recruit" +
+        "?nextController=operation4Teacher" +
+        "&name=" + name +
+        "&currentStatus=" + currentStatus +
+        "&currentId=" + currentId +
+        "&nextAction=index&team=" + id;
+    console.log(url);
+    //alert("....")
+    ajaxExecute(url);
+    //location.reload();
+}

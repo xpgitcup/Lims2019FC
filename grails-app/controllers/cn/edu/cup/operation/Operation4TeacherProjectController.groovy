@@ -28,14 +28,25 @@ class Operation4TeacherProjectController extends ThingController {
         }
     }
 
-    def saveThings() {
+    def createProject() {
         println("开始创建：${params}")
         def thingType = ThingType.get(params.thingType)
         def startDate = params.startDate
         def endDate = params.endDate
-        def relatedPersons = params.relatedPersons.split("\n")
-        println("${relatedPersons}")
-        redirect(action: "index", params: [currentId: params.thingType])
+        def name = params.name
+        if (Thing.countByName(name) < 1) {
+            def thing = new Thing(
+                    name: name,
+                    startDate: startDate,
+                    endDate: endDate,
+                    thingType: thingType,
+                    sponsor: session.systemUser.person()
+            )
+            thingService.save(thing)
+        } else {
+            flash.message = "${name} 名称重复了！"
+        }
+        redirect(action: "index", params: [currentId: params.thingType, flash: flash])
     }
 
     def createThing(ThingType thingType) {

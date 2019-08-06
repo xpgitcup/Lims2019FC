@@ -1,6 +1,7 @@
 package cn.edu.cup.operation
 
 import cn.edu.cup.basic.GroupInfo
+import cn.edu.cup.basic.Person
 import cn.edu.cup.lims.Progress
 import cn.edu.cup.lims.ProgressController
 import cn.edu.cup.lims.Team
@@ -11,6 +12,44 @@ import grails.validation.ValidationException
 class Operation4TeacherController extends ProgressController {
 
     def commonService
+    def teamService
+
+    /*
+     * 招聘
+     * */
+
+    def recruit() {
+        println("教师团队招聘....${params}")
+        def person = Person.findByName(params.name)
+        def team = teamService.get(params.team)
+        if (team.leader != person) {
+            if (!team.members.contains(person)) {
+                team.members.add(person)
+                teamService.save(team)
+            } else {
+                flash.message = "已经加入了!"
+            }
+        } else {
+            flash.message = "队长不用加入！"
+        }
+        /*
+        redirect(action: "index", params:[
+                currentStatus: params.currentStatus,
+                flash: flash,
+                currentId: params.currentId])
+
+         */
+        //redirect(action: "index")
+        chain(action: "index")
+    }
+
+    def createTeam() {
+        def thing = Thing.get(params.thing)
+        def myself = session.systemUser.person()
+        def team = new Team(leader: myself, thing: thing)
+        teamService.save(team)
+        redirect(action: "index")
+    }
 
     def saveProgress(Progress progress) {
         if (progress == null) {
@@ -158,6 +197,8 @@ class Operation4TeacherController extends ProgressController {
 
 
     def index() {
+        println("当前参数：${params}")
+
         def status = ["", "thing", "team", "progress"]
         def statusName = ["项目", "团队", "进度"]
         def viewName = ["teacherPanel", "teamPanel", "progressPanel"]

@@ -13,7 +13,12 @@
     <g:each in="${objectList}" var="item" status="i">
         <tr>
             <td><a href="operation4Teacher?currentStatus=thing&currentId=${item.id}">${item.name}->详情</a></td>
-            <td>${cn.edu.cup.lims.Team.countByThing(item)}</td>
+            <td>
+                ${cn.edu.cup.lims.Team.countByThing(item)}
+                <g:if test="${cn.edu.cup.lims.Team.countByThing(item) < 1}">
+                    <a href="javascript: createTeam(${item.id})">创建团队</a>
+                </g:if>
+            </td>
             <td>
                 <g:if test="${cn.edu.cup.lims.Team.countByThing(item) > 0}">
                     ${cn.edu.cup.lims.Progress.countByTeamInList(cn.edu.cup.lims.Team.findAllByThing(item))}

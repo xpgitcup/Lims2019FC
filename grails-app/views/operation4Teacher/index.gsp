@@ -80,6 +80,12 @@
         </ul>
     </div>
     <g:render template="${viewName}"/>
+
+    <div class="alert alert-info">
+        <g:if test="${flash.message}">
+            <div class="message" role="status">${flash.message}</div>
+        </g:if>
+    </div>
 </div>
 
 <div class="d-none" id="currentId">${currentId}</div>
