@@ -28,6 +28,9 @@ class Operation4TeacherProjectController extends ThingController {
         }
     }
 
+    /*
+    创建科研项目
+    * */
     def createProject() {
         println("开始创建：${params}")
         def thingType = ThingType.get(params.thingType)
@@ -53,12 +56,20 @@ class Operation4TeacherProjectController extends ThingController {
 
         def viewName = params.viewName
 
+        if (thingType.bePartOfName("教学任务")) {
+
+        }
         switch (thingType.name) {
             case "硕士论文":
                 viewName = "createThing4MasterPaper"
                 break
             case "本科毕设":
                 viewName = "createThing4Paper"
+                break
+            default:
+                if (thingType.bePartOfName("课程设计")) {
+
+                }
                 break
         }
 

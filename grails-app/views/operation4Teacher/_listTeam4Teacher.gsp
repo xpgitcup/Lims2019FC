@@ -7,7 +7,7 @@
     <th width="20%">队长</th>
     <th>进度数</th>
     <th>最新进展</th>
-    <th>队员</th>
+    <th width="30%">队员</th>
     <th>开始日期</th>
     </thead>
     <tbody>
@@ -16,11 +16,11 @@
             <td><a href="operation4Teacher?currentStatus=team&currentId=${item.id}">${item.thing}->详情</a></td>
             <td>
                 <g:if test="${item.leader == session.systemUser.person()}">
-                    <g:form>
+                    <g:form action="recruit" controller="operation4Teacher">
                         <label>姓名</label>
                         <input id="enlistName" name="name" style="width: 80px">
                         <g:hiddenField name="team" value="${item.id}"/>
-                        <input type="submit" value="ok" onclick="javascript: enlist(${item.id})"/>
+                        <input type="submit" value="ok"/>
                     </g:form>
                 </g:if>
                 <g:else>

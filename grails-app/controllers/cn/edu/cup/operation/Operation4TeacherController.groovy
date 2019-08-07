@@ -40,7 +40,12 @@ class Operation4TeacherController extends ProgressController {
 
          */
         //redirect(action: "index")
-        chain(action: "index")
+        chain(action: "index",
+                params: [
+                        currentStatus: "thing",
+                        currentId    : team.thing.id,
+                        flash        : flash
+                ])
     }
 
     def createTeam() {
