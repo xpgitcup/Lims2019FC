@@ -25,8 +25,8 @@ class DatabaseController {
     def driverClassName = "com.mysql.cj.jdbc.Driver";//    #升级到这个版本是为了适应MySQL 8.X
     def username = "sample";
     def password = "sample@chuyun";
-    def url = "jdbc:mysql://10.1.16.50:3306/lims2019dba?zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&serverTimezone=Asia/Shanghai"
-    //def url = "jdbc:mysql://localhost:3306/lims2019dba?zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&serverTimezone=Asia/Shanghai"
+    //def url = "jdbc:mysql://10.1.16.50:3306/lims2019dba?zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&serverTimezone=Asia/Shanghai"
+    def url = "jdbc:mysql://localhost:3306/lims2019dbb?zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&serverTimezone=Asia/Shanghai"
 
     def importSystemStatus() {
         def logFileName = "${commonService.webRootPath}/config/out/db_status.log"
@@ -219,6 +219,71 @@ class DatabaseController {
             }
         }
         println("${cc}, ${ec}")
+        redirect(action: "index", controller: controller)
+    }
+
+    def importThingA() {
+        theSQL = Sql.newInstance(url, username, password, driverClassName);
+        def otherSQL = Sql.newInstance(url, username, password, driverClassName);
+        def webRoot = commonService.webRootPath
+        def filename = "${webRoot}/config/otherdb.json"
+        def logFile = new File(filename)
+        def printWriter = new PrintWriter(logFile, "utf-8")
+
+        def controller = params.next
+        def myself = session.systemUser.person()
+        def qstring = "select a.*, b.name As thingType, b.up_type_id as upType from thing a, thing_type b where a.thing_type_id=b.id order by a.id"
+        def uqstring = "select c.name from thing_type c where c.id="
+        def cc = 0
+        def ec = 0
+        theSQL.eachRow(qstring) { e ->
+            println("${e}")
+            def tt = ThingType.findByName(e.thingType)
+            def sp = Person.get(e.sponsor_id)
+            println("发起者：${sp}")
+            println("项目类型： ${e.thingType}")
+            if (tt) {
+                println("${e} ${tt}")
+                if (Thing.countByName(e.name) < 1) {
+                    println("新增：${e.name}")
+                    def t = new Thing(
+                            name: e.name,
+                            thingType: tt,
+                            sponsor: sp,
+                            startDate: e.start_date,
+                            endDate: e.end_date
+                    )
+                    cc++
+                    t.save()
+                }
+            } else {
+                println("找不到：${e.thingType}")
+                printWriter.println("找不到：${e.thingType}")
+                def uq = uqstring + "${e.upType}"
+                def upTypeSet = otherSQL.firstRow(uq)
+                tt = ThingType.findByName("${upTypeSet.name}")
+                printWriter.println("上一级：${tt}")
+                if (tt) {
+                    if (Thing.countByName(e.name) < 1) {
+                        println("新增：${e.name}")
+                        def t = new Thing(
+                                name: e.name,
+                                thingType: tt,
+                                sponsor: sp,
+                                startDate: e.start_date,
+                                endDate: e.end_date
+                        )
+                        cc++
+                        t.save()
+                    }
+                } else {
+                    printWriter.println("找不到：${upTypeSet.name}")
+                    ec++
+                }
+            }
+        }
+        println("${cc}, ${ec}")
+        printWriter.close()
         redirect(action: "index", controller: controller)
     }
 

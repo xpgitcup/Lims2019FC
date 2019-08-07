@@ -3,7 +3,7 @@
     <g:if test="${cn.edu.cup.lims.Thing.count() < 1}">
         <li>
             <span class="form-inline">
-                <a href="database/importThing?next=operation4Thing">导入</a>
+                <a href="database/importThingA?next=operation4Thing">导入A</a>
             </span>
         </li>
     </g:if>

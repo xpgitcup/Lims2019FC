@@ -91,6 +91,13 @@
         "menuDescription": "维护专业的相关信息",
         "layout": "mainAfterLogin20190709",
         "menuOrder": 30
+      },
+      {
+        "menuContext": "课程信息",
+        "menuAction": "operation4Course/index",
+        "menuDescription": "课程信息管理",
+        "layout": "mainAfterLogin20190709",
+        "menuOrder": 40
       }
     ]
   },
@@ -148,7 +155,7 @@
         "menuAction": "operation4Progress/index",
         "menuDescription": "管理进度数据",
         "layout": "mainAfterLogin20190709",
-        "menuOrder": 60
+        "menuOrder": 70
       }
     ]
   },
