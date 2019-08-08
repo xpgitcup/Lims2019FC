@@ -1,5 +1,8 @@
 package cn.edu.cup.operation
 
+import cn.edu.cup.basic.Person
+import cn.edu.cup.basic.TutorInfo
+import cn.edu.cup.lims.Team
 import cn.edu.cup.lims.Thing
 import cn.edu.cup.lims.ThingController
 import cn.edu.cup.lims.ThingType
@@ -7,6 +10,7 @@ import cn.edu.cup.lims.ThingType
 class Operation4TeacherProjectController extends ThingController {
 
     def commonService
+    def teamService
 
     protected void prepareParams() {
 
@@ -26,6 +30,38 @@ class Operation4TeacherProjectController extends ThingController {
                     break
             }
         }
+    }
+
+    /*
+    学位论文
+    * */
+
+    def createMasterPaper() {
+        println("学位论文 ${params}")
+        def studentId = params.studentId
+        def paperYear = params.paperYaer
+        def names = params.name
+        def thingType = ThingType.get(params.thingType)
+        println("学生列表：${studentId}")
+        studentId.eachWithIndex { e, i ->
+            println("处理：${e}")
+            println("${thingType}")
+            def s = Person.get(e)
+            if (Thing.countByName(names[i]) < 1) {
+                def thing = new Thing(
+                        name: names[i],
+                        sponsor: session.systemUser.person(),
+                        thingType: params.thingType
+                )
+                thingService.save(thing)
+                def team = new Team(
+                        thing: thing,
+                        leader: s
+                )
+                teamService.save(team)
+            }
+        }
+        redirect(action: "index", params: [currentId: params.thingType, flash: flash])
     }
 
     /*
@@ -56,28 +92,48 @@ class Operation4TeacherProjectController extends ThingController {
     def createThing(ThingType thingType) {
 
         def viewName = params.viewName
+        def thingModel = [:]
+        def tutor = TutorInfo.findByTeacher(session.systemUser.person())
+        def students
+
+        Calendar c = Calendar.getInstance();
+        def year = c.get(Calendar.YEAR)
+        def paperYear = year - 2
+
+        if (!tutor) {
+            flash.message = "${session.systemUser.person()} 不是教师！"
+        } else {
+            def q = "from Person person where person in (${tutor.students}) and person.code like :like"
+            //def q = "from Person person where person.code like :like"
+            //def q = "from Person person where person in (${tutor.students})"    // ok
+            println("查询语句： ${q}")
+            students = Person.executeQuery(q, [like: "${paperYear}%"])
+            println("${tutor} 所带学生 ${students}")
+        }
+
+        thingModel.thingType = thingType
 
         if (thingType.bePartOfName("教学任务")) {
-            Calendar c = Calendar.getInstance();
-            def year = c.get(Calendar.YEAR)
 
-        }
-        switch (thingType.name) {
-            case "硕士论文":
-                viewName = "createThing4MasterPaper"
-                break
-            case "本科毕设":
-                viewName = "createThing4Paper"
-                break
-            default:
-                if (thingType.bePartOfName("课程设计")) {
+            switch (thingType.name) {
+                case "硕士论文":
+                    viewName = "createThing4MasterPaper"
+                    thingModel.paperYear = paperYear
+                    thingModel.students = students
+                    break
+                case "本科毕设":
+                    viewName = "createThing4Paper"
+                    break
+                default:
+                    if (thingType.bePartOfName("课程设计")) {
 
-                }
-                break
+                    }
+                    break
+            }
         }
 
         if (request.xhr) {
-            render(template: viewName, model: [thingType: thingType])
+            render(template: viewName, model: thingModel)
         } else {
             model:
             [thingType: thingType]
