@@ -31,6 +31,7 @@ class Operation4TeacherProjectController extends ThingController {
     /*
     创建科研项目
     * */
+
     def createProject() {
         println("开始创建：${params}")
         def thingType = ThingType.get(params.thingType)
@@ -57,6 +58,8 @@ class Operation4TeacherProjectController extends ThingController {
         def viewName = params.viewName
 
         if (thingType.bePartOfName("教学任务")) {
+            Calendar c = Calendar.getInstance();
+            def year = c.get(Calendar.YEAR)
 
         }
         switch (thingType.name) {
@@ -81,41 +84,6 @@ class Operation4TeacherProjectController extends ThingController {
         }
     }
 
-    def createNewThing(ThingType thingType) {
-
-        println("类型：${thingType}   ${params}")
-        def thingName = ""
-        if (thingType.bePartOfName("教学任务")) {
-            Calendar c = Calendar.getInstance();
-            def year = c.get(Calendar.YEAR)
-            switch (thingType.name) {
-                case "硕士论文":
-                    thingName = "${year - 3}级.硕士论文"
-                    break
-                case "本科毕设":
-                    thingName = "${year - 1}~${year}-2.本科毕设"
-                    break
-                default:
-                    thingName = "${year - 1}~${year}-2.${thingType.name}"
-            }
-        }
-
-        println("---------${thingName}")
-
-        def thing = new Thing(
-                name: thingName,
-                sponsor: session.systemUser.person(),
-                thingType: thingType
-        );
-        def viewName = params.viewName
-
-        if (request.xhr) {
-            render(template: viewName, model: [thing: thing])
-        } else {
-            thing
-        }
-    }
-
     def index() {
         //状态定义
         def status = ["类型选择", "信息设置", "人员设置"]
@@ -126,10 +94,11 @@ class Operation4TeacherProjectController extends ThingController {
         }
         def currentStatus = status[currentStatusIndex]
         def currentId = 0
+        def showThings = false
         if (params.currentId) {
             currentId = Integer.parseInt(params.currentId)
+            showThings = (ThingType.get(currentId).subTypes.size() < 1)
         }
-
         model:
         [
                 status            : status,
@@ -137,7 +106,8 @@ class Operation4TeacherProjectController extends ThingController {
                 currentStatus     : currentStatus,
                 currentId         : currentId,
                 viewName          : branchName[currentStatusIndex],
-                jsName            : branchName[currentStatusIndex]
+                jsName            : branchName[currentStatusIndex],
+                showThings        : showThings
         ]
     }
 }

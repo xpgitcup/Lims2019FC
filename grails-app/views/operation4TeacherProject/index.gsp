@@ -77,8 +77,8 @@
 </div>
 
 <div class="d-none" id="currentId">${currentId}</div>
-
 <div class="d-none" id="currentStatus">${currentStatus}</div>
+<div class="d-none" id="showThings">${showThings}</div>
 
 </body>
 </html>

@@ -25,10 +25,14 @@ $(function () {
 
     //console.info(document.title + "加载了...")
     var currentId = parseInt($("#currentId").text().trim());
-    if (currentId>0) {
-        card项目管理Div = $("#card项目管理Div");
-        setupPagination4Card(card项目管理Div);
-        loadCurrentPageBootStrap("项目管理");
+    var showThings = $("#showThings").text().trim();
+    console.info(showThings);
+    if (currentId > 0) {
+        if (showThings=="true") {
+            card项目管理Div = $("#card项目管理Div");
+            setupPagination4Card(card项目管理Div);
+            loadCurrentPageBootStrap("项目管理");
+        }
     }
 
 });
@@ -106,15 +110,6 @@ function clearFilterBootStrap() {
     sessionStorage.setItem("filter" + document.title, false)
     $("#currentFilter").html("")
     location.reload();
-}
-
-/*
-* 创建新的项目
-* */
-function createNewThing() {
-    var url = "operation4TeacherProject/createNewThing?viewName=createThing";
-    var id = $("#currentId").text().trim();
-    ajaxRun(url, id, "newThingDiv");
 }
 
 /*
