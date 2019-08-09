@@ -3,15 +3,15 @@
 
  Source Server         : sample
  Source Server Type    : MySQL
- Source Server Version : 80015
+ Source Server Version : 80016
  Source Host           : localhost:3306
  Source Schema         : lims2019dbc
 
  Target Server Type    : MySQL
- Target Server Version : 80015
+ Target Server Version : 80016
  File Encoding         : 65001
 
- Date: 08/08/2019 20:22:27
+ Date: 09/08/2019 15:18:39
 */
 
 SET NAMES utf8mb4;
@@ -33,16 +33,16 @@ CREATE TABLE `tutor_info`  (
 -- ----------------------------
 -- Records of tutor_info
 -- ----------------------------
-INSERT INTO `tutor_info` VALUES (1, 0, 1);
+INSERT INTO `tutor_info` VALUES (1, 32, 1);
 INSERT INTO `tutor_info` VALUES (2, 0, 216);
 INSERT INTO `tutor_info` VALUES (3, 0, 218);
 INSERT INTO `tutor_info` VALUES (4, 0, 223);
 INSERT INTO `tutor_info` VALUES (5, 0, 225);
-INSERT INTO `tutor_info` VALUES (6, 0, 268);
-INSERT INTO `tutor_info` VALUES (7, 18, 2);
-INSERT INTO `tutor_info` VALUES (8, 0, 3);
+INSERT INTO `tutor_info` VALUES (6, 23, 268);
+INSERT INTO `tutor_info` VALUES (7, 22, 2);
+INSERT INTO `tutor_info` VALUES (8, 16, 3);
 INSERT INTO `tutor_info` VALUES (9, 0, 4);
-INSERT INTO `tutor_info` VALUES (10, 0, 5);
+INSERT INTO `tutor_info` VALUES (10, 3, 5);
 INSERT INTO `tutor_info` VALUES (11, 0, 215);
 INSERT INTO `tutor_info` VALUES (12, 0, 217);
 INSERT INTO `tutor_info` VALUES (13, 0, 219);
@@ -52,7 +52,7 @@ INSERT INTO `tutor_info` VALUES (16, 0, 226);
 INSERT INTO `tutor_info` VALUES (17, 0, 228);
 INSERT INTO `tutor_info` VALUES (18, 0, 229);
 INSERT INTO `tutor_info` VALUES (19, 0, 230);
-INSERT INTO `tutor_info` VALUES (20, 0, 6);
+INSERT INTO `tutor_info` VALUES (20, 2, 6);
 INSERT INTO `tutor_info` VALUES (21, 0, 220);
 INSERT INTO `tutor_info` VALUES (22, 0, 227);
 INSERT INTO `tutor_info` VALUES (23, 0, 231);

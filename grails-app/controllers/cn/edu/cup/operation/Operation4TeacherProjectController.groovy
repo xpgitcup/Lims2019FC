@@ -1,5 +1,7 @@
 package cn.edu.cup.operation
 
+import cn.edu.cup.basic.Course
+import cn.edu.cup.basic.GradeInfo
 import cn.edu.cup.basic.Person
 import cn.edu.cup.basic.TutorInfo
 import cn.edu.cup.lims.Team
@@ -31,6 +33,75 @@ class Operation4TeacherProjectController extends ThingController {
             }
         }
     }
+
+    /*
+    本科毕业设计
+    * */
+    def createGraduationProject() {
+        println("本科毕设 ${params}")
+        def grades = []
+        params.grade.each { e ->
+            grades.add(GradeInfo.get(e))
+        }
+        def thingType = ThingType.get(params.thingType)
+        def name = "${thingType.name}.${params.schoolYear}"
+        if (Thing.countByName(name) < 1) {
+            def thing = new Thing(
+                    name: name,
+                    sponsor: session.systemUser.person(),
+                    thingType: thingType
+            )
+            thingService.save(thing)
+            grades.each { e ->
+                if (!thing.relatedPersons) {
+                    thing.relatedPersons = []
+                }
+                thing.relatedPersons.addAll(e.students)
+            }
+            thingService.save(thing)
+        } else {
+            flash.message = name + " 重复了！"
+        }
+        redirect(action: "index", params: [currentId: params.thingType, flash: flash])
+    }
+
+    /*
+    创建与课程有关的任务
+    * */
+
+    def createThing4Course() {
+        println("课程相关 ${params}")
+        if (params.course) {
+            def course = Course.get(params.course)
+            if (course) {
+                def grades = []
+                params.grade.each { e ->
+                    grades.add(GradeInfo.get(e))
+                }
+                def thingType = ThingType.get(params.thingType)
+                def name = "${thingType.name}.${course.name}.${params.schoolYear}"
+                if (Thing.countByName(name) < 1) {
+                    def thing = new Thing(
+                            name: name,
+                            sponsor: session.systemUser.person(),
+                            thingType: thingType
+                    )
+                    thingService.save(thing)
+                    grades.each { e ->
+                        if (!thing.relatedPersons) {
+                            thing.relatedPersons = []
+                        }
+                        thing.relatedPersons.addAll(e.students)
+                    }
+                    thingService.save(thing)
+                } else {
+                    flash.message = name + " 重复了！"
+                }
+            }
+        }
+        redirect(action: "index", params: [currentId: params.thingType, flash: flash])
+    }
+
 
     /*
     学位论文
@@ -93,41 +164,56 @@ class Operation4TeacherProjectController extends ThingController {
 
         def viewName = params.viewName
         def thingModel = [:]
-        def tutor = TutorInfo.findByTeacher(session.systemUser.person())
-        def students
 
         Calendar c = Calendar.getInstance();
         def year = c.get(Calendar.YEAR)
-        def paperYear = year - 2
-
-        if (!tutor) {
-            flash.message = "${session.systemUser.person()} 不是教师！"
-        } else {
-            def q = "from Person person where person in (${tutor.students}) and person.code like :like"
-            //def q = "from Person person where person.code like :like"
-            //def q = "from Person person where person in (${tutor.students})"    // ok
-            println("查询语句： ${q}")
-            students = Person.executeQuery(q, [like: "${paperYear}%"])
-            println("${tutor} 所带学生 ${students}")
-        }
 
         thingModel.thingType = thingType
 
         if (thingType.bePartOfName("教学任务")) {
-
             switch (thingType.name) {
                 case "硕士论文":
+                    def tutor = TutorInfo.findByTeacher(session.systemUser.person())
+                    def students
+                    def paperYear = year - 2
+
+                    if (!tutor) {
+                        flash.message = "${session.systemUser.person()} 不是教师！"
+                    } else {
+                        def q = "from Person person where person in (${tutor.students}) and person.code like :like"
+                        students = Person.executeQuery(q, [like: "${paperYear}%"])
+                    }
+
                     viewName = "createThing4MasterPaper"
                     thingModel.paperYear = paperYear
                     thingModel.students = students
                     break
+                case "课堂教学":
+                case "课程设计":
+                    viewName = "createThing4Course"
+                    def schoolYear
+                    thingModel.year = year
+                    def month = c.get(Calendar.MONTH)
+                    if (month <= 6) {
+                        schoolYear = "${year - 1}-#{year}-2"
+                    } else {
+                        schoolYear = "${year}-${year + 1}-1"
+                    }
+                    thingModel.schoolYear = schoolYear
+                    break
                 case "本科毕设":
-                    viewName = "createThing4Paper"
+                    viewName = "createGraduationProject"
+                    def schoolYear
+                    thingModel.year = year
+                    def month = c.get(Calendar.MONTH)
+                    if (month <= 6) {
+                        schoolYear = "${year - 1}-#{year}-2"
+                    } else {
+                        schoolYear = "${year}-${year + 1}-1"
+                    }
+                    thingModel.schoolYear = schoolYear
                     break
                 default:
-                    if (thingType.bePartOfName("课程设计")) {
-
-                    }
                     break
             }
         }
