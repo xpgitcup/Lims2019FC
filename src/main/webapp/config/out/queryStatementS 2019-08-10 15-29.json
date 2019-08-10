@@ -853,17 +853,6 @@
 		"actionName":"count",
 		"controllerName":"operation4Student",
 		"isSQL":true,
-		"keyString":"可选团队",
-		"needToQuery":true,
-		"paramsString":"[myself]",
-		"queryString":"select count(*) from thing_person\r\nwhere\r\nperson_id=myself",
-		"updateTime":1565429085000,
-		"version":1
-	},
-	{
-		"actionName":"count",
-		"controllerName":"operation4Student",
-		"isSQL":true,
 		"keyString":"科研项目",
 		"needToQuery":true,
 		"paramsString":"[myself, thingTypeList]",
@@ -889,9 +878,9 @@
 		"keyString":"领导的",
 		"needToQuery":true,
 		"paramsString":"[myself, thingTypeList]",
-		"queryString":"select count(*) from Team team\r\nwhere \r\n(team.leader=:myself)\r\nand\r\n(team.thing.thingType in (:thingTypeList))",
+		"queryString":"select count(*) from Progress progress\r\nwhere \r\n(progress.team.leader=:myself)\r\nand\r\n(progress.team.thing.thingType in (:thingTypeList))",
 		"updateTime":1564715095000,
-		"version":3
+		"version":2
 	},
 	{
 		"actionName":"list",
@@ -916,18 +905,6 @@
 		"updateTime":1565404925000,
 		"version":8,
 		"viewName":"listThing4Student"
-	},
-	{
-		"actionName":"list",
-		"controllerName":"operation4Student",
-		"isSQL":true,
-		"keyString":"可选团队",
-		"needToQuery":true,
-		"paramsString":"[max, myself, offset]",
-		"queryString":"select thing_related_persons_id from thing_person\r\nwhere\r\nperson_id=myself",
-		"updateTime":1565429085000,
-		"version":2,
-		"viewName":"listTeam4Student"
 	},
 	{
 		"actionName":"list",
@@ -960,10 +937,10 @@
 		"keyString":"领导的",
 		"needToQuery":true,
 		"paramsString":"[max, myself, offset, thingTypeList]",
-		"queryString":"from Team team\r\nwhere \r\n(team.leader=:myself)\r\nand\r\n(team.thing.thingType in (:thingTypeList))\r\norder by team.thing.thingType",
+		"queryString":"from Progress progress\r\nwhere \r\n(progress.team.leader=:myself)\r\nand\r\n(progress.team.thing.thingType in (:thingTypeList))\r\norder by progress.team.thing.thingType",
 		"updateTime":1564715095000,
-		"version":3,
-		"viewName":"listTeam4Student"
+		"version":2,
+		"viewName":"listProgress4Student"
 	},
 	{
 		"actionName":"count",

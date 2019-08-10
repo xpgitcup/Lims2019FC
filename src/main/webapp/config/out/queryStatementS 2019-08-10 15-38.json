@@ -853,17 +853,6 @@
 		"actionName":"count",
 		"controllerName":"operation4Student",
 		"isSQL":true,
-		"keyString":"可选团队",
-		"needToQuery":true,
-		"paramsString":"[myself]",
-		"queryString":"select count(*) from thing_person\r\nwhere\r\nperson_id=myself",
-		"updateTime":1565429085000,
-		"version":1
-	},
-	{
-		"actionName":"count",
-		"controllerName":"operation4Student",
-		"isSQL":true,
 		"keyString":"科研项目",
 		"needToQuery":true,
 		"paramsString":"[myself, thingTypeList]",
@@ -916,18 +905,6 @@
 		"updateTime":1565404925000,
 		"version":8,
 		"viewName":"listThing4Student"
-	},
-	{
-		"actionName":"list",
-		"controllerName":"operation4Student",
-		"isSQL":true,
-		"keyString":"可选团队",
-		"needToQuery":true,
-		"paramsString":"[max, myself, offset]",
-		"queryString":"select thing_related_persons_id from thing_person\r\nwhere\r\nperson_id=myself",
-		"updateTime":1565429085000,
-		"version":2,
-		"viewName":"listTeam4Student"
 	},
 	{
 		"actionName":"list",

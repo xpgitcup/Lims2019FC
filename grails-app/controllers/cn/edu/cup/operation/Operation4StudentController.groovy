@@ -48,6 +48,9 @@ class Operation4StudentController extends Operation4TeacherController {
                 case "可选任务":
                     params.myself = myself.id
                     break
+                case "可选团队":
+                    params.myself = myself.id
+                    break
                 case "团队选择":
                     def thing = Thing.get(params.currentId)
                     params.currentId = thing
@@ -82,6 +85,16 @@ class Operation4StudentController extends Operation4TeacherController {
                 }
                 println("转换后：${things}")
                 result.objectList = things
+                break
+            case "可选团队":
+                def things = []
+                println("结果：${result}")
+                result.objectList.each { e ->
+                    println("查找 ${e}")
+                    things.add(Thing.get(e.thing_related_persons_id))
+                }
+                println("转换后：${things}")
+                result.objectList = Team.findAllByThingInList(things)
                 break
 
         }

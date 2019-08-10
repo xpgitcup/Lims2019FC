@@ -926,8 +926,8 @@
 		"paramsString":"[max, myself, offset]",
 		"queryString":"select thing_related_persons_id from thing_person\r\nwhere\r\nperson_id=myself",
 		"updateTime":1565429085000,
-		"version":2,
-		"viewName":"listTeam4Student"
+		"version":1,
+		"viewName":"listThing4Student"
 	},
 	{
 		"actionName":"list",
