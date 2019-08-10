@@ -4,9 +4,10 @@
 <table class="table table-striped table-sm m-0 p-0">
     <thead>
     <th width="20%">名称</th>
-    <th>相关团队</th>
+    <th>相关</th>
+    <th>团队</th>
     <th>相关进展</th>
-    <th width="50%">最新进展</th>
+    <th>最新进展</th>
     <th>开始日期</th>
     </thead>
     <tbody>
@@ -15,13 +16,25 @@
             <td>${item.name}</td>
             <td>
                 ${cn.edu.cup.lims.Team.countByThing(item)}
-                <!-- 只要不是队长，就可以创建团队  -->
                 <g:if test="${cn.edu.cup.lims.Team.countByLeader(session.systemUser.person()) < 1}">
                     <a href="javascript: createTeam(${item.id})">创建团队</a>
                 </g:if>
-                <g:else>
-                    ☆
-                </g:else>
+            </td>
+            <td>
+            <!-- 只要不是队长，就可以创建团队  -->
+                <g:if test="${cn.edu.cup.lims.Team.countByThing(item) > 0}">
+                    <g:if test="${cn.edu.cup.lims.Team.countByLeader(session.systemUser.person()) < 1}">
+                        <g:form action="joinTeam" controller="operation4Student">
+                            <label>加入</label>
+                            <input id="leaderName" name="name" style="width: 80px">
+                            <g:hiddenField name="thing" value="${item.id}"/>
+                            <input type="submit" value="ok"/>
+                        </g:form>
+                    </g:if>
+                    <g:else>
+                        ☆
+                    </g:else>
+                </g:if>
             </td>
             <td>
                 <g:if test="${cn.edu.cup.lims.Team.countByThing(item) > 0}">
@@ -38,6 +51,9 @@
     </g:each>
     </tbody>
 </table>
+<g:if test="${objectList.size() < 1}">
+    所有任务都选完了！
+</g:if>
 
 <g:if test="${flash.message}">
     <div class="message" role="status">${flash.message}</div>

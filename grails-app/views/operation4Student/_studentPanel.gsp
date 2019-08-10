@@ -22,11 +22,6 @@
                 可选任务
             </a>
         </li>
-        <li class="nav-item">
-            <a href="#div可选团队" class="nav-link" data-toggle="tab">
-                可选团队
-            </a>
-        </li>
     </ul>
 
     <!-- 具体卡片-->
@@ -203,49 +198,6 @@
             </ul>
         </div>
         <!--具体的可选任务标签结束======-->
-        <!--具体的可选团队标签-->
-        <div id="div可选团队" class="tab-pane">
-            <div id="display可选团队Div">
-                <br> 在这里显示可选团队所需的信息</br>
-            </div>
-            <!-- 这里是分页设置-->
-            <ul class="pagination pagination-sm">
-                <li class="page-item">
-                    <a class="page-link">页长</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" id="pageSizeStudent可选团队"></a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="javascript: loadFirstPageBootStrap('可选团队')">首页</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="javascript: loadPreviousPageBootStrap('可选团队')">&laquo</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" id="currentPageStudent可选团队"></a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link">/</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" id="totalPageStudent可选团队"></a>
-                </li>
-                <li>
-                    <a class="page-link" href="javascript: loadNextPageBootStrap('可选团队')">&raquo</a>
-                </li>
-                <li>
-                    <a class="page-link" href="javascript: loadLastPageBootStrap('可选团队')">尾页</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link">总记录数</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" id="totalCountStudent可选团队"></a>
-                </li>
-            </ul>
-        </div>
-        <!--具体的可选团队标签结束======-->
 
     </div>
 </div>

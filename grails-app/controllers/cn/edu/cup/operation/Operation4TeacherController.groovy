@@ -15,6 +15,35 @@ class Operation4TeacherController extends ProgressController {
     def teamService
 
     /*
+    加入队长的团队
+    * */
+
+    def joinTeam() {
+        println("加入..${params}")
+        def leader = Person.findByName(params.name)
+        def thing = Thing.get(params.thing)
+        if (leader) {
+            def team = Team.findByLeaderAndThing(leader, thing)
+            def myself = session.systemUser.person()
+            if (!team.members.contains(myself)) {
+                team.members.add(myself)
+                teamService.save(team)
+            } else {
+                flash.message = "已经加入了!"
+            }
+        } else {
+            flash.message = "找不到${params.name}队长！"
+        }
+
+        chain(action: "index",
+                params: [
+                        currentStatus: "thing",
+                        currentId    : thing.id,
+                        flash        : flash
+                ])
+    }
+
+    /*
      * 招聘
      * */
 
@@ -32,14 +61,7 @@ class Operation4TeacherController extends ProgressController {
         } else {
             flash.message = "队长不用加入！"
         }
-        /*
-        redirect(action: "index", params:[
-                currentStatus: params.currentStatus,
-                flash: flash,
-                currentId: params.currentId])
 
-         */
-        //redirect(action: "index")
         chain(action: "index",
                 params: [
                         currentStatus: "thing",
@@ -63,7 +85,8 @@ class Operation4TeacherController extends ProgressController {
         }
         try {
             progressService.save(progress)
-            flash.message = message(code: 'default.created.message', args: [message(code: 'progress.label', default: 'Progress'), progress.id])
+            flash.message = message(code: 'default.created.message',
+                    args: [message(code: 'progress.label', default: 'Progress'), progress.id])
             if (!params.uploadedFile.empty) {
                 //处理文件上传
                 def destDir = progress.realSupportFileDir()

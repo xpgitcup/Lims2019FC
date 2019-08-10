@@ -3,16 +3,11 @@ package cn.edu.cup.operation
 import cn.edu.cup.lims.Team
 import cn.edu.cup.lims.Thing
 import cn.edu.cup.lims.ThingType
+import groovy.sql.Sql
 
 class Operation4StudentController extends Operation4TeacherController {
 
-    def createTeam() {
-        def thing = Thing.get(params.thing)
-        def myself = session.systemUser.person()
-        def team = new Team(leader: myself, thing: thing)
-        teamService.save(team)
-        redirect(action: "index")
-    }
+    def dataSource
 
     protected void prepareParams() {
 
@@ -47,9 +42,23 @@ class Operation4StudentController extends Operation4TeacherController {
                     break
                 case "可选任务":
                     params.myself = myself.id
-                    break
-                case "可选团队":
-                    params.myself = myself.id
+                    def sql = new Sql(dataSource)
+                    def cList = []
+                    def rs = sql.rows("SELECT DISTINCT\n" +
+                            "team_person.team_members_id\n" +
+                            "FROM\n" +
+                            "team_person\n" +
+                            "WHERE\n" +
+                            "team_person.person_id = :myself", [myself: myself.id])
+                    println("rs: ${rs}")
+                    rs.each { e ->
+                        def t = Team.get(e.team_members_id)
+                        cList.add(t.thing.id)
+                    }
+                    println("cList: ${cList}")
+                    if (cList.size()>0) {
+                        params.exList = cList
+                    }
                     break
                 case "团队选择":
                     def thing = Thing.get(params.currentId)
@@ -86,17 +95,6 @@ class Operation4StudentController extends Operation4TeacherController {
                 println("转换后：${things}")
                 result.objectList = things
                 break
-            case "可选团队":
-                def things = []
-                println("结果：${result}")
-                result.objectList.each { e ->
-                    println("查找 ${e}")
-                    things.add(Thing.get(e.thing_related_persons_id))
-                }
-                println("转换后：${things}")
-                result.objectList = Team.findAllByThingInList(things)
-                break
-
         }
         return result
     }

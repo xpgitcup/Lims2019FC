@@ -853,11 +853,22 @@
 		"actionName":"count",
 		"controllerName":"operation4Student",
 		"isSQL":true,
-		"keyString":"可选团队",
+		"keyString":"可选任务",
 		"needToQuery":true,
-		"paramsString":"[myself]",
-		"queryString":"select count(*) from thing_person\r\nwhere\r\nperson_id=myself",
-		"updateTime":1565429085000,
+		"paramsString":"[exList, myself]",
+		"queryString":"select count(*) from thing_person\r\nwhere\r\n(person_id=myself)\r\nand \r\n(thing_related_persons_id not in (exList))",
+		"updateTime":1565447866000,
+		"version":4
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4Student",
+		"isSQL":false,
+		"keyString":"团队选择",
+		"needToQuery":true,
+		"paramsString":"[currentId]",
+		"queryString":"select count(*) from Team team where team.thing = :currentId",
+		"updateTime":1565450388000,
 		"version":1
 	},
 	{
@@ -894,6 +905,17 @@
 		"version":3
 	},
 	{
+		"actionName":"count",
+		"controllerName":"operation4Student",
+		"isSQL":false,
+		"keyString":"领导的",
+		"needToQuery":true,
+		"paramsString":"[like, myself, thingTypeList]",
+		"queryString":"select count(*) from Student student",
+		"updateTime":1565450677000,
+		"version":0
+	},
+	{
 		"actionName":"list",
 		"controllerName":"operation4Student",
 		"isSQL":true,
@@ -921,11 +943,23 @@
 		"actionName":"list",
 		"controllerName":"operation4Student",
 		"isSQL":true,
-		"keyString":"可选团队",
+		"keyString":"可选任务",
 		"needToQuery":true,
-		"paramsString":"[max, myself, offset]",
-		"queryString":"select thing_related_persons_id from thing_person\r\nwhere\r\nperson_id=myself",
-		"updateTime":1565429085000,
+		"paramsString":"[exList, max, myself, offset]",
+		"queryString":"select thing_related_persons_id from thing_person\r\nwhere\r\n(person_id=myself)\r\nand \r\n(thing_related_persons_id not in (exList))",
+		"updateTime":1565447866000,
+		"version":3,
+		"viewName":"listThing4Student"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Student",
+		"isSQL":false,
+		"keyString":"团队选择",
+		"needToQuery":true,
+		"paramsString":"[currentId, max, offset]",
+		"queryString":"from Team team where team.thing = :currentId",
+		"updateTime":1565450388000,
 		"version":2,
 		"viewName":"listTeam4Student"
 	},
@@ -964,6 +998,18 @@
 		"updateTime":1564715095000,
 		"version":3,
 		"viewName":"listTeam4Student"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Student",
+		"isSQL":false,
+		"keyString":"领导的",
+		"needToQuery":true,
+		"paramsString":"[like, max, myself, offset, thingTypeList]",
+		"queryString":"from Student student",
+		"updateTime":1565450677000,
+		"version":0,
+		"viewName":"listStudent"
 	},
 	{
 		"actionName":"count",

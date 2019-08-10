@@ -300,6 +300,29 @@
 	},
 	{
 		"actionName":"count",
+		"controllerName":"operation4GradeInfo",
+		"isSQL":false,
+		"keyString":"班级信息",
+		"needToQuery":true,
+		"paramsString":"[]",
+		"queryString":"select count(*) from GradeInfo gradeInfo",
+		"updateTime":1565013250000,
+		"version":0
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4GradeInfo",
+		"isSQL":false,
+		"keyString":"班级信息",
+		"needToQuery":true,
+		"paramsString":"[max, offset]",
+		"queryString":"from GradeInfo gradeInfo",
+		"updateTime":1565013250000,
+		"version":0,
+		"viewName":"listGradeInfo"
+	},
+	{
+		"actionName":"count",
 		"controllerName":"operation4GroupInfo",
 		"isSQL":false,
 		"keyString":"课题组",
@@ -375,6 +398,17 @@
 		"queryString":"select count(*) from Person person\r\nwhere person.personTitle in (:titleList)",
 		"updateTime":1563332443000,
 		"version":2
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4Person",
+		"isSQL":false,
+		"keyString":"班级管理",
+		"needToQuery":true,
+		"paramsString":"[]",
+		"queryString":"select count(*) from GradeInfo gradeInfo",
+		"updateTime":1565400161000,
+		"version":1
 	},
 	{
 		"actionName":"count",
@@ -457,6 +491,18 @@
 		"updateTime":1563332443000,
 		"version":3,
 		"viewName":"listStudent"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Person",
+		"isSQL":false,
+		"keyString":"班级管理",
+		"needToQuery":true,
+		"paramsString":"[max, offset]",
+		"queryString":"from GradeInfo gradeInfo",
+		"updateTime":1565400161000,
+		"version":1,
+		"viewName":"listGradeInfo"
 	},
 	{
 		"actionName":"list",
@@ -796,6 +842,28 @@
 		"actionName":"count",
 		"controllerName":"operation4Student",
 		"isSQL":true,
+		"keyString":"可选任务",
+		"needToQuery":true,
+		"paramsString":"[myself]",
+		"queryString":"select count(*) from thing_person\r\nwhere\r\nperson_id=myself",
+		"updateTime":1565404925000,
+		"version":6
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4Student",
+		"isSQL":true,
+		"keyString":"可选任务",
+		"needToQuery":true,
+		"paramsString":"[exList, myself]",
+		"queryString":"select count(*) from thing_person\r\nwhere\r\n(person_id=myself)\r\nand \r\n(thing_related_persons_id not in (exList))",
+		"updateTime":1565447866000,
+		"version":4
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4Student",
+		"isSQL":true,
 		"keyString":"科研项目",
 		"needToQuery":true,
 		"paramsString":"[myself, thingTypeList]",
@@ -821,9 +889,9 @@
 		"keyString":"领导的",
 		"needToQuery":true,
 		"paramsString":"[myself, thingTypeList]",
-		"queryString":"select count(*) from Progress progress\r\nwhere \r\n(progress.team.leader=:myself)\r\nand\r\n(progress.team.thing.thingType in (:thingTypeList))",
+		"queryString":"select count(*) from Team team\r\nwhere \r\n(team.leader=:myself)\r\nand\r\n(team.thing.thingType in (:thingTypeList))",
 		"updateTime":1564715095000,
-		"version":2
+		"version":3
 	},
 	{
 		"actionName":"list",
@@ -836,6 +904,30 @@
 		"updateTime":1564715096000,
 		"version":1,
 		"viewName":"listTeam4Student"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Student",
+		"isSQL":true,
+		"keyString":"可选任务",
+		"needToQuery":true,
+		"paramsString":"[max, myself, offset]",
+		"queryString":"select thing_related_persons_id from thing_person\r\nwhere\r\nperson_id=myself",
+		"updateTime":1565404925000,
+		"version":8,
+		"viewName":"listThing4Student"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4Student",
+		"isSQL":true,
+		"keyString":"可选任务",
+		"needToQuery":true,
+		"paramsString":"[exList, max, myself, offset]",
+		"queryString":"select thing_related_persons_id from thing_person\r\nwhere\r\n(person_id=myself)\r\nand \r\n(thing_related_persons_id not in (exList))",
+		"updateTime":1565447866000,
+		"version":3,
+		"viewName":"listThing4Student"
 	},
 	{
 		"actionName":"list",
@@ -868,10 +960,10 @@
 		"keyString":"领导的",
 		"needToQuery":true,
 		"paramsString":"[max, myself, offset, thingTypeList]",
-		"queryString":"from Progress progress\r\nwhere \r\n(progress.team.leader=:myself)\r\nand\r\n(progress.team.thing.thingType in (:thingTypeList))\r\norder by progress.team.thing.thingType",
+		"queryString":"from Team team\r\nwhere \r\n(team.leader=:myself)\r\nand\r\n(team.thing.thingType in (:thingTypeList))\r\norder by team.thing.thingType",
 		"updateTime":1564715095000,
-		"version":2,
-		"viewName":"listProgress4Student"
+		"version":3,
+		"viewName":"listTeam4Student"
 	},
 	{
 		"actionName":"count",
@@ -1793,5 +1885,51 @@
 		"updateTime":1564817576000,
 		"version":0,
 		"viewName":"listThing"
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4TutorInfo",
+		"isSQL":false,
+		"keyString":"导师信息维护",
+		"needToQuery":true,
+		"paramsString":"[]",
+		"queryString":"select count(*) from TutorInfo tutorInfo",
+		"updateTime":1564880252000,
+		"version":0
+	},
+	{
+		"actionName":"count",
+		"controllerName":"operation4TutorInfo",
+		"isSQL":false,
+		"keyString":"导师信息维护",
+		"needToQuery":true,
+		"paramsString":"[like]",
+		"queryString":"select count(*) from TutorInfo tutorInfo\r\nwhere \r\n(tutorInfo.teacher.name like :like) \r\nor\r\n(tutorInfo.teacher.code like :like)",
+		"updateTime":1564881128000,
+		"version":1
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4TutorInfo",
+		"isSQL":false,
+		"keyString":"导师信息维护",
+		"needToQuery":true,
+		"paramsString":"[max, offset]",
+		"queryString":"from TutorInfo tutorInfo",
+		"updateTime":1564880253000,
+		"version":0,
+		"viewName":"listTutorInfo"
+	},
+	{
+		"actionName":"list",
+		"controllerName":"operation4TutorInfo",
+		"isSQL":false,
+		"keyString":"导师信息维护",
+		"needToQuery":true,
+		"paramsString":"[like, max, offset]",
+		"queryString":"from TutorInfo tutorInfo\r\nwhere \r\n(tutorInfo.teacher.name like :like) \r\nor\r\n(tutorInfo.teacher.code like :like)",
+		"updateTime":1564881128000,
+		"version":1,
+		"viewName":"listTutorInfo"
 	}
 ]
