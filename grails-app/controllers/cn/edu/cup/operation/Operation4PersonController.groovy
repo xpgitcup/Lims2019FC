@@ -1,5 +1,6 @@
 package cn.edu.cup.operation
 
+import cn.edu.cup.basic.GradeInfo
 import cn.edu.cup.basic.PersonController
 import cn.edu.cup.basic.PersonTitle
 import cn.edu.cup.lims.Team
@@ -14,6 +15,14 @@ class Operation4PersonController extends PersonController {
 
     def removeFromSystemUser() {
         switch (params.key) {
+            case "grade":
+                def grade = GradeInfo.get(params.id)
+                if (grade) {
+                    grade.students.each { e->
+                        systemCommonService.removePersonFromUser(e)
+                    }
+                }
+                break
             case "student":
                 def student = personService.get(params.id)
                 if (!student) {
@@ -36,6 +45,14 @@ class Operation4PersonController extends PersonController {
 
     def addToSystemUser() {
         switch (params.key) {
+            case "grade":
+                def grade = GradeInfo.get(params.id)
+                if (grade) {
+                    grade.students.each { e->
+                        systemCommonService.addPersonToUser(e)
+                    }
+                }
+                break
             case "student":
                 def student = personService.get(params.id)
                 systemCommonService.addPersonToUser(student)

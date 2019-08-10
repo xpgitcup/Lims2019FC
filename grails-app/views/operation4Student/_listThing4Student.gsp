@@ -1,0 +1,40 @@
+<%@ page import="cn.edu.cup.lims.Team" %>
+<asset:stylesheet src="cup/tableConfig.css"/>
+
+<table class="table table-striped table-sm m-0 p-0">
+    <thead>
+    <th width="20%">名称</th>
+    <th>相关团队</th>
+    <th>相关进展</th>
+    <th width="50%">最新进展</th>
+    <th>开始日期</th>
+    </thead>
+    <tbody>
+    <g:each in="${objectList}" var="item" status="i">
+        <tr>
+            <td><a href="operation4Teacher?currentStatus=thing&currentId=${item.id}">${item.name}->详情</a></td>
+            <td>
+                ${cn.edu.cup.lims.Team.countByThing(item)}
+                <g:if test="${cn.edu.cup.lims.Team.countByThing(item) < 1}">
+                    <a href="javascript: createTeam(${item.id})">创建团队</a>
+                </g:if>
+            </td>
+            <td>
+                <g:if test="${cn.edu.cup.lims.Team.countByThing(item) > 0}">
+                    ${cn.edu.cup.lims.Progress.countByTeamInList(cn.edu.cup.lims.Team.findAllByThing(item))}
+                </g:if>
+            </td>
+            <td>
+                <g:if test="${cn.edu.cup.lims.Team.countByThing(item) > 0}">
+                    ${cn.edu.cup.lims.Progress.findByTeamInList(cn.edu.cup.lims.Team.findAllByThing(item), [sort: "regDate", order: "desc"])}
+                </g:if>
+            </td>
+            <td>${item.startDate}</td>
+        </tr>
+    </g:each>
+    </tbody>
+</table>
+
+<g:if test="${flash.message}">
+    <div class="message" role="status">${flash.message}</div>
+</g:if>

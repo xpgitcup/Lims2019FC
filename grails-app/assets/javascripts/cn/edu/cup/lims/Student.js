@@ -53,3 +53,12 @@ function appendParamsBootStrap(title) {
 
     return  append;
 }
+
+/*
+* 创建团队
+* */
+function createTeam(id) {
+    var url = "operation4Student/createTeam?thing=" + id;
+    ajaxExecute(url);
+    location.reload();
+}

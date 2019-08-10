@@ -6,6 +6,14 @@ import cn.edu.cup.lims.ThingType
 
 class Operation4StudentController extends Operation4TeacherController {
 
+    def createTeam() {
+        def thing = Thing.get(params.thing)
+        def myself = session.systemUser.person()
+        def team = new Team(leader: myself, thing: thing)
+        teamService.save(team)
+        redirect(action: "index")
+    }
+
     protected void prepareParams() {
 
         println("学生日常操作：")
@@ -37,6 +45,9 @@ class Operation4StudentController extends Operation4TeacherController {
                     }
                     params.thingTypeList = idlist
                     break
+                case "可选任务":
+                    params.myself = myself.id
+                    break
                 case "团队选择":
                     def thing = Thing.get(params.currentId)
                     params.currentId = thing
@@ -62,6 +73,17 @@ class Operation4StudentController extends Operation4TeacherController {
                 println("转换后：${teams}")
                 result.objectList = teams
                 break
+            case "可选任务":
+                def things = []
+                println("结果：${result}")
+                result.objectList.each { e ->
+                    println("查找 ${e}")
+                    things.add(Thing.get(e.thing_related_persons_id))
+                }
+                println("转换后：${things}")
+                result.objectList = things
+                break
+
         }
         return result
     }
