@@ -11,7 +11,7 @@
  Target Server Version : 50627
  File Encoding         : 65001
 
- Date: 08/08/2019 15:29:22
+ Date: 11/08/2019 10:39:15
 */
 
 SET NAMES utf8mb4;
@@ -38,7 +38,7 @@ CREATE TABLE `progress`  (
   CONSTRAINT `FK3gfg3qw93o00sgybjd3nuy1v0` FOREIGN KEY (`contributor_id`) REFERENCES `person` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK9rdflrh05eu15ao9mldbr2eqg` FOREIGN KEY (`team_id`) REFERENCES `team` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FKaegt6dto4gjcsiy0xhfy491dx` FOREIGN KEY (`prev_progress_id`) REFERENCES `progress` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 685 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 687 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of progress
@@ -727,5 +727,7 @@ INSERT INTO `progress` VALUES (681, 0, '和谭遥好好讨论，借鉴OLGA等好
 INSERT INTO `progress` VALUES (682, 0, '刘莹莹上传基础资料', 58, NULL, NULL, NULL, 2, '2019-08-05 08:52:00');
 INSERT INTO `progress` VALUES (683, 0, '软件运行流程', 68, 680, NULL, '文件菜单.xmind', 94, '2019-08-06 09:53:00');
 INSERT INTO `progress` VALUES (684, 0, '增加用户管理', 69, NULL, NULL, '多气合采.xmind', 95, '2019-08-06 10:01:00');
+INSERT INTO `progress` VALUES (685, 0, '这是一个测试', 58, 682, NULL, '学生数据实例.xlsx', 267, '2019-08-08 15:29:00');
+INSERT INTO `progress` VALUES (686, 0, '积液相关文献', 70, 677, NULL, '积液相关文献.rar', 97, '2019-08-10 12:27:00');
 
 SET FOREIGN_KEY_CHECKS = 1;

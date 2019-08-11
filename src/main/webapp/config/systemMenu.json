@@ -209,20 +209,6 @@
         "menuDescription": "维护项目计划",
         "layout": "mainAfterLogin20190709",
         "menuOrder": 0
-      },
-      {
-        "menuContext": "进度维护",
-        "menuAction": "operation4Progress/index",
-        "menuDescription": "维护项目进度",
-        "layout": "mainAfterLogin20190709",
-        "menuOrder": 10
-      },
-      {
-        "menuContext": "团队管理",
-        "menuAction": "operation4Team/index",
-        "menuDescription": "维护团队信息",
-        "layout": "mainAfterLogin20190709",
-        "menuOrder": 20
       }
     ]
   }
