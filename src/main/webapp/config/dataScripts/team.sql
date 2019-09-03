@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : sample
+ Source Server         : 10.1.16.50
  Source Server Type    : MySQL
- Source Server Version : 80016
- Source Host           : localhost:3306
+ Source Server Version : 50627
+ Source Host           : 10.1.16.50:3306
  Source Schema         : lims2019dbc
 
  Target Server Type    : MySQL
- Target Server Version : 80016
+ Target Server Version : 50627
  File Encoding         : 65001
 
- Date: 08/08/2019 15:14:24
+ Date: 03/09/2019 18:11:46
 */
 
 SET NAMES utf8mb4;
@@ -31,14 +31,14 @@ CREATE TABLE `team`  (
   INDEX `FK4lrv984nrutn7xe5bwap2p1le`(`leader_id`) USING BTREE,
   CONSTRAINT `FK4lrv984nrutn7xe5bwap2p1le` FOREIGN KEY (`leader_id`) REFERENCES `person` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FKakp3oh8ul8hjcycd0aq8x9836` FOREIGN KEY (`thing_id`) REFERENCES `thing` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 79 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of team
 -- ----------------------------
-INSERT INTO `team` VALUES (1, 0, 8, 2);
+INSERT INTO `team` VALUES (1, 1, 8, 2);
 INSERT INTO `team` VALUES (2, 0, 9, 2);
-INSERT INTO `team` VALUES (3, 0, 5, 1);
+INSERT INTO `team` VALUES (3, 1, 5, 1);
 INSERT INTO `team` VALUES (4, 0, 6, 1);
 INSERT INTO `team` VALUES (5, 0, 7, 1);
 INSERT INTO `team` VALUES (6, 0, 10, 2);
@@ -105,7 +105,14 @@ INSERT INTO `team` VALUES (66, 0, 2, 91);
 INSERT INTO `team` VALUES (67, 0, 2, 68);
 INSERT INTO `team` VALUES (68, 0, 25, 2);
 INSERT INTO `team` VALUES (69, 0, 26, 2);
-INSERT INTO `team` VALUES (70, 0, 24, 2);
-INSERT INTO `team` VALUES (71, 0, 27, 2);
+INSERT INTO `team` VALUES (70, 1, 24, 2);
+INSERT INTO `team` VALUES (71, 2, 27, 2);
+INSERT INTO `team` VALUES (72, 0, 28, 59);
+INSERT INTO `team` VALUES (73, 0, 29, 61);
+INSERT INTO `team` VALUES (74, 0, 30, 72);
+INSERT INTO `team` VALUES (75, 0, 31, 75);
+INSERT INTO `team` VALUES (76, 0, 32, 80);
+INSERT INTO `team` VALUES (77, 4, 33, 1);
+INSERT INTO `team` VALUES (78, 4, 34, 2);
 
 SET FOREIGN_KEY_CHECKS = 1;

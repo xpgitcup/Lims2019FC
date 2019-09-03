@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : sample
+ Source Server         : 10.1.16.50
  Source Server Type    : MySQL
- Source Server Version : 80016
- Source Host           : localhost:3306
+ Source Server Version : 50627
+ Source Host           : 10.1.16.50:3306
  Source Schema         : lims2019dbc
 
  Target Server Type    : MySQL
- Target Server Version : 80016
+ Target Server Version : 50627
  File Encoding         : 65001
 
- Date: 08/08/2019 15:15:23
+ Date: 03/09/2019 18:11:54
 */
 
 SET NAMES utf8mb4;
@@ -28,7 +28,7 @@ CREATE TABLE `team_person`  (
   INDEX `FKt0ne9eoxa1hptfkq4vo8xhd53`(`team_members_id`) USING BTREE,
   CONSTRAINT `FK849p1qabcqamcqtn57f2h8v8p` FOREIGN KEY (`person_id`) REFERENCES `person` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FKt0ne9eoxa1hptfkq4vo8xhd53` FOREIGN KEY (`team_members_id`) REFERENCES `team` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of team_person
@@ -131,5 +131,18 @@ INSERT INTO `team_person` VALUES (34, 56);
 INSERT INTO `team_person` VALUES (6, 48);
 INSERT INTO `team_person` VALUES (6, 61);
 INSERT INTO `team_person` VALUES (58, 267);
+INSERT INTO `team_person` VALUES (1, 72);
+INSERT INTO `team_person` VALUES (70, 166);
+INSERT INTO `team_person` VALUES (71, 72);
+INSERT INTO `team_person` VALUES (71, 267);
+INSERT INTO `team_person` VALUES (77, 5);
+INSERT INTO `team_person` VALUES (77, 2);
+INSERT INTO `team_person` VALUES (77, 66);
+INSERT INTO `team_person` VALUES (77, 133);
+INSERT INTO `team_person` VALUES (3, 93);
+INSERT INTO `team_person` VALUES (78, 166);
+INSERT INTO `team_person` VALUES (78, 369);
+INSERT INTO `team_person` VALUES (78, 371);
+INSERT INTO `team_person` VALUES (78, 373);
 
 SET FOREIGN_KEY_CHECKS = 1;

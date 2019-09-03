@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : sample
+ Source Server         : 10.1.16.50
  Source Server Type    : MySQL
- Source Server Version : 80015
- Source Host           : localhost:3306
+ Source Server Version : 50627
+ Source Host           : 10.1.16.50:3306
  Source Schema         : lims2019dbc
 
  Target Server Type    : MySQL
- Target Server Version : 80015
+ Target Server Version : 50627
  File Encoding         : 65001
 
- Date: 09/08/2019 18:48:23
+ Date: 03/09/2019 18:16:07
 */
 
 SET NAMES utf8mb4;
@@ -31,7 +31,7 @@ CREATE TABLE `person`  (
   UNIQUE INDEX `UK_4gr67lk0t9mc9aoqfbo9mdmtw`(`code`) USING BTREE,
   INDEX `FKgp5bmxhm3l9bb8l2oymygnfed`(`person_title_id`) USING BTREE,
   CONSTRAINT `FKgp5bmxhm3l9bb8l2oymygnfed` FOREIGN KEY (`person_title_id`) REFERENCES `person_title` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 369 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 434 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of person
@@ -404,5 +404,70 @@ INSERT INTO `person` VALUES (365, 0, 13, '2016010814', '张久达');
 INSERT INTO `person` VALUES (366, 0, 13, '2016010815', '钟华勇');
 INSERT INTO `person` VALUES (367, 0, 13, '2016010817', '宗优');
 INSERT INTO `person` VALUES (368, 0, 13, '2014010738', '陈文挺');
+INSERT INTO `person` VALUES (369, 0, 17, '2019210798', '焦玉博');
+INSERT INTO `person` VALUES (370, 0, 17, '2019210799', '何毅');
+INSERT INTO `person` VALUES (371, 0, 17, '2019210800', '王延庆');
+INSERT INTO `person` VALUES (372, 0, 17, '2019215402', '杨起');
+INSERT INTO `person` VALUES (373, 0, 17, '2019215403', '钱雅婷');
+INSERT INTO `person` VALUES (374, 0, 17, '2018214083', '薛文第');
+INSERT INTO `person` VALUES (375, 0, 17, '2018314019', '高雪冬');
+INSERT INTO `person` VALUES (376, 0, 17, '2018314501', '陈宏举');
+INSERT INTO `person` VALUES (377, 0, 17, '2019210784', '诸葛夏侃');
+INSERT INTO `person` VALUES (378, 0, 17, '2019210785', '郑冬妍');
+INSERT INTO `person` VALUES (379, 0, 17, '2019210786', '潘婷');
+INSERT INTO `person` VALUES (380, 0, 17, '2019210787', '李维嘉');
+INSERT INTO `person` VALUES (381, 0, 17, '2019210788', '李彦博');
+INSERT INTO `person` VALUES (382, 0, 17, '2019210790', '柴冲');
+INSERT INTO `person` VALUES (383, 0, 17, '2019210791', '张蕊');
+INSERT INTO `person` VALUES (384, 0, 17, '2019210792', '张鑫儒');
+INSERT INTO `person` VALUES (385, 0, 17, '2019210795', '张雨');
+INSERT INTO `person` VALUES (386, 0, 17, '2019210796', '江锋');
+INSERT INTO `person` VALUES (387, 0, 17, '2019210797', '黄文丽');
+INSERT INTO `person` VALUES (388, 0, 17, '2019210807', '刘礼豪');
+INSERT INTO `person` VALUES (389, 0, 17, '2019210808', '付顺康');
+INSERT INTO `person` VALUES (390, 0, 17, '2019210810', '刘倩倩');
+INSERT INTO `person` VALUES (391, 0, 17, '2019210814', '陈杰');
+INSERT INTO `person` VALUES (392, 0, 17, '2019210815', '马克');
+INSERT INTO `person` VALUES (393, 0, 17, '2019210816', '高维蔚');
+INSERT INTO `person` VALUES (394, 0, 17, '2019210817', '肖帆');
+INSERT INTO `person` VALUES (395, 0, 17, '2019210819', '任博文');
+INSERT INTO `person` VALUES (396, 0, 17, '2019210820', '冯子原');
+INSERT INTO `person` VALUES (397, 0, 17, '2019210823', '郑超');
+INSERT INTO `person` VALUES (398, 0, 17, '2019210826', '徐苗苗');
+INSERT INTO `person` VALUES (399, 0, 17, '2019210827', '张超越');
+INSERT INTO `person` VALUES (400, 0, 17, '2019215388', '季蓓蕾');
+INSERT INTO `person` VALUES (401, 0, 17, '2019215389', '张金池');
+INSERT INTO `person` VALUES (402, 0, 17, '2019215390', '夏汉威');
+INSERT INTO `person` VALUES (403, 0, 17, '2019215391', '李延豪');
+INSERT INTO `person` VALUES (404, 0, 17, '2019215392', '黄亚楠');
+INSERT INTO `person` VALUES (405, 0, 17, '2019215393', '肖开喜');
+INSERT INTO `person` VALUES (406, 0, 17, '2019215394', '郑文川');
+INSERT INTO `person` VALUES (407, 0, 17, '2019215395', '刘罗茜');
+INSERT INTO `person` VALUES (408, 0, 17, '2019215396', '周小龙');
+INSERT INTO `person` VALUES (409, 0, 17, '2019215397', '李杰');
+INSERT INTO `person` VALUES (410, 0, 17, '2019215408', '张扬');
+INSERT INTO `person` VALUES (411, 0, 17, '2019215410', '戴元豪');
+INSERT INTO `person` VALUES (412, 0, 17, '2019215411', '隋金昊');
+INSERT INTO `person` VALUES (413, 0, 17, '2019215412', '刘浩田');
+INSERT INTO `person` VALUES (414, 0, 17, '2019215413', '贾军鹏');
+INSERT INTO `person` VALUES (415, 0, 17, '2019215414', '王婷');
+INSERT INTO `person` VALUES (416, 0, 17, '2019215415', '宋晨曦');
+INSERT INTO `person` VALUES (417, 0, 17, '2019215417', '贺禹铭');
+INSERT INTO `person` VALUES (418, 0, 17, '2019215418', '顾佳鹏');
+INSERT INTO `person` VALUES (419, 0, 17, '2019215422', '李泽世');
+INSERT INTO `person` VALUES (420, 0, 17, '2019215423', '李胜');
+INSERT INTO `person` VALUES (421, 0, 17, '2019215424', '金灿');
+INSERT INTO `person` VALUES (422, 0, 17, '2019215425', '樊国涛');
+INSERT INTO `person` VALUES (423, 0, 17, '2019215426', '叶桥');
+INSERT INTO `person` VALUES (424, 0, 17, '2019245301', '万宜来');
+INSERT INTO `person` VALUES (425, 0, 17, '2019245302', '张欢');
+INSERT INTO `person` VALUES (426, 0, 17, '2019310325', '步亚冉');
+INSERT INTO `person` VALUES (427, 0, 17, '2019310326', '齐达');
+INSERT INTO `person` VALUES (428, 0, 17, '2019310328', '廖清云');
+INSERT INTO `person` VALUES (429, 0, 17, '2019310332', '程显闻');
+INSERT INTO `person` VALUES (430, 0, 17, '2019310333', '吕杨');
+INSERT INTO `person` VALUES (431, 0, 17, '2019310339', '葛运通');
+INSERT INTO `person` VALUES (432, 0, 17, '2019310340', '王传硕');
+INSERT INTO `person` VALUES (433, 0, 17, '2019315302', '刘国豪');
 
 SET FOREIGN_KEY_CHECKS = 1;

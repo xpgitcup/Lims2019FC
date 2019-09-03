@@ -5,13 +5,13 @@
  Source Server Type    : MySQL
  Source Server Version : 50627
  Source Host           : 10.1.16.50:3306
- Source Schema         : lims2019dbb
+ Source Schema         : lims2019dbc
 
  Target Server Type    : MySQL
  Target Server Version : 50627
  File Encoding         : 65001
 
- Date: 11/08/2019 10:39:15
+ Date: 03/09/2019 18:11:31
 */
 
 SET NAMES utf8mb4;
@@ -38,7 +38,7 @@ CREATE TABLE `progress`  (
   CONSTRAINT `FK3gfg3qw93o00sgybjd3nuy1v0` FOREIGN KEY (`contributor_id`) REFERENCES `person` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK9rdflrh05eu15ao9mldbr2eqg` FOREIGN KEY (`team_id`) REFERENCES `team` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FKaegt6dto4gjcsiy0xhfy491dx` FOREIGN KEY (`prev_progress_id`) REFERENCES `progress` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 687 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 730 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of progress
@@ -729,5 +729,48 @@ INSERT INTO `progress` VALUES (683, 0, '软件运行流程', 68, 680, NULL, '文
 INSERT INTO `progress` VALUES (684, 0, '增加用户管理', 69, NULL, NULL, '多气合采.xmind', 95, '2019-08-06 10:01:00');
 INSERT INTO `progress` VALUES (685, 0, '这是一个测试', 58, 682, NULL, '学生数据实例.xlsx', 267, '2019-08-08 15:29:00');
 INSERT INTO `progress` VALUES (686, 0, '积液相关文献', 70, 677, NULL, '积液相关文献.rar', 97, '2019-08-10 12:27:00');
+INSERT INTO `progress` VALUES (687, 0, '请上传论文计划', 72, NULL, NULL, NULL, 2, '2019-08-11 10:42:00');
+INSERT INTO `progress` VALUES (688, 0, '请上传论文计划', 73, NULL, NULL, NULL, 2, '2019-08-11 10:47:00');
+INSERT INTO `progress` VALUES (689, 0, '请上传论文计划', 75, NULL, NULL, NULL, 2, '2019-08-11 10:48:00');
+INSERT INTO `progress` VALUES (690, 0, '请上传论文计划', 76, NULL, NULL, NULL, 2, '2019-08-11 10:48:00');
+INSERT INTO `progress` VALUES (691, 0, '完善了PPT中的部分内容', 1, NULL, '流型图仍需修改', '5_长治单管项目验收汇报--修改.pptx', 72, '2019-08-11 12:30:00');
+INSERT INTO `progress` VALUES (692, 0, '完善了报告中的部分内容', 1, NULL, '流型图仍需修改', '单管多相流水力、热力实验(1) -修改.docx', 72, '2019-08-11 12:31:00');
+INSERT INTO `progress` VALUES (693, 0, '流程图基本完成', 1, NULL, '部分数据、分界线仍需确定核实', 'MBD流型图-2次.zip', 72, '2019-08-11 12:31:00');
+INSERT INTO `progress` VALUES (694, 0, '软件', 68, 683, NULL, '机坪加油管网水力学计算软件.xmind', 94, '2019-08-11 15:17:00');
+INSERT INTO `progress` VALUES (695, 0, '马必东第一次模拟的OLGA文件', 1, NULL, NULL, '马必东OLGA模型及模拟文件1.zip', 72, '2019-08-13 19:15:00');
+INSERT INTO `progress` VALUES (696, 0, '马必东第一次模拟的OLGA模型', 1, NULL, '请忽略上一个压缩文件，传错了作废掉', '马必东OLGA模型1.zip', 72, '2019-08-13 19:26:00');
+INSERT INTO `progress` VALUES (697, 0, '马必东第二次模拟的OLGA模型', 1, NULL, NULL, '马必东OLGA模型2.zip', 72, '2019-08-13 19:27:00');
+INSERT INTO `progress` VALUES (698, 0, '第一次模拟结果', 1, NULL, NULL, 'MBD模拟结果及流型图-第一次（通过改变输量）.zip', 72, '2019-08-13 19:28:00');
+INSERT INTO `progress` VALUES (699, 0, '第二次模拟结果', 1, NULL, NULL, 'MBD模拟结果及流型图-第二次（通过改变含水率）.zip', 72, '2019-08-13 19:28:00');
+INSERT INTO `progress` VALUES (700, 0, '基础数据', 1, NULL, NULL, '马必东初步设计总说明.doc', 72, '2019-08-13 19:29:00');
+INSERT INTO `progress` VALUES (701, 0, '基础数据2', 1, NULL, NULL, '马必东管网数据（从初步设计中摘取的）.docx', 72, '2019-08-13 19:30:00');
+INSERT INTO `progress` VALUES (702, 0, '更新', 69, 684, NULL, '多气合采.xmind', 95, '2019-08-14 08:48:00');
+INSERT INTO `progress` VALUES (703, 0, 'OLGA', 68, 694, NULL, 'OLGA.xmind', 94, '2019-08-14 09:07:00');
+INSERT INTO `progress` VALUES (704, 0, '引射器选择算例', 3, NULL, NULL, '8.14 崔雪萌.pptx', 93, '2019-08-14 11:34:00');
+INSERT INTO `progress` VALUES (705, 0, '论文第一章初', 3, 658, NULL, '论文第一章初.docx', 80, '2019-08-14 12:42:00');
+INSERT INTO `progress` VALUES (706, 0, '论文第三章初', 3, 705, NULL, '论文第三章初.docx', 80, '2019-08-14 12:42:00');
+INSERT INTO `progress` VALUES (707, 0, '论文大纲', 76, 690, NULL, '论文大纲.docx', 80, '2019-08-14 12:50:00');
+INSERT INTO `progress` VALUES (708, 0, '论文第一章初', 76, 707, NULL, '论文第一章初.docx', 80, '2019-08-14 12:51:00');
+INSERT INTO `progress` VALUES (709, 0, '论文第三章初', 76, 708, NULL, '论文第三章初.docx', 80, '2019-08-14 12:51:00');
+INSERT INTO `progress` VALUES (710, 0, '上传论文的算例', 76, NULL, NULL, NULL, 2, '2019-08-14 15:11:00');
+INSERT INTO `progress` VALUES (711, 0, '请上传程序代码', 76, NULL, NULL, NULL, 2, '2019-08-14 15:13:00');
+INSERT INTO `progress` VALUES (712, 0, '文献综述部分内容', 70, 686, NULL, '煤层气田采气管道积液排放技术研究.docx', 97, '2019-08-14 16:12:00');
+INSERT INTO `progress` VALUES (713, 0, '工况计算', 5, 679, NULL, '工况计算表0813.xlsx', 75, '2019-08-14 15:51:00');
+INSERT INTO `progress` VALUES (714, 0, '流动保障模型介绍', 58, NULL, NULL, '保障.docx', 267, '2019-08-15 19:37:00');
+INSERT INTO `progress` VALUES (715, 0, '重做了流型图', 1, NULL, NULL, '单管多相流水力、热力实验(1) -初稿.docx', 72, '2019-08-15 20:30:00');
+INSERT INTO `progress` VALUES (716, 0, '重做了流型图', 1, NULL, NULL, '5_长治单管项目验收汇报--初稿.pptx', 72, '2019-08-15 20:31:00');
+INSERT INTO `progress` VALUES (717, 0, '新流型图', 1, NULL, NULL, '流型图完成.zip', 72, '2019-08-15 20:31:00');
+INSERT INTO `progress` VALUES (718, 0, '这个图的可读性较差，看着头晕', 58, 618, NULL, NULL, 2, '2019-08-17 09:46:00');
+INSERT INTO `progress` VALUES (719, 0, '现场腐蚀情况分析', 5, NULL, NULL, '腐蚀分析.docx', 69, '2019-08-17 12:23:00');
+INSERT INTO `progress` VALUES (720, 0, '论文第三章初稿', 5, 719, NULL, '第三章气固两相流数值模拟方法及模型初稿.docx', 69, '2019-08-17 12:25:00');
+INSERT INTO `progress` VALUES (721, 0, '文献', 68, 703, NULL, '文献.docx', 94, '2019-08-19 03:35:00');
+INSERT INTO `progress` VALUES (722, 0, '文献', 68, 721, NULL, '文献.docx', 94, '2019-08-19 08:16:00');
+INSERT INTO `progress` VALUES (723, 0, '导引条', 68, 722, NULL, '机场加油.xmind', 94, '2019-08-19 08:17:00');
+INSERT INTO `progress` VALUES (724, 0, '论文', 68, 723, NULL, '文献.rar', 94, '2019-08-19 08:18:00');
+INSERT INTO `progress` VALUES (725, 0, '这个写的不错！', 68, 723, NULL, NULL, 2, '2019-08-19 17:55:00');
+INSERT INTO `progress` VALUES (726, 0, '请大家上传成果', 78, NULL, NULL, NULL, 2, '2019-08-31 18:01:00');
+INSERT INTO `progress` VALUES (727, 0, '用LaTeX尝试编辑各类数学公式', 78, 726, '数学公式自动编号的格式是固定的，无法修改；进行复杂公式的编辑时，逻辑语言互相嵌套容易出错', 'document.tex', 371, '2019-08-31 18:04:00');
+INSERT INTO `progress` VALUES (728, 0, '用LATEX制作了论文封面、论文中的表格及表格标题格式', 78, 726, '封皮的样式模板还未确定', '封皮.zip', 369, '2019-08-31 18:04:00');
+INSERT INTO `progress` VALUES (729, 0, '用LaTeX尝试编辑各类数学公式', 78, 726, '数学公式自动编号的格式是固定的，无法修改；进行复杂公式的编辑时，逻辑语言互相嵌套容易出错', 'document.tex', 371, '2019-08-31 18:09:00');
 
 SET FOREIGN_KEY_CHECKS = 1;

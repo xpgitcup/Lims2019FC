@@ -3,15 +3,15 @@
 
  Source Server         : sample
  Source Server Type    : MySQL
- Source Server Version : 80015
+ Source Server Version : 80016
  Source Host           : localhost:3306
  Source Schema         : lims2019dbc
 
  Target Server Type    : MySQL
- Target Server Version : 80015
+ Target Server Version : 80016
  File Encoding         : 65001
 
- Date: 09/08/2019 18:48:42
+ Date: 03/09/2019 19:03:54
 */
 
 SET NAMES utf8mb4;
@@ -23,7 +23,7 @@ SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS `grade_info_person`;
 CREATE TABLE `grade_info_person`  (
   `grade_info_students_id` bigint(20) NOT NULL,
-  `person_id` bigint(20) DEFAULT NULL,
+  `person_id` bigint(20) NULL DEFAULT NULL,
   INDEX `FKoawewuokub2yddujnhxkxdy17`(`person_id`) USING BTREE,
   INDEX `FKholupsdbhme4j42lns4ps6vck`(`grade_info_students_id`) USING BTREE,
   CONSTRAINT `FKholupsdbhme4j42lns4ps6vck` FOREIGN KEY (`grade_info_students_id`) REFERENCES `grade_info` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,

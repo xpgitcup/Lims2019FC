@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : sample
+ Source Server         : 10.1.16.50
  Source Server Type    : MySQL
- Source Server Version : 80016
- Source Host           : localhost:3306
- Source Schema         : lims2019dbb
+ Source Server Version : 50627
+ Source Host           : 10.1.16.50:3306
+ Source Schema         : lims2019dbc
 
  Target Server Type    : MySQL
- Target Server Version : 80016
+ Target Server Version : 50627
  File Encoding         : 65001
 
- Date: 08/08/2019 15:26:35
+ Date: 03/09/2019 18:12:46
 */
 
 SET NAMES utf8mb4;
@@ -28,7 +28,7 @@ CREATE TABLE `thing_person`  (
   INDEX `FKqh6ljd8ln0q92yo3is9fvr0dx`(`thing_related_persons_id`) USING BTREE,
   CONSTRAINT `FKlxc8lkh4f96lm6nkrixmpih63` FOREIGN KEY (`person_id`) REFERENCES `person` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FKqh6ljd8ln0q92yo3is9fvr0dx` FOREIGN KEY (`thing_related_persons_id`) REFERENCES `thing` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of thing_person
@@ -190,5 +190,208 @@ INSERT INTO `thing_person` VALUES (3, 265);
 INSERT INTO `thing_person` VALUES (2, 256);
 INSERT INTO `thing_person` VALUES (2, 255);
 INSERT INTO `thing_person` VALUES (2, 265);
+INSERT INTO `thing_person` VALUES (35, 282);
+INSERT INTO `thing_person` VALUES (35, 323);
+INSERT INTO `thing_person` VALUES (35, 337);
+INSERT INTO `thing_person` VALUES (35, 272);
+INSERT INTO `thing_person` VALUES (35, 335);
+INSERT INTO `thing_person` VALUES (35, 288);
+INSERT INTO `thing_person` VALUES (35, 157);
+INSERT INTO `thing_person` VALUES (35, 341);
+INSERT INTO `thing_person` VALUES (35, 285);
+INSERT INTO `thing_person` VALUES (35, 281);
+INSERT INTO `thing_person` VALUES (35, 283);
+INSERT INTO `thing_person` VALUES (35, 297);
+INSERT INTO `thing_person` VALUES (35, 315);
+INSERT INTO `thing_person` VALUES (35, 280);
+INSERT INTO `thing_person` VALUES (35, 332);
+INSERT INTO `thing_person` VALUES (35, 353);
+INSERT INTO `thing_person` VALUES (35, 312);
+INSERT INTO `thing_person` VALUES (35, 344);
+INSERT INTO `thing_person` VALUES (35, 291);
+INSERT INTO `thing_person` VALUES (35, 349);
+INSERT INTO `thing_person` VALUES (35, 354);
+INSERT INTO `thing_person` VALUES (35, 306);
+INSERT INTO `thing_person` VALUES (35, 273);
+INSERT INTO `thing_person` VALUES (35, 310);
+INSERT INTO `thing_person` VALUES (35, 313);
+INSERT INTO `thing_person` VALUES (35, 351);
+INSERT INTO `thing_person` VALUES (35, 270);
+INSERT INTO `thing_person` VALUES (35, 316);
+INSERT INTO `thing_person` VALUES (35, 286);
+INSERT INTO `thing_person` VALUES (35, 334);
+INSERT INTO `thing_person` VALUES (35, 368);
+INSERT INTO `thing_person` VALUES (35, 345);
+INSERT INTO `thing_person` VALUES (35, 300);
+INSERT INTO `thing_person` VALUES (35, 311);
+INSERT INTO `thing_person` VALUES (35, 350);
+INSERT INTO `thing_person` VALUES (35, 274);
+INSERT INTO `thing_person` VALUES (35, 347);
+INSERT INTO `thing_person` VALUES (35, 289);
+INSERT INTO `thing_person` VALUES (36, 396);
+INSERT INTO `thing_person` VALUES (36, 404);
+INSERT INTO `thing_person` VALUES (36, 378);
+INSERT INTO `thing_person` VALUES (36, 395);
+INSERT INTO `thing_person` VALUES (36, 426);
+INSERT INTO `thing_person` VALUES (36, 411);
+INSERT INTO `thing_person` VALUES (36, 415);
+INSERT INTO `thing_person` VALUES (36, 383);
+INSERT INTO `thing_person` VALUES (36, 419);
+INSERT INTO `thing_person` VALUES (36, 375);
+INSERT INTO `thing_person` VALUES (36, 422);
+INSERT INTO `thing_person` VALUES (36, 409);
+INSERT INTO `thing_person` VALUES (36, 371);
+INSERT INTO `thing_person` VALUES (36, 397);
+INSERT INTO `thing_person` VALUES (36, 387);
+INSERT INTO `thing_person` VALUES (36, 407);
+INSERT INTO `thing_person` VALUES (36, 388);
+INSERT INTO `thing_person` VALUES (36, 421);
+INSERT INTO `thing_person` VALUES (36, 433);
+INSERT INTO `thing_person` VALUES (36, 403);
+INSERT INTO `thing_person` VALUES (36, 427);
+INSERT INTO `thing_person` VALUES (36, 428);
+INSERT INTO `thing_person` VALUES (36, 402);
+INSERT INTO `thing_person` VALUES (36, 376);
+INSERT INTO `thing_person` VALUES (36, 381);
+INSERT INTO `thing_person` VALUES (36, 380);
+INSERT INTO `thing_person` VALUES (36, 377);
+INSERT INTO `thing_person` VALUES (36, 373);
+INSERT INTO `thing_person` VALUES (36, 417);
+INSERT INTO `thing_person` VALUES (36, 420);
+INSERT INTO `thing_person` VALUES (36, 379);
+INSERT INTO `thing_person` VALUES (36, 385);
+INSERT INTO `thing_person` VALUES (36, 399);
+INSERT INTO `thing_person` VALUES (36, 401);
+INSERT INTO `thing_person` VALUES (36, 416);
+INSERT INTO `thing_person` VALUES (36, 384);
+INSERT INTO `thing_person` VALUES (36, 405);
+INSERT INTO `thing_person` VALUES (36, 398);
+INSERT INTO `thing_person` VALUES (36, 432);
+INSERT INTO `thing_person` VALUES (36, 424);
+INSERT INTO `thing_person` VALUES (36, 425);
+INSERT INTO `thing_person` VALUES (36, 410);
+INSERT INTO `thing_person` VALUES (36, 370);
+INSERT INTO `thing_person` VALUES (36, 386);
+INSERT INTO `thing_person` VALUES (36, 374);
+INSERT INTO `thing_person` VALUES (36, 389);
+INSERT INTO `thing_person` VALUES (36, 390);
+INSERT INTO `thing_person` VALUES (36, 408);
+INSERT INTO `thing_person` VALUES (36, 406);
+INSERT INTO `thing_person` VALUES (36, 394);
+INSERT INTO `thing_person` VALUES (36, 372);
+INSERT INTO `thing_person` VALUES (36, 392);
+INSERT INTO `thing_person` VALUES (36, 393);
+INSERT INTO `thing_person` VALUES (36, 423);
+INSERT INTO `thing_person` VALUES (36, 429);
+INSERT INTO `thing_person` VALUES (36, 414);
+INSERT INTO `thing_person` VALUES (36, 391);
+INSERT INTO `thing_person` VALUES (36, 430);
+INSERT INTO `thing_person` VALUES (36, 413);
+INSERT INTO `thing_person` VALUES (36, 382);
+INSERT INTO `thing_person` VALUES (36, 418);
+INSERT INTO `thing_person` VALUES (36, 412);
+INSERT INTO `thing_person` VALUES (36, 369);
+INSERT INTO `thing_person` VALUES (36, 400);
+INSERT INTO `thing_person` VALUES (36, 431);
+INSERT INTO `thing_person` VALUES (37, 287);
+INSERT INTO `thing_person` VALUES (37, 282);
+INSERT INTO `thing_person` VALUES (37, 303);
+INSERT INTO `thing_person` VALUES (37, 281);
+INSERT INTO `thing_person` VALUES (37, 285);
+INSERT INTO `thing_person` VALUES (37, 271);
+INSERT INTO `thing_person` VALUES (37, 273);
+INSERT INTO `thing_person` VALUES (37, 286);
+INSERT INTO `thing_person` VALUES (37, 284);
+INSERT INTO `thing_person` VALUES (37, 279);
+INSERT INTO `thing_person` VALUES (37, 291);
+INSERT INTO `thing_person` VALUES (37, 280);
+INSERT INTO `thing_person` VALUES (37, 292);
+INSERT INTO `thing_person` VALUES (37, 290);
+INSERT INTO `thing_person` VALUES (37, 299);
+INSERT INTO `thing_person` VALUES (37, 272);
+INSERT INTO `thing_person` VALUES (37, 300);
+INSERT INTO `thing_person` VALUES (37, 301);
+INSERT INTO `thing_person` VALUES (37, 302);
+INSERT INTO `thing_person` VALUES (37, 298);
+INSERT INTO `thing_person` VALUES (37, 288);
+INSERT INTO `thing_person` VALUES (37, 294);
+INSERT INTO `thing_person` VALUES (37, 296);
+INSERT INTO `thing_person` VALUES (37, 297);
+INSERT INTO `thing_person` VALUES (37, 276);
+INSERT INTO `thing_person` VALUES (37, 293);
+INSERT INTO `thing_person` VALUES (37, 277);
+INSERT INTO `thing_person` VALUES (37, 274);
+INSERT INTO `thing_person` VALUES (37, 275);
+INSERT INTO `thing_person` VALUES (37, 295);
+INSERT INTO `thing_person` VALUES (37, 270);
+INSERT INTO `thing_person` VALUES (37, 269);
+INSERT INTO `thing_person` VALUES (37, 289);
+INSERT INTO `thing_person` VALUES (37, 283);
+INSERT INTO `thing_person` VALUES (37, 278);
+INSERT INTO `thing_person` VALUES (37, 312);
+INSERT INTO `thing_person` VALUES (37, 327);
+INSERT INTO `thing_person` VALUES (37, 315);
+INSERT INTO `thing_person` VALUES (37, 306);
+INSERT INTO `thing_person` VALUES (37, 311);
+INSERT INTO `thing_person` VALUES (37, 309);
+INSERT INTO `thing_person` VALUES (37, 313);
+INSERT INTO `thing_person` VALUES (37, 331);
+INSERT INTO `thing_person` VALUES (37, 304);
+INSERT INTO `thing_person` VALUES (37, 323);
+INSERT INTO `thing_person` VALUES (37, 308);
+INSERT INTO `thing_person` VALUES (37, 325);
+INSERT INTO `thing_person` VALUES (37, 334);
+INSERT INTO `thing_person` VALUES (37, 316);
+INSERT INTO `thing_person` VALUES (37, 320);
+INSERT INTO `thing_person` VALUES (37, 322);
+INSERT INTO `thing_person` VALUES (37, 328);
+INSERT INTO `thing_person` VALUES (37, 330);
+INSERT INTO `thing_person` VALUES (37, 326);
+INSERT INTO `thing_person` VALUES (37, 317);
+INSERT INTO `thing_person` VALUES (37, 319);
+INSERT INTO `thing_person` VALUES (37, 324);
+INSERT INTO `thing_person` VALUES (37, 333);
+INSERT INTO `thing_person` VALUES (37, 321);
+INSERT INTO `thing_person` VALUES (37, 307);
+INSERT INTO `thing_person` VALUES (37, 310);
+INSERT INTO `thing_person` VALUES (37, 305);
+INSERT INTO `thing_person` VALUES (37, 314);
+INSERT INTO `thing_person` VALUES (37, 332);
+INSERT INTO `thing_person` VALUES (37, 318);
+INSERT INTO `thing_person` VALUES (37, 329);
+INSERT INTO `thing_person` VALUES (37, 335);
+INSERT INTO `thing_person` VALUES (37, 363);
+INSERT INTO `thing_person` VALUES (37, 360);
+INSERT INTO `thing_person` VALUES (37, 341);
+INSERT INTO `thing_person` VALUES (37, 356);
+INSERT INTO `thing_person` VALUES (37, 345);
+INSERT INTO `thing_person` VALUES (37, 346);
+INSERT INTO `thing_person` VALUES (37, 340);
+INSERT INTO `thing_person` VALUES (37, 348);
+INSERT INTO `thing_person` VALUES (37, 357);
+INSERT INTO `thing_person` VALUES (37, 353);
+INSERT INTO `thing_person` VALUES (37, 359);
+INSERT INTO `thing_person` VALUES (37, 344);
+INSERT INTO `thing_person` VALUES (37, 354);
+INSERT INTO `thing_person` VALUES (37, 337);
+INSERT INTO `thing_person` VALUES (37, 343);
+INSERT INTO `thing_person` VALUES (37, 366);
+INSERT INTO `thing_person` VALUES (37, 367);
+INSERT INTO `thing_person` VALUES (37, 355);
+INSERT INTO `thing_person` VALUES (37, 362);
+INSERT INTO `thing_person` VALUES (37, 347);
+INSERT INTO `thing_person` VALUES (37, 350);
+INSERT INTO `thing_person` VALUES (37, 352);
+INSERT INTO `thing_person` VALUES (37, 364);
+INSERT INTO `thing_person` VALUES (37, 349);
+INSERT INTO `thing_person` VALUES (37, 358);
+INSERT INTO `thing_person` VALUES (37, 361);
+INSERT INTO `thing_person` VALUES (37, 368);
+INSERT INTO `thing_person` VALUES (37, 336);
+INSERT INTO `thing_person` VALUES (37, 342);
+INSERT INTO `thing_person` VALUES (37, 338);
+INSERT INTO `thing_person` VALUES (37, 365);
+INSERT INTO `thing_person` VALUES (37, 339);
+INSERT INTO `thing_person` VALUES (37, 351);
 
 SET FOREIGN_KEY_CHECKS = 1;
