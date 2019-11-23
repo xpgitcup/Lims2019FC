@@ -20,7 +20,20 @@
             <td>${item.thingType.name}</td>
             <td>${item.sponsor}</td>
             <td>${item?.relatedPersons?.size()}</td>
-            <td>${item?.relatedPersons}</td>
+            <td>
+                <g:form action="addRelatedPersons" controller="operation4Thing">
+                    <label>选课班级</label>
+                    <g:select from="${cn.edu.cup.basic.GradeInfo.list()}"
+                              name="grade"
+                              optionKey="id"
+                              optionValue="name"
+                              multiple="true"
+                              size="1"
+                              noSelection="${['null': 'Select One...']}"/>
+                    <g:hiddenField name="thing" value="${item.id}"/>
+                    <input type="submit" value="ok"/>
+                </g:form>
+            </td>
             <td>${cn.edu.cup.lims.Team.countByThing(item)}</td>
             <td>${item.startDate}</td>
             <td>${item.endDate}</td>

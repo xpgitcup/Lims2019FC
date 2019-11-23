@@ -3,7 +3,7 @@
 
 <table class="table table-striped table-sm m-0 p-0">
     <thead>
-    <th width="15%">班级</th>
+    <th width="30%">班级</th>
     <th width="10%">专业</th>
     <th width="5%">类型</th>
     <th width="5%">人数</th>
@@ -25,6 +25,9 @@
                     <g:if test="${item.userCount() == item.students.size()}">
                         <a href="operation4Person/removeFromSystemUser?key=grade&id=${item.id}">毕业</a>
                     </g:if>
+                    <g:else>
+                        <a href="operation4Person/addToSystemUser?key=grade&id=${item.id}">入学</a>
+                    </g:else>
                 </g:if>
             </td>
             <td>${item.major.name}</td>

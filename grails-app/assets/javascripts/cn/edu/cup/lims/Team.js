@@ -55,7 +55,7 @@ function appendParamsBootStrap(title) {
 
 
 function deleteTeam(id) {
-    console.info("删除教学任务：" + id);
+    console.info("删除团队：" + id);
     ajaxExecuteWithMethod("operation4Team/delete?id=" + id, 'DELETE');
     console.log("删除：" + id + "了！");
     location.reload();

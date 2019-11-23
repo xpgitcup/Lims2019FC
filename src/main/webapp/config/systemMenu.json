@@ -209,6 +209,13 @@
         "menuDescription": "维护项目计划",
         "layout": "mainAfterLogin20190709",
         "menuOrder": 0
+      },
+      {
+        "menuContext": "团队维护",
+        "menuAction": "operation4Team/index",
+        "menuDescription": "维护项目计划",
+        "layout": "mainAfterLogin20190709",
+        "menuOrder": 0
       }
     ]
   }

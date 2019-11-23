@@ -28,6 +28,11 @@
 </head>
 
 <body>
+<g:if test="${key == '团队管理'}">
+    <g:render template="teamManagePanel"/>
+</g:if>
+<g:else>
     <g:render template="teamPanel"/>
+</g:else>
 </body>
 </html>

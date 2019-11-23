@@ -7,6 +7,27 @@ import cn.edu.cup.lims.ThingType
 class Operation4TeamController extends TeamController {
 
     /*
+     * 解聘
+     * */
+
+    def dismiss() {
+        println("开始解聘....${params}")
+        def person = Person.findByName(params.name)
+        def team = teamService.get(params.team)
+        if (team.leader != person) {
+            if (team.members.contains(person)) {
+                team.members.remove(person)
+                teamService.save(team)
+            } else {
+                flash.message = "查无此人!"
+            }
+        } else {
+            flash.message = "队长不用加入！"
+        }
+        redirect(action: params.nextAction, controller: params.nextController, params: params)
+    }
+
+    /*
      * 招聘
      * */
 
@@ -28,6 +49,8 @@ class Operation4TeamController extends TeamController {
     }
 
     protected void prepareParams() {
+        def myself = session.systemUser.person()
+        params.myself = myself
         switch (params.key) {
             case "科研项目":
                 params.thingTypeList = ThingType.findByName("科研项目").relatedThingTypeList()

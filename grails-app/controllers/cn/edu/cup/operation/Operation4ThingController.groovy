@@ -8,6 +8,30 @@ import cn.edu.cup.lims.ThingType
 
 class Operation4ThingController extends ThingController {
 
+    def gradeInfoService
+
+    def addRelatedPersons() {
+        def grade = gradeInfoService.get(params.grade)
+        def thing = thingService.get(params.thing)
+
+        println("更新${thing}相关人员！")
+        println("${grade.students?.size()}")
+
+        def k = 0
+        grade.students.each { e ->
+            if (!thing.relatedPersons.contains(e)) {
+                thing.relatedPersons.add(e)
+                k++
+            }
+        }
+        if (k > 0) {
+            thingService.save(thing)
+            flash.message = "更新${k}个人员！"
+        }
+
+        redirect(action: "index")
+    }
+
     def updateRelatedPersons() {
         def logFileName = "${commonService.webRootPath}/config/out/db_thing_relatedPersons.log"
         def lofFile = new File(logFileName)
